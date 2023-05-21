@@ -1,0 +1,15 @@
+<!--pages/home/com/com.wxml-->
+<!-- <view>
+		<scroll-view v-show="isShow" :class="{'fixed':isFixed}" scroll-x="true"
+			class="scroll-view d-flex bg-white  position-relative">
+			<view class="item text-center nowarp" v-for="(item,index) in sources" :key="index"
+				:style="'width:'+(!isScroll?(100/sources.length)+'%':'auto')"
+				:class="{'active font-weight-bold':type==item.type}" @click="clickType(item,index)">
+				{{item.name}}
+			</view>
+			滚动条
+			<view class="line-box" :style="left:{{activeLeft}}px"></view>
+		</scroll-view>
+		当固定顶部时，占位元素，高度可修改
+		<view :show="{{isFixed && isShow}}" :style="'height:'+height+'px'"></view>
+	</view> -->

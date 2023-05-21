@@ -1,0 +1,34 @@
+/* pages/home/com/com.wxss */
+.line-box {
+  position: absolute;
+  width: 56rpx;
+  height: 4rpx;
+  /* // background-color: #2B323C; */
+  background-color: #0D6ED9;
+  /* // bottom: 48rpx; */
+  top: 74rpx;
+  transform: translateX(-50%);
+  transition: all 0.1s;
+}
+
+.item {
+  display: inline-block;
+  max-width: 400rpx;
+  padding: 16rpx 40rpx;
+}
+
+.item.active {
+  color: #0D6ED9;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  /* #ifdef H5 */
+  top: 44px;
+  /* #endif */
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0, 0, 0, 0.06);
+}

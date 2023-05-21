@@ -1,0 +1,22 @@
+<view class="recommend">
+    <view class="recommend-box">
+      <view class="{{isSticky?'recommend-head-fixed':'recommend-head'}}">
+        <view class="head-left">
+          <view class="title">
+            <view>小浪推荐</view>
+            <view class="line">|</view>
+            <view class="small-title">镇店之宝</view>
+          </view>
+          <view class="bot-title">
+            酒水新风潮
+          </view>
+        </view>
+        <view class="head-right">
+          全部>
+        </view>
+      </view>
+      <view class="recommend-body">
+      
+      </view>
+    </view>
+  </view>

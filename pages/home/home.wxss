@@ -1,0 +1,73 @@
+.recommend {
+  width: 750rpx;
+  height: 500rpx;
+  background-color: #f9f9f9;
+}
+.head-left {
+  width: 270rpx;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.small-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #e33652;
+}
+.bot-title {
+  width: 120rpx;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  color: #c04768;
+  border-bottom: 4rpx solid #ec8b8b;
+}
+.line {
+  font-size: 20rpx;
+  color: #cccccc;
+}
+.head-right {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 5rpx 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 50rpx;
+  background-color: #f72854;
+  height: 40rpx;
+  font-weight: 600;
+  font-size: 22rpx;
+}
+.recommend-body {
+  width: 100%;
+  height: 1900rpx;
+  background-color: aqua;
+}
+/* 吸顶元素的默认样式 */
+.recommend-head {
+  display: flex;
+  justify-content: space-between;
+  width: 690rpx;
+  height: 96rpx;
+  background-color: #f9f9f9;
+  padding: 20rpx 30rpx 0 30rpx;
+  border-bottom: 4rpx solid #999;
+}
+ 
+/* 吸顶元素的固定定位样式 */
+.recommend-head-fixed {
+  display: flex;
+  justify-content: space-between;
+  width: 690rpx;
+  height: 96rpx;
+  background-color: #fff;
+  padding: 20rpx 30rpx 0 30rpx;
+  border-bottom: 4rpx solid #fff;
+  /* 吸顶样式 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}

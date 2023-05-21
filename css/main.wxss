@@ -1,0 +1,21 @@
+page {
+  /* 主色颜色  #FE716F*/
+  --primary-color:#C83C3C; 
+  /* 副色颜色（暂未使用） */
+  --secondly-color: #000000;
+  --white-color: #FFF;
+  /* 边框定义 */
+  --border-radius: 10rpx;
+  --border-radius-3:6rpx;
+  --border-radius-5:10rpx;
+  --border-radius-8:16rpx;
+  --border-radius-10:20rpx;
+  --border-color:#ebedf0;
+  /* --border-color:red; */
+  --bth-max-width:95%;
+  --color: #646566;
+  /* 按钮背景色 */
+  --btn-bg:#F6F6F6; 
+  /* 评分背景色 */
+  --rate-bg:#FFF8E7;
+}

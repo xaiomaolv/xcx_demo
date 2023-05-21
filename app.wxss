@@ -1,0 +1,27 @@
+/**app.wxss**/
+@import "/css/flex.wxss";
+@import "css/main.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+/* 国旗大小 */
+.nationFlag {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+
+/* 头像大小 */
+.avator {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}

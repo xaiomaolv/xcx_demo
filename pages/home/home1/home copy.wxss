@@ -1,0 +1,110 @@
+/* pages/home/home.wxss */
+.greenColor {
+  color: rgb(59 185 80);
+}
+ 
+ 
+.greenBg {
+  background-color: rgb(59 185 80);
+}
+ 
+ 
+.topView {
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+  z-index:999;
+  width:100%;
+  background-color: #fff;
+  height: 80rpx;
+}
+ 
+ 
+/* 导航tab */
+.tabs {
+  white-space: nowrap;
+  padding-left: 32rpx;
+  width: 100%;
+  overflow: hidden;
+}
+ 
+ 
+/* 隐藏scroll-view页面滚动条 */
+::webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: #fff;
+  display: none;
+}
+ 
+ 
+.tabs .tab {
+  display: inline-block;
+  padding-right: 50rpx;
+}
+ 
+ 
+.tab_text {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-bottom: 10rpx;
+}
+ 
+ 
+.tab_line {
+  margin: 0 auto;
+  width: 30rpx;
+  height: 5rpx;
+}
+ 
+ 
+/*滚动内容*/
+.column {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+ 
+ 
+.column .column_title {
+  padding: 40rpx 32rpx 0rpx 32rpx;
+}
+ 
+ 
+.column .column_imgs {
+  padding: 0 28rpx;
+  overflow: hidden;
+  margin-top: 15rpx;
+ 
+ 
+}
+ 
+ 
+.column_imgs .img_div {
+  width: 230rpx;
+  height: 190rpx;
+  padding: 7rpx 7rpx;
+  box-sizing: border-box;
+  float: left;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+ 
+ 
+.column_imgs .img_div image {
+  width: 100%;
+  height: 100%;
+  background: #b5b5b5;
+}
+ 
+ 
+.column_imgs .img_div .showMore {
+  width: 100%;
+  height: 100%;
+  background: #f3f5f8;
+  line-height: 190rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #0f0d6b;
+}

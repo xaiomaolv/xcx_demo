@@ -1,0 +1,15 @@
+<!--pages/demo/demo.wxml-->
+<view class="wrap">
+  <view class="top-box" style="{{boxStyle}}">
+    <view class="top-box1" style="{{box1Style}}">顶部box1</view>
+    <!-- <view class="top-box2"></view> -->
+    <scroll-view class="top-box2" scroll-into-view="{{scrollId}}" scroll-x="true" scroll-with-animation="true">
+      <block wx:for="{{cates}}" wx:key="index">
+        <view class="{{item.id === currentId?'cate-item-act cate-item':'cate-item'}}" data-id="{{item.id}}" id="good{{item.id}}" bindtap="cateChange">{{item.name}}</view>
+      </block>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y="true" class="scroll-con" style="{{scrollViewStyle}}" bindscroll="goodsViewScroll" bindscrolltoupper="goodsViewScrollTop">
+    <view class="scroll-con-item" wx:for="{{cates}}" wx:key="index">{{item.name}}</view>
+  </scroll-view>
+</view>
