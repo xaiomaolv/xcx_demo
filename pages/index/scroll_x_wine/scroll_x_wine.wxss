@@ -41,3 +41,10 @@
   height: 0;
   color: transparent;
 }
+
+.scroll_title {
+white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: block;
+}

@@ -219,6 +219,18 @@
 <view class="wineryCard">
   <view class="ft-bd mg-10-15 pd-tb-10 tx-ct">酒庄</view>
   <view class="ft-bd tx-ct">la wine</view>
+  <view class="flex-row ">
+    <view class="flex-col-8 tx-rt ft-se-18">4.5</view>
+    <view class="flex-col-6 mg-lt-10">
+      <van-rate readonly color="#B81728" value="3" size="7" bind:change="onChange" />
+      <view class="ft-se-12 clr-999">21211条评论</view>
+    </view>
+    <view class="clr-999 ft-se-14 flex-col-8 tx-lt">36款酒</view>
+  </view>
+  <view class="flex-row flex-wrap">
+  <image class="nationFlag tx-rt" src="/img/mate/7.png" mode="aspectFit"/>
+  <button class="log_btn tx-lt" round size="mini">法国马兹</button>
+  </view>
   <!-- 最佳酒款 -->
   <view></view>
 </view>

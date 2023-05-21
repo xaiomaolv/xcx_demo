@@ -10,7 +10,10 @@
           <view class="ft-se-12">{{item.num}}条评分</view>
         </view>
         <image class="" src="{{item.w_img}}" mode="aspectFit" />
-
+        <view class="tx-ct" style="margin-left:100rpx">
+        <view class="">{{item.num}}</view>
+        <view class="scroll_title">{{item.w_name}}</view>
+        </view>
       </view>
     </scroll-view>
   </view>
