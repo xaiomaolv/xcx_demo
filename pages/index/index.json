@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "navTabs":"/components/navTabs/navTabs"
+  },
   "navigationStyle": "custom"
 }

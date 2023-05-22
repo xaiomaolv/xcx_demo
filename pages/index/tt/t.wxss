@@ -1,0 +1,22 @@
+/* pages/index/tt/t.wxss */
+.navigateBox{
+  width:100%;
+  position: sticky;
+  height:92rpx;
+  background:#fff;
+  z-index:8;
+  top:0rpx;
+  left:0rpx;
+  border-top:2rpx solid #F2F2F2;
+ 
+}
+/* .navigateBox .menus {
+  position: relative;
+  display: inline-block;
+  height: 92rpx;
+  line-height: 92rpx;
+  width: auto;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  color: #7F7F7F;
+} */

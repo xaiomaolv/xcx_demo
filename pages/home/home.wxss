@@ -1,73 +1,72 @@
-.recommend {
-  width: 750rpx;
-  height: 500rpx;
-  background-color: #f9f9f9;
-}
-.head-left {
-  width: 270rpx;
-}
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.small-title {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #e33652;
-}
-.bot-title {
-  width: 120rpx;
-  padding: 10rpx 0;
-  font-size: 24rpx;
-  color: #c04768;
-  border-bottom: 4rpx solid #ec8b8b;
-}
-.line {
-  font-size: 20rpx;
-  color: #cccccc;
-}
-.head-right {
-  display: flex;
-  justify-content: flex-end;
-  color: #fff;
-  padding: 5rpx 20rpx;
-  text-align: center;
-  line-height: 40rpx;
-  border-radius: 50rpx;
-  background-color: #f72854;
-  height: 40rpx;
-  font-weight: 600;
-  font-size: 22rpx;
-}
-.recommend-body {
+/* pages/home/home.wxss */
+page {
   width: 100%;
-  height: 1900rpx;
-  background-color: aqua;
+  min-height: 100vh;
 }
-/* 吸顶元素的默认样式 */
-.recommend-head {
-  display: flex;
-  justify-content: space-between;
-  width: 690rpx;
-  height: 96rpx;
-  background-color: #f9f9f9;
-  padding: 20rpx 30rpx 0 30rpx;
-  border-bottom: 4rpx solid #999;
+
+/* 顶部返回 */
+.head-back {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 50rpx;
+  /* border-radius: 50rpx;
+  border: 1rpx solid rgba(204, 204, 204, .6); */
+  width: 170rpx;
+  margin-left: 25rpx;
+  position: relative;
+
 }
- 
-/* 吸顶元素的固定定位样式 */
-.recommend-head-fixed {
+
+.head-back image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.head-back::after {
+  /* position: absolute;
+  right: 50rpx;
+  top: 150rpx; */
+  content: "";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 0 0 2px 2px;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
+
+.card_item {
+  display: inline-block;
+  /* width: 162rpx; */
+  height: 10vh;
+  border-radius: 15rpx;
+  margin-right: 12rpx;
+  /* opacity: .5; */
+  position: relative;
+}
+
+.card_item:last-child {
+  margin-right: 20rpx;
+}
+
+/* 底部 */
+.camera_view {
+  height: 100%;
+  width: 100%;
+  /* position:absolute; */
   display: flex;
-  justify-content: space-between;
-  width: 690rpx;
-  height: 96rpx;
-  background-color: #fff;
-  padding: 20rpx 30rpx 0 30rpx;
-  border-bottom: 4rpx solid #fff;
-  /* 吸顶样式 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  margin: 0 auto;
+}
+
+.camera_bottom {
+  height: calc(100vh - 89vh);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #B81728;
 }

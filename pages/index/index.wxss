@@ -3,6 +3,17 @@ page {
   width: 100%;
   background-color: rgb(242, 242, 242);
 }
+.navigateBox{
+  width:100%;
+  position: sticky;
+  height:92rpx;
+  background:#fff;
+  z-index:8;
+  top:0rpx;
+  left:0rpx;
+  border-top:2rpx solid #F2F2F2;
+ 
+}
 /*  去掉button的默认样式*/
 button {
   background: transparent;
@@ -14,21 +25,31 @@ button::after {
   border: none;
   display: none;
 }
-.mg-15-25{
-  margin:30rpx 50rpx;
+.nationFlags{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
 }
-.mg-10-15{
+.mg-15-25 {
+  margin: 30rpx 50rpx;
+}
+
+.mg-10-15 {
   margin: 20rpx 30rpx;
 }
-.mg-0-15{
+
+.mg-0-15 {
   margin: 0 30rpx;
 }
-.mg-0-10{
+
+.mg-0-10 {
   margin: 0 20rpx;
 }
-.mg-10-0{
-  margin:20rpx 0 ;
+
+.mg-10-0 {
+  margin: 20rpx 0;
 }
+
 .header {
   width: 100%;
   position: relative;
@@ -71,19 +92,22 @@ button::after {
   left: calc(50% - 1rpx);
   top: 10%;
 }
-.topCard{
+
+.topCard {
   background-color: white;
   border-bottom-left-radius: 40rpx;
   border-bottom-right-radius: 40rpx;
   padding-bottom: 20rpx;
 }
-.rateCard{
+
+.rateCard {
   background-color: white;
   border-bottom-left-radius: 40rpx;
   border-bottom-right-radius: 40rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
+
 /* 酒瓶大小 */
 .wine_img {
   width: 250rpx;
@@ -110,6 +134,7 @@ button::after {
   width: 160rpx;
   height: 280rpx;
 }
+
 /* 参考价格 */
 .price_btn {
   background-color: #F2F2F2;
@@ -119,52 +144,68 @@ button::after {
   margin-top: 70rpx;
   border-radius: 30rpx;
 }
+
 .circle {
   width: 90rpx;
-  height:90rpx;
+  height: 90rpx;
   border-radius: 50%;
   border: 1rpx solid #979797;
   padding: 20rpx;
   margin-right: 30rpx;
 }
 
-.van_btn{
+.van_btn {
   border: 1rpx solid black !important;
   margin-left: 30rpx;
   font-weight: bold !important;
-  padding:0 32rpx !important;
+  padding: 0 32rpx !important;
 }
 
-.bds{
-  border: 1rpx solid #dbcfcf;
-  margin-right: 10rpx;
+.bds {
+  border: 1rpx solid var(--border-color);
+  margin-right: 25rpx;
+  /* padding:0 20rpx; */
   border-radius: 10rpx;
+  width: 40%;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* 编者注 */
-.editCard{
+.editCard {
   background-color: white;
   border-radius: 40rpx;
   padding-bottom: 20rpx;
 }
+
 /* 简介 */
-.blurbCard{
+.blurbCard {
   background-color: white;
   border-radius: 40rpx;
   padding-bottom: 20rpx;
 }
-.blud_btn{
+
+.blud_btn {
   border-radius: 30rpx;
   border: 1px solid #000;
 }
-.blud_btn .active{
+
+.blud_btn .active {
   border: 1rpx solid black;
   background-color: black;
   color: white;
 }
+.bd-bt-blurb {
+  border-bottom: 1rpx solid var(--border-color);
+  /* margin: 30rpx 50rpx; */
+  padding: 26rpx 0;
+}
 .box {
   display: flex;
 }
- 
+
 .box .item {
   flex: 1;
   text-align: center;
@@ -173,72 +214,80 @@ button::after {
   border: 1px solid #000;
   border-radius: 50rpx;
 }
- 
+
 .active {
   color: white;
   background-color: black;
 }
 
-.blud_logo{
+.blud_logo {
   width: 80rpx;
   height: 80rpx;
 }
 
 /* 口味特征 */
-.flavourCard{
+.flavourCard {
   background-color: white;
   border-radius: 40rpx;
-  /* padding-bottom: 20rpx; */
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
+  /* padding: 0 20rpx 20rpx 20rpx; */
 }
+
 .van-field__control:disabled,
 .van-field__control[disabled] {
-    color: #B81728;
-    opacity: 1;
-    /* // // ios 和 安卓9.0 必须添加此属性，才会生效 */
-    -webkit-text-fill-color: #000; 
-    -webkit-opacity: 1;
-  }
-.bd-bt-flavour{
+  color: #B81728;
+  opacity: 1;
+  /* // // ios 和 安卓9.0 必须添加此属性，才会生效 */
+  -webkit-text-fill-color: #000;
+  -webkit-opacity: 1;
+}
+
+.bd-bt-flavour {
   width: 100%;
   border-bottom: 1rpx solid var(--border-color);
 }
-.custom-class{
+
+.custom-class {
   margin: 10rpx 40rpx;
 }
+
 .custom-button {
-  width: 66px;
+  width: 120rpx;
   color: #B81728;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 18rpx;
+  line-height: 20rpx;
   text-align: center;
   background-color: #B81728;
-  border-radius: 100px;
+  border-radius: 200rpx;
 }
+
 .row {
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start; */
+  /* justify-content: center; */
   align-items: center;
 }
 
 /* 我的日志 */
-.logCard{
+.logCard {
   background-color: white;
   border-radius: 40rpx;
-  /* padding-bottom: 20rpx; */
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
+  /* padding: 0 20rpx 20rpx 20rpx; */
 }
-.log_rate{
-  padding:0 20rpx !important;
+
+.log_rate {
+  padding: 0 20rpx !important;
   background-color: var(--rate-bg);
   border-radius: 30rpx;
 }
-.log_btn{
-  padding:0 20rpx !important;
+
+.log_btn {
+  padding: 0 20rpx !important;
   background-color: var(--btn-bg);
   border-radius: 30rpx;
 }
+
 .custom-icon {
   font-size: 32rpx;
   padding-right: 10rpx;
@@ -246,33 +295,41 @@ button::after {
 }
 
 /* 评价 */
-.evaluateCard{
+.evaluateCard {
   background-color: white;
   border-radius: 40rpx;
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
 }
 
 /* 赏酒攻略 */
-.tasteCard{
+.tasteCard {
   background-color: white;
   border-radius: 40rpx;
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
 }
+
 /* 酿酒师笔记 */
-.brewerCard{
+.brewerCard {
   background-color: white;
   border-radius: 40rpx;
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
 }
+
 /* 酒庄 */
-.wineryCard{
+.wineryCard {
   background-color: white;
   border-radius: 40rpx;
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
 }
+.winery_btn{
+  /* padding: 0 20rpx !important; */
+  /* background-color: var(--btn-bg); */
+  /* border-radius: 30rpx; */
+}
+
 /* 你可能喜欢 */
-.likeCard{
+.likeCard {
   background-color: white;
   border-radius: 40rpx;
-  padding:0 20rpx 20rpx 20rpx;
+  padding-bottom: 20rpx;
 }

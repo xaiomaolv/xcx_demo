@@ -653,7 +653,27 @@ flex-row .flex-center {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.flex-row-center{
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
 
+  display: -ms-flexbox;
+  -ms-flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  -ms-flex-pack: start;
+  -ms-flex-align: center;
+  -ms-flex-line-pack: center;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 /* 行式弹性盒子两端对齐 */
 .flex-row.flex-space {
   -webkit-box-pack: justify;
@@ -1187,4 +1207,26 @@ textarea {
   border-style: solid;
   transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
   -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
+
+/*button 按钮 mini*/
+.btn_mini {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #f8f8f8;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  line-height: 2.55555556;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 2.3;
 }

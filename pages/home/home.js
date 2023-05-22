@@ -1,48 +1,39 @@
 // pages/home/home.js
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    scrollTop: 0, // 页面滚动距离
-    stickyHeight: 0, // 吸顶元素的高度
-    isSticky: false // 是否吸顶
+    // 导航栏高度
+    navHeight: app.globalData.navHeight,
+    // 导航栏距离顶部距离
+    navTop: app.globalData.navTop,
+    // 胶囊的高度
+    navObj: app.globalData.navObj,
+    // 胶囊宽度+距右距离
+    navObjWid: app.globalData.navObjWid,
+    sShowCamera: false,
+    width: 10,
+    height: 10,
+    src: "",
+    image: "",
+    skipphotoStatus: "0", // 1跳过 0没有跳过
+    isShowImage: false,
+    dataArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // mock数据
+    dataLength: null,
+    divsion: 4 ,// 三条数据一个swiper-item
+    current:"",
+    isFirst:false, //是否是第一次进入
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-// 获取需要吸顶元素的高度
-wx.createSelectorQuery().select('.recommend').boundingClientRect((rect) => {
-  this.setData({
-    // 这个top是节点的上边界坐标
-    stickyHeight: rect.top
-  })
-  console.log(rect.top)
-  console.log(this.data.stickyHeight)
-}).exec()
 
   },
-  onPageScroll: function (e) {
-    console.log(e)
-    // 监听页面滚动事件
-    this.setData({
-      scrollTop: e.scrollTop
-    })
-    if (this.data.scrollTop >= this.data.stickyHeight) {
-      // 当滚动距离大于等于吸顶元素的高度时，设置为吸顶状态
-      this.setData({
-        isSticky: true
-      })
-    } else {
-      // 当滚动距离小于吸顶元素的高度时，取消吸顶状态
-      this.setData({
-        isSticky: false
-      })
-    }
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/home/home",
-    "pages/index/scroll_x_wine/scroll_x_wine"
+    "pages/index/index",
+    "pages/index/tt/t",
+    "pages/index/tab/tab",
+    "pages/index/scroll_x_wine/scroll_x_wine",
+    "pages/detail/compare/compare"
   ],
   "window": {
     "backgroundTextStyle": "light",

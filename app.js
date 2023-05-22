@@ -11,13 +11,17 @@ App({
           // 胶囊按钮与右侧的距离=windowWidth-right+胶囊宽度
           navObjWid = res.windowWidth - menuButtonObject.right + menuButtonObject.width,
           navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight) * 2;
-        this.globalData.navHeight = navHeight;//导航栏总体高度
-        this.globalData.navTop = navTop;//胶囊距离顶部距离
-        this.globalData.navObj = menuButtonObject.height;//胶囊高度
-        this.globalData.navObjWid = navObjWid;//胶囊宽度（包括右边距离)
+        this.globalData.navHeight = navHeight; //导航栏总体高度
+        this.globalData.navTop = navTop; //胶囊距离顶部距离
+        this.globalData.navObj = menuButtonObject.height; //胶囊高度
+        this.globalData.navObjWid = navObjWid; //胶囊宽度（包括右边距离)
         this.globalData.windowWidth = res.windowWidth;
         this.globalData.windowHeight = res.windowHeight;
-
+        // 1111111111
+        this.globalData.windowWidth = res.windowWidth
+        this.globalData.statusBarHeight = res.statusBarHeight
+        this.globalData.navBarHeight = 44 + res.statusBarHeight
+        this.globalData.capsule = wx.getMenuButtonBoundingClientRect() //获取胶囊宽高及位置
       },
       fail(err) {
         console.log(err)
@@ -25,5 +29,6 @@ App({
     })
   },
   globalData: {
+    capsule: ''
   }
 })

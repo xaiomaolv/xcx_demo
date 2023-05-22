@@ -1,22 +1,48 @@
-<view class="recommend">
-    <view class="recommend-box">
-      <view class="{{isSticky?'recommend-head-fixed':'recommend-head'}}">
-        <view class="head-left">
-          <view class="title">
-            <view>小浪推荐</view>
-            <view class="line">|</view>
-            <view class="small-title">镇店之宝</view>
-          </view>
-          <view class="bot-title">
-            酒水新风潮
-          </view>
-        </view>
-        <view class="head-right">
-          全部>
-        </view>
-      </view>
-      <view class="recommend-body">
-      
-      </view>
+<!--pages/home/home.wxml-->
+<camera device-position="back" flash="auto" style="width:100%; height:89vh">
+  <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
+    <view class="head-back flex-row" catchtap="handleBackClick">
     </view>
   </view>
+
+  <!-- 拍照 -->
+  <view style="">
+    <cover-image class='bgImage' src="../../img/scan/bk.png" style="margin-top: {{navTop}}px;">
+    </cover-image>
+    <cover-view wx:if="{{isFirst}}" class='cameratop-view1'>-扫描酒瓶-</cover-view>
+    <cover-view wx:if="{{isFirst}}" class='cameratop-view2'>正面标签部分</cover-view>
+    <cover-view wx:if="{{isFirst}}" class='cameratop-view3'>识别率最高的拍照区域</cover-view>
+  </view>
+
+  <!-- 识别图片-->
+  <view style="">
+    <view class="flex-row">
+      <view wx:for="{{dataArr}}" id="view{{index}}" wx:key="index" class="flex-col-6 mg-20 card_item {{index==current}}">
+        <view class="center_btn">
+          <text>2.2</text>
+        </view>
+        <view style="background: rgb(182, 71, 71)" catchtap="tap" data-index="{{index}}">
+          <!-- <image src="../../img/sy.jpg" mode="aspectFit" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image> -->
+          <view class="tx-ct clr-FFF">¥2102</view>
+        </view>
+      </view>
+    </view>
+    <!-- <scroll-view class="scroll" scroll-x="true">
+        <view style="padding: 20rpx;" class="flex-col-24">
+          <view wx:for="{{dataArr}}" id="view{{index}}" wx:key="index" class="flex-col-6 mg-20 card_item {{index==current}}">
+            <view class="center_btn">
+              <text>2.2</text>
+            </view>
+            <view style="background: rgb(141, 138, 138)" catchtap="tap" data-index="{{index}}">
+              <image src="../../img/sy.jpg" mode="aspectFill" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image>
+              <view class="tx-ct clr-FFF">¥2102</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view> -->
+  </view>
+  <!-- 底部 -->
+  <View class="camera_view">
+    <view class=" camera_bottom" style=""></view>
+  </View>
+</camera>
