@@ -1,0 +1,50 @@
+/* pages/index/scroll_x_wine/scroll_x_wine.wxss */
+.hot-card {
+  /* border-radius: 30rpx;
+  background-color: white;
+  height: 680rpx; */
+}
+
+.hot-card-bg {
+  background: wheat;
+  width: 100%;
+  height: 300rpx;
+  clip-path: ellipse(90% 60% at 35% 35%);
+}
+.hot-rate {
+  height: 170rpx;
+  width: 170rpx;
+  margin-left: 140rpx;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 240rpx;
+}
+
+.scroll {
+  margin-top: 30px;
+  white-space: nowrap;
+}
+
+.scroll .scroll-box {
+  display: inline-block;
+}
+
+.scroll view image {
+  width: 300rpx;
+  height: 480rpx;
+}
+
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.scroll_title {
+white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: block;
+}

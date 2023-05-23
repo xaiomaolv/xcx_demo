@@ -1,0 +1,14 @@
+<!--pages/home/com/scroll_x/scroll_x.wxml-->
+<view class="flex-row" style="{{customStyle}}">
+  <scroll-view scroll-x class="scroll">
+    <view wx:for="{{list}}" wx:key="index" class="scroll-box">
+      <view class="center_btn">
+          <text>{{item.rate}}</text>
+        </view>
+        <image src="{{item.img}}" mode="aspectFill" style="height: {{img_height}}vh;margin:20rpx;border-radius: 30rpx;"></image>
+        <view style="background: rgb(182, 71, 71)" catchtap="tap" data-index="{{index}}">
+          <view class="tx-ct clr-FFF">¥2102</view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

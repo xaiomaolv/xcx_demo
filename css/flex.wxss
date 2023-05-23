@@ -675,10 +675,26 @@ flex-row .flex-center {
   align-content: center;
 }
 /* 行式弹性盒子两端对齐 */
-.flex-row.flex-space {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+.flex-space {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
+
+  display: -ms-flexbox;
+  -ms-flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  -ms-flex-pack: start;
+  -ms-flex-align: center;
+  -ms-flex-line-pack: center;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 
 /* 行式弹性盒子居右对齐 */

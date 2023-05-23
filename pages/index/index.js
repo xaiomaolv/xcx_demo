@@ -2,8 +2,15 @@
 const app = getApp();
 Page({
   data: {
+    isShowNav: false, //是否显示顶部导航
+    isShowBtn: true, //是否显示左侧按钮
+    backgroundColor: '#B81728', //背景颜色
+    navTitle: '酒款详情页', //标题
+    isWhite: false, //是否白色胶囊
+    titleColor: 'white', //字体颜色
     // 导航栏高度
     navHeight: app.globalData.navHeight,
+    navBarHeight: app.globalData.navBarHeight,
     // 导航栏距离顶部距离
     navTop: app.globalData.navTop,
     // 胶囊的高度
@@ -13,6 +20,9 @@ Page({
     // ————————吸顶tab————————//
     toView: '',
     activeIndex: 0,
+    // customStyle:{
+    //   width:560rpx,margin:auto;width:560rpx;margin:auto;
+    // },
     title: [{
       name: "详情",
       opt: 'blurbCard',
@@ -132,6 +142,13 @@ Page({
         year: 2020,
         desc: '非常不错，非常不错，非常不错，非常不错，非常不错，非常不错，',
         head: '/img/mate/12.png'
+      },{
+        name: '武大',
+        date: '2012-09-12',
+        rate: '4.0',
+        year: 2020,
+        desc: '非常不错，非常不错，非常不错，非常不错，非常不错，非常不错，',
+        head: '/img/mate/12.png'
       }]
     },
     // 评价
@@ -198,25 +215,14 @@ Page({
       },
     ],
     // 评价
-    evaluateCurrent: '0'
+    evaluateCurrent: '0',
+    rateCardHeight: 0
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // 设置导航栏为对应导航
-    wx.setNavigationBarTitle({
-      // title: (opts.navName != '' ? opts.navName : '') + '商铺列表'
-      title: "酒款详情页"
-    })
-    wx.setNavigationBarColor({
-      frontColor: '#ffffff',
-      backgroundColor: '#B81728',
-      animation: {
-        duration: 400,
-        timingFunc: 'easeIn'
-      }
-    })
+
   },
 
   /**
@@ -230,10 +236,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    console.log(this.data.navBarHeight, 'navBarHeight');
+    console.log(this.data.navHeight, 'navHeight');
     let that = this
     that.navTabs = that.selectComponent(".navtabs");
     that.slideAnchor();
-    that.topCardHeight()
+    that.rateCardHeight()
   },
 
   /**
@@ -317,7 +325,6 @@ Page({
       query.select('#evaluateCard').boundingClientRect();
       query.select('#tasteCard').boundingClientRect();
       query.select('#likeCard').boundingClientRect();
-      // query.select('#topCard').boundingClientRect();
       query.exec(function (res) {
         resolve(res);
       });
@@ -326,6 +333,7 @@ Page({
       let heightArray = [],
         topArray = [];
       res.forEach(rect => {
+        console.log(rect,'rrrrr');
         heightArray.push(Math.floor(rect.top));
         topArray.push(rect.height)
       });
@@ -338,20 +346,20 @@ Page({
       });
     });
   },
-  // 获取topcard的top
-  topCardHeight() {
+  // 获取ratecard的top
+  rateCardHeight() {
     let that = this
     const query = wx.createSelectorQuery()
-    query.select('#topCard').boundingClientRect()
+    query.select('#rateCard').boundingClientRect()
     query.exec(function (res) {
-      console.log(res, '2345y');
       that.setData({
-        topCardHeight: res[0].top
+        rateCardHeight: res[0].top
       })
     })
   },
   //点击锚点跳转
   jumpTo: function (e) {
+    console.log(e,'eeeeeeeee');
     let that = this
     let target = e.detail.item.opt;
     let activeIndex = e.detail.item.type;
@@ -362,7 +370,7 @@ Page({
     } = that.data;
     let numHeight = 0;
     //计算当前锚点是否能根据tab的点击至顶部
-    console.log(topArray,'topArray');
+    console.log(topArray, 'topArray');
     for (var i = activeIndex; i < topArray.length; i++) {
       numHeight += topArray[i]
     }
@@ -373,6 +381,7 @@ Page({
       isHidden,
       scrollLock: numHeight >= scrollHeight ? true : false //如果界面出现锚点位置过低的情况防止tab的active回弹
     })
+    console.log(this.data.toView,'bbbbbbb');
   },
 
   //scroll-view滚动监听事件
@@ -381,11 +390,18 @@ Page({
     const {
       heightArray,
       scrollLock,
-      toView
+      toView,
+      rateCardHeight
     } = that.data;
     let scrollTop = e.detail.scrollTop;
-    console.log(scrollTop, 'scrollTop');
+    // console.log(scrollTop, 'scrollTop');
     let isHidden = scrollTop >= heightArray[0] ? true : false; //控制tab显示与隐藏
+    let isShowNav = scrollTop >= rateCardHeight ? true : false; //控制topnav显示与隐藏
+    if (that.data.isShowNav != isShowNav) {
+      that.setData({
+        isShowNav
+      })
+    }
     if (that.data.isHidden != isHidden) {
       that.setData({
         isHidden,
@@ -393,15 +409,20 @@ Page({
         activeIndex: 0,
       })
     }
-    //锚点高度足够时，姐买你滑动到相应的位置，tab的active发生相应的改变
+    //锚点高度足够时，滑动到相应的位置，tab的active发生相应的改变
+    // console.log(scrollLock,'scrollLock');
     if (scrollLock) {
       let len = heightArray.length;
       let lastIndex = len - 1;
       let activeIndex = 0;
+      // console.log(lastIndex,'lastIndex');
+      // console.log(scrollTop,'scrollTop');
       for (let i = 0; i < len; i++) {
         if (scrollTop >= 0 && scrollTop < heightArray[0]) {
+          // console.log(i,1111);
           activeIndex = 0;
         } else if (scrollTop >= heightArray[i] && scrollTop < heightArray[i + 1]) {
+          // console.log(i,'222222');
           activeIndex = i;
         } else if (scrollTop >= heightArray[lastIndex]) {
           activeIndex = lastIndex;
@@ -412,9 +433,12 @@ Page({
       })
     }
   },
-
+  startScroll(e){
+    console.log(e,'startScroll');
+  },
   //停止滚动，防止锚点位置过低，界面滚动时无效的情况
-  endScroll(e) {
+  endScroll:function (e) {
+    console.log(e,'eeeeee');
     this.setData({
       scrollLock: true
     });

@@ -6,7 +6,13 @@
   width: 750rpx;
   z-index: 99999;
 } */
-
+.nav_wrap{
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  position: fixed;
+  width: 750rpx;
+}
 .content {
   position: relative;
   width: 100%;
@@ -47,7 +53,7 @@
 
 .title {
   text-align: center;
-  font-weight: 900;
+  /* font-weight: 500; */
   font-size: 32rpx;
 }
 

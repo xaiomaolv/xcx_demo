@@ -5,6 +5,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 是否显示导航栏
+    isShowNav:{
+      type: Boolean,
+      value: false
+    },
     // 是否显示左侧按钮
     isShow: {
       type: Boolean,
@@ -19,8 +24,19 @@ Component({
     pageNum: {
       type: Number,
       value: 1
+    },
+    backgroundColor: {
+      type: String,
+      value: '#ffffff'
+    },
+    titleColor: {
+      type: String,
+      value: ''
+    },
+    navTitle: {
+      type: String,
+      value: ''
     }
-
   },
 
   /**

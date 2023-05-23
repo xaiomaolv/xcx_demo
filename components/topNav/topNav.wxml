@@ -1,7 +1,7 @@
 <!--components/topNav/topNav.wxml-->
-<view class="nav-box">
-	<view wx:if="{{ seat }}" class="seat-box" style="height:{{ 44 + statusBarHeight}}px;"></view>
-	<view class='nav-wrap' style="background-color:{{backgroundColor}};">
+<!-- <view class="nav-box"> -->
+	<!-- <view wx:if="{{ seat }}" class="seat-box" style="height:{{ 44 + statusBarHeight}}px;"></view> -->
+	<view class='nav_wrap' wx:if="{{isShowNav}}" style="background-color:{{backgroundColor}};">
 		<view style="height:{{statusBarHeight}}px;"></view>
 		<view class='content'>
 			<view class="title" style="line-height:44px;color:{{titleColor}};">{{navTitle}}</view>
@@ -10,7 +10,7 @@
 				<block wx:if="{{isBack}}">
 					<view class="capsult-item">
 						<image class='back' bindtap='back'
-						src="{{isWhite ? '/images/ic_nav_back_white.png':'/images/ic_nav_back_blac.png'}}"
+						src="{{isWhite ? '/img/nav/left.png':'/img/nav/left.png'}}"
 						mode="aspectFit" lazy-load="false" data-num="{{pageNum}}" binderror="" bindload="">
 					</image>
 					</view>
@@ -18,11 +18,11 @@
 		  	</block>
 				<view class="capsult-item">
 					<image class='home' bindtap="toIndex"
-					src="{{isWhite ? '/images/ic_nav_home_white.png':'/images/ic_nav_home_black.png'}}"
+					src="{{isWhite ? '/img/nav/home.png':'/img/nav/home.png'}}"
 					mode="aspectFit" lazy-load="false" binderror="" bindload="">
 				</image>
 				</view>
 			</view>
 		</view>
 	</view>
-</view>
+<!-- </view> -->

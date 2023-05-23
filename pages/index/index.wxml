@@ -1,8 +1,9 @@
 <!-- navtab吸顶 -->
-<view class="navigateBox" style="margin-top: {{}};" wx:if="{{isHidden}}">
+<topNav class="nav_wrap" isShowNav="{{isShowNav}}" isShow="{{isShowBtn}}" navTitle="{{navTitle}}" backgroundColor="{{backgroundColor}}" isWhite="{{isWhite}}" titleColor="{{titleColor}}"></topNav>
+<view class="navigateBox" style="margin-top: {{navBarHeight}}px;" wx:if="{{isHidden}}">
   <navTabs class="navtabs" list="{{title}}" active="{{activeIndex}}" customStyle="width:560rpx;margin:auto;" bind:change="jumpTo"></navTabs>
 </view>
-<scroll-view style="width:100%;height:100vh" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragend="endScroll">
+<scroll-view style="width:100%;height:100vh" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragstart="startScroll" binddragend="endScroll">
   <view class="header">
     <image src="{{wineInfo.w_bg}}" class="header-bg" />
     <!-- <view style="height: {{navHeight}}px;">
@@ -14,7 +15,7 @@
     </view>
   </view> -->
   </view>
-  <view id="topCard" class="flex-row" style="background: white;padding-bottom: 20rpx;">
+  <view class="flex-row" style="background: white;padding-bottom: 20rpx;">
     <view class="flex-col-12">
       <image class="wine_img" src="{{wineInfo.w_img}}" mode="" />
     </view>
@@ -107,8 +108,13 @@
     </view>
     <!-- 口味特征 -->
     <view class="flavourCard">
-      <view class=" mg-10-15 pd-tp-10">口味特征
-        <text class="ft-se-14 clr-999">11143条评论</text>
+      <view class="flex-space mg-10-15">
+        <view class="pd-tp-10">口味特征
+          <text class="ft-se-14 clr-999">11143条评论</text>
+        </view>
+        <view class="ft-se-12 clr-pri">
+          <van-icon name="edit" color="#B81728" />我要描述
+        </view>
       </view>
       <view class="row tx-ct mg-10-0" wx:for="{{flavourList}}" wx:key="index">
         <view class="flex-col-4 ft-se-14">{{item.left}}</view>
@@ -130,7 +136,7 @@
           <view class="ft-se-12 clr-999"> {{item.name}} <text class="clr-6dc">67</text>人觉得不错</view>
         </view>
       </view>
-      <view class="tx-ct clr-pri mg-tp-20">查看更多</view>
+      <view class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp">查看更多</view>
     </view>
     <!-- 我的日志 -->
     <view class="logCard">
@@ -169,68 +175,76 @@
     <!-- 评分排名 -->
     <view class="mg-10-15">
       <view class="clr-666 ft-se-14">评分排名</view>
+    </view>
       <!--点评笔记  -->
-      <view class="flex-row mg-10-0">
-        <view class="clr-666 ft-se-14 flex-col-12">点评笔记</view>
-        <view class="clr-999 ft-se-12 flex-col-24 tx-rt">1132条评论</view>
-      </view>
-      <view class="tx-ct">
-        <!-- <button size="mini" wx:for="{{evaluateHight}}" wx:key="index" bindtap="handleClick" data-myid="{{index}}" style="border-radius: 30rpx;border: 1rpx solid black;" class="mg-0-10 blud_btn{{blurbCurrent == index?'active':''}} ">{{item}}</button> -->
-        <view wx:for="{{evaluateHight}}" wx:key="index" bindtap="evaluateBtnClick" data-evaluateid="{{index}}" class="btn_mini {{evaluateCurrent == index?'active':''}}" style="margin-right: 20rpx;border: 1px solid #000;">
-          {{item}}
-        </view>
-      </view>
-      <view class="mg-tp-10" wx:for="{{logList.history}}" wx:key="index">
+      <view class="mg-10-15">
         <view class="flex-row">
-          <image src="{{item.head}}" mode="aspectFit" class="avator" />
-          <view class="flex-col mg-lt-10">
-            <view>{{item.name}}</view>
-            <view class="clr-999 ft-se-12">{{item.date}}</view>
+          <view class="clr-666 ft-se-14 flex-col-12">点评笔记</view>
+          <view class="clr-999 ft-se-12 flex-col-24 tx-rt">1132条评论</view>
+        </view>
+        <view class="tx-ct mg-tp-20">
+          <view wx:for="{{evaluateHight}}" wx:key="index" bindtap="evaluateBtnClick" data-evaluateid="{{index}}" class="btn_mini {{evaluateCurrent == index?'active':''}}" style="margin-right: 20rpx;border: 1px solid #000;">
+            {{item}}
           </view>
         </view>
-        <view class="tx-lt mg-tp-5">
-          <button class="log_rate mg-rt-10" round size="mini">
-            <van-icon name="star" color="#FCB709" />
-            <text class="clr-rate ft-se-12 mg-lt-5">{{item.rate}}</text>
-          </button>
-          <button class="log_btn" round size="mini">{{item.year}}</button>
+        <view class="mg-tp-10" wx:for="{{logList.history}}" wx:key="index">
+          <view class="flex-row">
+            <image src="{{item.head}}" mode="aspectFit" class="avator" />
+            <view class="flex-col mg-lt-10">
+              <view>{{item.name}}</view>
+              <view class="clr-999 ft-se-12">{{item.date}}</view>
+            </view>
+          </view>
+          <view class="tx-lt mg-tp-5">
+            <button class="log_rate mg-rt-10" round size="mini">
+              <van-icon name="star" color="#FCB709" />
+              <text class="clr-rate ft-se-12 mg-lt-5">{{item.rate}}</text>
+            </button>
+            <button class="log_btn" round size="mini">{{item.year}}</button>
+          </view>
+          <view class="ft-se-14">{{item.desc}}</view>
         </view>
-        <view class="ft-se-14">{{item.desc}}</view>
       </view>
-      <view class="tx-ct clr-pri mg-tp-20">查看更多</view>
+
+      <view class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp">查看全部</view>
       <!-- 评酒视频 -->
-      <view>
-        <view class="mg-10-0 pd-tp-10">评酒视频
+      <view class="mg-10-15">
+        <view class="pd-tp-10">评酒视频
           <text class="ft-se-14 clr-999">11143条评论</text>
         </view>
       </view>
-    </view>
   </view>
   <!-- 赏酒攻略 -->
   <view id="tasteCard">
     <view class="tasteCard">
       <view class="ft-bd mg-10-15 pd-tb-10 tx-ct">赏酒攻略</view>
       <!-- 食物搭配 -->
-      <view class="flex-row mg-10-15 pd-tp-10">
-        <view class="flex-col-12">食物搭配
+      <view class="flex-space mg-10-15 pd-tp-10">
+        <view>食物搭配
           <text class="ft-se-14 clr-999">11143条评论</text>
         </view>
-        <view class="flex-col-12 tx-rt ft-se-12 clr-pri">
+        <view class="ft-se-12 clr-pri">
           <van-icon name="edit" color="#B81728" />
           我要推荐
         </view>
       </view>
       <!-- 醒酒时间 -->
-      <view class="mg-10-15 pd-tp-10">醒酒时间
-        <text class="ft-se-14 clr-999">11143条评论</text>
-      </view>
-      <!-- 推荐场合 -->
-      <view class="flex-row mg-10-15 pd-tp-10">
-        <view class="flex-col-12">推荐场合
+      <view class="flex-space mg-10-15 pd-tp-10">
+        <view>醒酒时间
           <text class="ft-se-14 clr-999">11143条评论</text>
         </view>
-        <view class="flex-col-12 tx-rt ft-se-12 clr-pri">
+        <view class="ft-se-12">
+          我的推荐：10分钟
           <van-icon name="edit" color="#B81728" />
+        </view>
+      </view>
+      <!-- 推荐场合 -->
+      <view class="flex-space mg-10-15 pd-tp-10">
+        <view>推荐场合
+          <text class="ft-se-14 clr-999">11143条评论</text>
+        </view>
+        <view class="ft-se-12 clr-pri">
+          <van-icon name="edit" color="#B81728" size="16" />
           我要推荐
         </view>
       </view>

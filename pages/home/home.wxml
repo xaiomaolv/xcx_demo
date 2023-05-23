@@ -1,33 +1,51 @@
 <!--pages/home/home.wxml-->
-<camera device-position="back" flash="auto" style="width:100%; height:89vh">
+<camera id="cemeraHeight" device-position="back" flash="auto" style="width:100%; height:89vh">
   <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
     <view class="head-back flex-row" catchtap="handleBackClick">
     </view>
   </view>
 
   <!-- 拍照 -->
-  <view style="">
-    <cover-image class='bgImage' src="../../img/scan/bk.png" style="margin-top: {{navTop}}px;">
+  <view id="takephoto" style="margin-top: {{navTop -10}}px;">
+    <cover-image class='bgImage' src="{{isFirst ? '/img/scan/bkf.png':'/img/scan/bk.png'}}" style="width:90%;margin:auto;height: 46vh;">
     </cover-image>
-    <cover-view wx:if="{{isFirst}}" class='cameratop-view1'>-扫描酒瓶-</cover-view>
-    <cover-view wx:if="{{isFirst}}" class='cameratop-view2'>正面标签部分</cover-view>
-    <cover-view wx:if="{{isFirst}}" class='cameratop-view3'>识别率最高的拍照区域</cover-view>
   </view>
 
   <!-- 识别图片-->
-  <view style="">
-    <view class="flex-row">
-      <view wx:for="{{dataArr}}" id="view{{index}}" wx:key="index" class="flex-col-6 mg-20 card_item {{index==current}}">
+  <view>
+    <view class="" style="height: {{photoHeight}}px;">
+      <view>
+        <scroll-view scroll-x class="scrolls">
+          <view class="scroll-box" style="width:25%;margin:40rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" catchtap="tap" data-index="{{index}}">
+            <view>
+              <view class="center_btn">
+                <text>2.2</text>
+                <!-- <text>暂无评分</text> -->
+              </view>
+            </view>
+            <view style="background: rgb(141, 138, 138);">
+              <image src="{{item.img}}" mode="" style="width: 100%;border-radius: 15rpx;height: 18vh"></image>
+              <view class="tx-ct ft-se-12 clr-FFF">¥{{item.price}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+  </view>
+  <!-- <scroll_x list="{{imglist}}"></scroll_x> -->
+  <!-- <view class="flex-row">
+      <view wx:for="{{imglist}}" wx:key="index" class="flex-col-6 mg-20">
         <view class="center_btn">
-          <text>2.2</text>
+          <text>{{item.rate}}</text>
         </view>
+        <image src="{{item.img}}" mode="aspectFill" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image>
         <view style="background: rgb(182, 71, 71)" catchtap="tap" data-index="{{index}}">
-          <!-- <image src="../../img/sy.jpg" mode="aspectFit" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image> -->
           <view class="tx-ct clr-FFF">¥2102</view>
         </view>
       </view>
-    </view>
-    <!-- <scroll-view class="scroll" scroll-x="true">
+    </view> -->
+  <!-- <scroll-view class="scroll" scroll-x="true">
         <view style="padding: 20rpx;" class="flex-col-24">
           <view wx:for="{{dataArr}}" id="view{{index}}" wx:key="index" class="flex-col-6 mg-20 card_item {{index==current}}">
             <view class="center_btn">
@@ -40,9 +58,14 @@
           </view>
         </view>
       </scroll-view> -->
-  </view>
-  <!-- 底部 -->
-  <View class="camera_view">
-    <view class=" camera_bottom" style=""></view>
-  </View>
 </camera>
+<!-- 底部 -->
+<View class="camera_view">
+  <view class=" camera_bottom">
+    <!-- 拍照按钮 -->
+    <view class="flex-row " style='bottom:{{isIphoneX==true?"75px":"0px"}}'>
+      <image class='takephoto1 flex-center' src='../../img/scan/pz.png' bindtap='takePhotoAction'></image>
+      <!-- <image class='takephoto flex-end' src='../../img/scan/xc.png' bindtap='chooseImg'></image> -->
+    </view>
+  </view>
+</View>

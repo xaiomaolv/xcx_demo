@@ -1,0 +1,20 @@
+/* pages/home/com/scroll_x/scroll_x.wxss */
+.scroll {
+  white-space: nowrap;
+}
+
+.scroll .scroll-box {
+  display: inline-block;
+}
+
+.scroll view image {
+  /* width: 300rpx;
+  height: 200rpx; */
+}
+
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
