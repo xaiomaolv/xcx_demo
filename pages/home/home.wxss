@@ -67,14 +67,19 @@ page {
   display: flex;
   margin: 0 auto;
 } */
+.camera_view {
+  /* height: 100%; */
+  /* width: 100%; */
+  /* position:absolute; */
+  /* position: relative; */
+  /* margin: 0 auto; */
+}
+
 .camera_bottom {
   height: calc(100vh - 89vh);
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   background-color: #B81728;
   border: 1rpx solid #B81728;
 }
@@ -101,14 +106,6 @@ page {
   margin-right: 20rpx;
 }
 
-.camera_view {
-  height: 100%;
-  width: 100%;
-  /* position:absolute; */
-  display: flex;
-  margin: 0 auto;
-}
-
 .row {
   display: flex;
   justify-content: row;
@@ -116,26 +113,26 @@ page {
 }
 
 .takephoto {
-  width: 92rpx;
-  height: 92rpx;
-  justify-content: flex-end;
-  align-items: center;
+  width: 220rpx;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
 }
 
 .takephoto1 {
-  width: 202rpx;
-  height: 202rpx;
-  padding-bottom: 18rpx;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rpx;
+  display: inline;
+  float: right;
+  padding-top: 30px;
+  padding-right: 30px;
+  width: 92rpx;
+  height: 92rpx;
 }
 
 .center_btn {
   margin-bottom: 16rpx;
-  width:70rpx;
-  height: 37rpx;
-  background: #d43f11;
+  background: #B81728;
   border-radius: 10rpx;
   font-size: 24rpx;
   font-family: PingFang SC;
@@ -145,6 +142,13 @@ page {
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 
 .center_btn::after {
@@ -154,7 +158,37 @@ page {
   position: absolute;
   border-left: 14rpx solid transparent;
   border-right: 14rpx solid transparent;
-  border-top: 14rpx solid #d43f11;
+  border-top: 14rpx solid #B81728;
   bottom: -10rpx;
-  left: 16rpx;
+  left: 24rpx;
+}
+
+.center_rates {
+  margin-bottom: 16rpx;
+  background: #B81728;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  position: relative;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.center_rates::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 14rpx solid transparent;
+  border-right: 14rpx solid transparent;
+  border-top: 14rpx solid #B81728;
+  bottom: -10rpx;
+  left: 50rpx;
 }

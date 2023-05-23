@@ -20,6 +20,11 @@ Component({
       type: Boolean,
       value: true
     },
+    // 是否显示左侧返回按钮
+    isHome: {
+      type: Boolean,
+      value: true
+    },
     // 返回层级 默认为1
     pageNum: {
       type: Number,

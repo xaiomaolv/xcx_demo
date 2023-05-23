@@ -16,7 +16,7 @@
 					</view>
 					<view class="{{isWhite? 'lineWhite':'lineblack'}}" hover-class="none" hover-stop-propagation="false"></view>
 		  	</block>
-				<view class="capsult-item">
+				<view wx:if="{{isHome}}" class="capsult-item">
 					<image class='home' bindtap="toIndex"
 					src="{{isWhite ? '/img/nav/home.png':'/img/nav/home.png'}}"
 					mode="aspectFit" lazy-load="false" binderror="" bindload="">

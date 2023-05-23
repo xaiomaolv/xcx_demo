@@ -176,43 +176,43 @@
     <view class="mg-10-15">
       <view class="clr-666 ft-se-14">评分排名</view>
     </view>
-      <!--点评笔记  -->
-      <view class="mg-10-15">
+    <!--点评笔记  -->
+    <view class="mg-10-15">
+      <view class="flex-row">
+        <view class="clr-666 ft-se-14 flex-col-12">点评笔记</view>
+        <view class="clr-999 ft-se-12 flex-col-24 tx-rt">1132条评论</view>
+      </view>
+      <view class="tx-ct mg-tp-20">
+        <view wx:for="{{evaluateHight}}" wx:key="index" bindtap="evaluateBtnClick" data-evaluateid="{{index}}" class="btn_mini {{evaluateCurrent == index?'active':''}}" style="margin-right: 20rpx;border: 1px solid #000;">
+          {{item}}
+        </view>
+      </view>
+      <view class="mg-tp-10" wx:for="{{logList.history}}" wx:key="index">
         <view class="flex-row">
-          <view class="clr-666 ft-se-14 flex-col-12">点评笔记</view>
-          <view class="clr-999 ft-se-12 flex-col-24 tx-rt">1132条评论</view>
-        </view>
-        <view class="tx-ct mg-tp-20">
-          <view wx:for="{{evaluateHight}}" wx:key="index" bindtap="evaluateBtnClick" data-evaluateid="{{index}}" class="btn_mini {{evaluateCurrent == index?'active':''}}" style="margin-right: 20rpx;border: 1px solid #000;">
-            {{item}}
+          <image src="{{item.head}}" mode="aspectFit" class="avator" />
+          <view class="flex-col mg-lt-10">
+            <view>{{item.name}}</view>
+            <view class="clr-999 ft-se-12">{{item.date}}</view>
           </view>
         </view>
-        <view class="mg-tp-10" wx:for="{{logList.history}}" wx:key="index">
-          <view class="flex-row">
-            <image src="{{item.head}}" mode="aspectFit" class="avator" />
-            <view class="flex-col mg-lt-10">
-              <view>{{item.name}}</view>
-              <view class="clr-999 ft-se-12">{{item.date}}</view>
-            </view>
-          </view>
-          <view class="tx-lt mg-tp-5">
-            <button class="log_rate mg-rt-10" round size="mini">
-              <van-icon name="star" color="#FCB709" />
-              <text class="clr-rate ft-se-12 mg-lt-5">{{item.rate}}</text>
-            </button>
-            <button class="log_btn" round size="mini">{{item.year}}</button>
-          </view>
-          <view class="ft-se-14">{{item.desc}}</view>
+        <view class="tx-lt mg-tp-5">
+          <button class="log_rate mg-rt-10" round size="mini">
+            <van-icon name="star" color="#FCB709" />
+            <text class="clr-rate ft-se-12 mg-lt-5">{{item.rate}}</text>
+          </button>
+          <button class="log_btn" round size="mini">{{item.year}}</button>
         </view>
+        <view class="ft-se-14">{{item.desc}}</view>
       </view>
+    </view>
 
-      <view class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp">查看全部</view>
-      <!-- 评酒视频 -->
-      <view class="mg-10-15">
-        <view class="pd-tp-10">评酒视频
-          <text class="ft-se-14 clr-999">11143条评论</text>
-        </view>
+    <view class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp">查看全部</view>
+    <!-- 评酒视频 -->
+    <view class="mg-10-15">
+      <view class="pd-tp-10">评酒视频
+        <text class="ft-se-14 clr-999">11143条评论</text>
       </view>
+    </view>
   </view>
   <!-- 赏酒攻略 -->
   <view id="tasteCard">
@@ -296,20 +296,20 @@
   </view>
   <!-- 你可能还喜欢 -->
   <view id="likeCard" class="likeCard">
-    <view class="ft-bd mg-10-15 pd-tb-10 tx-ct">你可能还喜欢</view>
-    <!-- <view wx:for="{{aa}}" wx:key="index">
-    <view style="width:100%;display: flex;justify-content: flex-start;align-items: center;" wx:if="{{index%2==0}}">
-      <view style="width: 50%;display: flex;justify-content: flex-start;align-items: baseline;" wx:for="{{shuzu(aa,index)}}">
-        <view style="font-size: 0.8rem;width:55%;text-align: center">{{ item.bb }}</view>
+    <view class="ft-bd mg-10-15 pd-tp-10 tx-ct">你可能还喜欢</view>
+    <view class="gridLike">
+      <view class="itemLike" wx:for="{{wineLists}}" wx:key="index">
+        <image src="{{item.w_img}}" mode="aspectFit" style="height: 460rpx; width: 360rpx;" />
+        <view class="clr-999 mg-10-15">{{item.num}}</view>
+        <view class="line_ellipsis mg-0-15 li-hg-24">{{item.w_name}}</view>
+        <view class="flex-row">
+          <view class="ft-se-18 flex-row-center">{{item.rate}}</view>
+          <view class="flex-col">
+            <van-rate readonly color="#B81728" value="3" size="8" />
+            <view class="ft-se-12 clr-999">{{item.num}}<text class="mg-lt-5">条评价</text></view>
+          </view>
+        </view>
       </view>
     </view>
-  </view> -->
-    <!-- <view class="">
-    <view class="flex-row flex-wrap" >
-      <view class="flex-col-12" wx:for="{{wineLists}}" wx:key="index" wx:if="{{index%2==0}}">
-        <image src="{{item.w_img}}" mode="aspectFit" style="height: 300rpx; width: 200rpx;" />
-      </view>
-    </view>
-  </view> -->
   </view>
 </scroll-view>

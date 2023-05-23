@@ -16,56 +16,31 @@
     <view class="" style="height: {{photoHeight}}px;">
       <view>
         <scroll-view scroll-x class="scrolls">
-          <view class="scroll-box" style="width:25%;margin:40rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" catchtap="tap" data-index="{{index}}">
-            <view>
-              <view class="center_btn">
-                <text>2.2</text>
-                <!-- <text>暂无评分</text> -->
+          <view class="scroll-box" style="width:25%;margin:50rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" catchtap="tap" data-index="{{index}}">
+            <view class="flex-row-center ft-bd-600">
+              <view wx:if="{{item.rate > 0}}" class="center_btn tx-ct">
+                <text>{{item.rate}}</text>
+              </view>
+              <view wx:else class="center_rates tx-ct">
+                <text>暂无评分</text>
               </view>
             </view>
-            <view style="background: rgb(141, 138, 138);">
-              <image src="{{item.img}}" mode="" style="width: 100%;border-radius: 15rpx;height: 18vh"></image>
-              <view class="tx-ct ft-se-12 clr-FFF">¥{{item.price}}</view>
+            <view style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;">
+              <image src="{{item.img}}" mode="" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
+              <view wx:if="{{item.price}}" class="tx-ct ft-se-12 ft-bd-600 clr-FFF">¥{{item.price}}</view>
+              <view wx:else class="tx-ct ft-se-12 ft-bd-600 clr-FFF">价格未知</view>
             </view>
           </view>
         </scroll-view>
       </view>
     </view>
-
   </view>
-  <!-- <scroll_x list="{{imglist}}"></scroll_x> -->
-  <!-- <view class="flex-row">
-      <view wx:for="{{imglist}}" wx:key="index" class="flex-col-6 mg-20">
-        <view class="center_btn">
-          <text>{{item.rate}}</text>
-        </view>
-        <image src="{{item.img}}" mode="aspectFill" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image>
-        <view style="background: rgb(182, 71, 71)" catchtap="tap" data-index="{{index}}">
-          <view class="tx-ct clr-FFF">¥2102</view>
-        </view>
-      </view>
-    </view> -->
-  <!-- <scroll-view class="scroll" scroll-x="true">
-        <view style="padding: 20rpx;" class="flex-col-24">
-          <view wx:for="{{dataArr}}" id="view{{index}}" wx:key="index" class="flex-col-6 mg-20 card_item {{index==current}}">
-            <view class="center_btn">
-              <text>2.2</text>
-            </view>
-            <view style="background: rgb(141, 138, 138)" catchtap="tap" data-index="{{index}}">
-              <image src="../../img/sy.jpg" mode="aspectFill" style="width: 100%;border-radius: 15rpx;height: 260rpx;"></image>
-              <view class="tx-ct clr-FFF">¥2102</view>
-            </view>
-          </view>
-        </view>
-      </scroll-view> -->
 </camera>
 <!-- 底部 -->
-<View class="camera_view">
-  <view class=" camera_bottom">
-    <!-- 拍照按钮 -->
-    <view class="flex-row " style='bottom:{{isIphoneX==true?"75px":"0px"}}'>
-      <image class='takephoto1 flex-center' src='../../img/scan/pz.png' bindtap='takePhotoAction'></image>
-      <!-- <image class='takephoto flex-end' src='../../img/scan/xc.png' bindtap='chooseImg'></image> -->
-    </view>
+<view class=" camera_bottom">
+  <!-- 拍照按钮 -->
+  <view style="display:flex;justify-content:center;margin-left: 146rpx;">
+    <image class="takephoto" src='../../img/scan/pz.png'></image>
+    <image class='takephoto1' src='../../img/scan/xc.png' bindtap='chooseImg'></image>
   </view>
-</View>
+</view>
