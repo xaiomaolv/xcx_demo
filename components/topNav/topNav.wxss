@@ -6,13 +6,35 @@
   width: 750rpx;
   z-index: 99999;
 } */
-.nav_wrap{
+.head-back {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  /* height: 88rpx;
+  width: 170rpx;
+  margin-left: 25rpx; */
+  position: relative;
+
+}
+.head-back::after {
+  content: "";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 0 0 2px 2px;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
+
+.nav_wrap {
   top: 0;
   left: 0;
   z-index: 99999;
   position: fixed;
   width: 750rpx;
 }
+
 .content {
   position: relative;
   width: 100%;

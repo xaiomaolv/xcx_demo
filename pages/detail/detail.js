@@ -1,3 +1,4 @@
+// pages/detail/detail.js
 // index.js
 const app = getApp();
 Page({
@@ -217,7 +218,21 @@ Page({
     ],
     // 评价
     evaluateCurrent: '0',
-    rateCardHeight: 0
+    rateCardHeight: 0,
+    videoList:[
+      {
+        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num:800
+      },
+      {
+        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num:400
+      },
+      {
+        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num:300
+      },
+    ]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -288,16 +303,11 @@ Page({
       })
     } else {
       wx.switchTab({
-        url: '/pages/index/index',
+        url: '../scan/scan',
       })
     }
   },
-  // 回到首页
-  handleHomeClick() {
-    wx.switchTab({
-      url: '/pages/index/index',
-    })
-  },
+  
   // 简介按钮高亮切换
   handleClick(e) {
     this.setData({

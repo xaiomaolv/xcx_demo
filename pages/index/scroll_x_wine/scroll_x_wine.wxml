@@ -6,7 +6,7 @@
       <view wx:for="{{wineLists}}" wx:key="index" class="scroll-box">
         <view class="hot-rate tx-ct">
           <view class="ft-se-20">{{item.rate}}</view>
-          <van-rate readonly color="#B81728" value="3" size="12" bind:change="onChange" />
+          <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3" size="12" bind:change="onChange" />
           <view class="ft-se-12">{{item.num}}条评分</view>
         </view>
         <image class="" src="{{item.w_img}}" mode="aspectFit" />

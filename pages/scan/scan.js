@@ -42,7 +42,7 @@ Page({
         img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
       },
       {
-        rate:5.1,
+        rate:'',
         price:1000,
         img:'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
       },
@@ -85,34 +85,12 @@ Page({
           topArray.push(rect.height)
         });
         that.setData({
-          // heightArray,
+          heightArray,
           topArray,
           photoHeight: topArray[0] - topArray[1]
         });
         console.log(that.data.photoHeight, '99999999');
       });
-      // let query = wx.createSelectorQuery();
-      // const windowHeight = wx.getSystemInfoSync().windowHeight;
-      // const windowWidth = wx.getSystemInfoSync().windowWidth;
-      // console.log(windowHeight, 'windowHeight'); 
-      // let navTop = that.data.navTop
-      // let hh = windowHeight-navTop
-      // console.log(hh,'hhh');
-      // let h = 100 / 1080 * hh; //vh
-      // let w =  100 / 1920 * windowWidth;
-      // console.log(h,'hhhh');
-      // console.log(w,'wwww');
-      // that.setData({
-      //   h:h,
-      //   hh:hh
-      // })
-      // query.select('#takephoto').boundingClientRect(rect => {
-      //   let height = rect.height;
-      //   console.log(height, 'takephoto');
-      //   that.setData({
-      //     height:height
-      //   })
-      // }).exec();
     }, 300)
 
   },
@@ -224,5 +202,13 @@ Page({
       url: './videoView/videoView',
     })
     console.log('教程');
+  },
+  // 跳转详情
+  toDetail(e){
+    let item = e.currentTarget.dataset.item
+    console.log(item,'item');
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
   }
 })

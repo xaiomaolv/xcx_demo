@@ -48,7 +48,15 @@ Component({
    * 组件的初始数据
    */
   data: {
-    capsule: {}
+    capsule: {},
+    // 导航栏高度
+    navHeight: app.globalData.navHeight,
+    // 导航栏距离顶部距离
+    navTop: app.globalData.navTop,
+    // 胶囊的高度
+    navObj: app.globalData.navObj,
+    // 胶囊宽度+距右距离
+    navObjWid: app.globalData.navObjWid,
   },
 
   /**
@@ -64,7 +72,7 @@ Component({
     //跳转到首页
     toIndex() {
       wx.switchTab({
-        url: '/pages/index/index'
+        url: '/pages/home/home'
       })
     }
 

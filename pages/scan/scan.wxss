@@ -13,39 +13,6 @@ page {
   display: inline-block;
 }
 
-/* 顶部返回 */
-.head-back {
-  padding: 0 20rpx;
-  box-sizing: border-box;
-  height: 50rpx;
-  /* border-radius: 50rpx;
-  border: 1rpx solid rgba(204, 204, 204, .6); */
-  width: 170rpx;
-  margin-left: 25rpx;
-  position: relative;
-
-}
-
-.head-back image {
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.head-back::after {
-  /* position: absolute;
-  right: 50rpx;
-  top: 150rpx; */
-  content: "";
-  display: inline-block;
-  height: 20rpx;
-  width: 20rpx;
-  border-width: 0 0 2px 2px;
-  border-color: #fff;
-  border-style: solid;
-  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
-  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
-}
-
 .card_item {
   display: inline-block;
   /* width: 162rpx; */

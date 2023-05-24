@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navTabs":"/components/navTabs/navTabs",
+    "topNav":"/components/topNav/topNav"
+  },
+  "navigationStyle": "custom"
+}

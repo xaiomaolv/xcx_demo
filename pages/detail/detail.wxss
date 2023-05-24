@@ -1,27 +1,30 @@
-/**index.wxss**/
+/* pages/detail/detail.wxss */
 page {
   width: 100%;
   height: 100%;
   background-color: rgb(242, 242, 242);
 }
-.nav_wrap{
+
+.nav_wrap {
   top: 0;
   left: 0;
   z-index: 99999;
   position: fixed;
   width: 750rpx;
 }
-.navigateBox{
-  width:100%;
+
+.navigateBox {
+  width: 100%;
   position: sticky;
-  height:92rpx;
-  background:#fff;
-  z-index:8;
+  height: 92rpx;
+  background: #fff;
+  z-index: 8;
   /* top:0rpx; */
-  left:0rpx;
-  border-top:2rpx solid #F2F2F2;
- 
+  left: 0rpx;
+  border-top: 2rpx solid #F2F2F2;
+
 }
+
 /*  去掉button的默认样式*/
 button {
   background: transparent;
@@ -33,6 +36,7 @@ button::after {
   border: none;
   display: none;
 }
+
 .mg-15-25 {
   margin: 30rpx 50rpx;
 }
@@ -44,6 +48,7 @@ button::after {
 .mg-0-15 {
   margin: 0 30rpx;
 }
+
 .mg-0-10 {
   margin: 0 20rpx;
 }
@@ -173,11 +178,13 @@ button::after {
   background-color: black;
   color: white;
 }
+
 .bd-bt-blurb {
   border-bottom: 1rpx solid var(--border-color);
   /* margin: 30rpx 50rpx; */
   padding: 26rpx 0;
 }
+
 .box {
   display: flex;
 }
@@ -206,7 +213,7 @@ button::after {
   background-color: white;
   border-radius: 20rpx;
   padding-bottom: 20rpx;
- /* padding: 0 20rpx 20rpx 20rpx; */
+  /* padding: 0 20rpx 20rpx 20rpx; */
 }
 
 .van-field__control:disabled,
@@ -248,7 +255,7 @@ button::after {
 .logCard {
   background-color: white;
   border-radius: 20rpx;
-   padding-bottom: 20rpx;
+  padding-bottom: 20rpx;
   /* padding: 0 20rpx 20rpx 20rpx; */
 }
 
@@ -277,6 +284,19 @@ button::after {
   padding-bottom: 20rpx;
 }
 
+.evlVideo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.evlVideo_s {
+  height: 300rpx;
+  margin: 4rpx;
+  border-radius: 10rpx;
+}
+
 /* 赏酒攻略 */
 .tasteCard {
   background-color: white;
@@ -297,7 +317,8 @@ button::after {
   border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
-.flag_btn{
+
+.flag_btn {
   margin-top: 20rpx;
   padding: 0 60rpx;
 }
@@ -308,10 +329,12 @@ button::after {
   border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
+
 .gridLike {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .itemLike {
   border-right: 1px solid #e5e4e9;
   margin-top: 90rpx;

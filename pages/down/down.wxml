@@ -1,2 +1,4 @@
 <!--pages/down/down.wxml-->
-<text>pages/down/down.wxml</text>
+<view>
+  <image src="{{randomImage.img}}" mode=""/>
+</view>

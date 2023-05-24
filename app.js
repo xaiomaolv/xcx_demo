@@ -18,7 +18,6 @@ App({
         this.globalData.windowWidth = res.windowWidth;
         this.globalData.windowHeight = res.windowHeight;
         // 1111111111
-        this.globalData.windowWidth = res.windowWidth
         this.globalData.statusBarHeight = res.statusBarHeight
         this.globalData.navBarHeight = 44 + res.statusBarHeight
         this.globalData.capsule = wx.getMenuButtonBoundingClientRect() //获取胶囊宽高及位置

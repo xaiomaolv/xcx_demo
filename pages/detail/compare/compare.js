@@ -95,3 +95,4 @@ Page({
     }
   }
 })
+// Page({  data: {    imageList: [], // 图片列表    randomImage: '' // 随机图片  },  onLoad: function () {    // 获取图片列表    this.setData({      imageList: wx.getStorageSync('imageList')    });    // 随机选择一张图片    let randomIndex = Math.floor(Math.random() * this.data.imageList.length);    this.setData({      randomImage: this.data.imageList[randomIndex]    });  }})

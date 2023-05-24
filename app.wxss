@@ -11,6 +11,33 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+/* 顶部返回 */
+.head-back {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  /* height: 58rpx; */
+  width: 170rpx;
+  margin-left: 25rpx;
+  position: relative;
+
+}
+
+.head-back image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.head-back::after {
+  content: "";
+  display: inline-block;
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 0 0 2px 2px;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
 
 /* 国旗小 */
 .nationFlag {

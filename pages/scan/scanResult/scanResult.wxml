@@ -33,7 +33,7 @@
       <!-- 评分 -->
       <view class="hot-rate" wx:for="{{wineInfo.rate}}" wx:key="index">
         <view class="ft-se-34">{{item.rate}}</view>
-        <van-rate readonly color="#B81728" value="3.6" size="16" bind:change="onChange" />
+        <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3.5" size="16" bind:change="onChange" />
         <view class="ft-se-14 mg-tp-4">{{item.num}}条评价</view>
         <!-- 参考价格 -->
         <view class="btn_mini price_btn">

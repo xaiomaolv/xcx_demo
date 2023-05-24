@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <camera id="cemeraHeight" device-position="back" flash="auto" style="width:100%; height:89vh">
   <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
-    <view class="head-back flex-row" catchtap="handleBackClick">
+    <view class="head-back flex-row" style="height: {{navObj}}px;" catchtap="handleBackClick">
     </view>
   </view>
 

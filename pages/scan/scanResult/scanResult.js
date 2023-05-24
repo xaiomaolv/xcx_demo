@@ -98,15 +98,14 @@ Page({
   // 关闭弹窗
   onClose() {
     console.log("dddddd");
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../../../pages/scan/scan',
     })
   },
   // 查看更多
   seeMore(){
-    
-    wx.redirectTo({
-      url: '../../../pages/index/index',
+    wx.navigateTo({
+      url: '../../../pages/detail/detail',
     })
   }
 })
