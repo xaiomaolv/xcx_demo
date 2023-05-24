@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/scan/scan.js
 const app = getApp();
 Page({
   /**
@@ -36,16 +36,16 @@ Page({
         price: '',
         img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
       },
-      // {
-      //   rate:4.1,
-      //   price:1000,
-      //   img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
-      // },
-      // {
-      //   rate:5.1,
-      //   price:1000,
-      //   img:'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
-      // },
+      {
+        rate:4.1,
+        price:1000,
+        img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
+      },
+      {
+        rate:5.1,
+        price:1000,
+        img:'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
+      },
       // {
       //   rate:'',
       //   price:'',
@@ -169,27 +169,40 @@ Page({
       });
     });
   },
-    /**
+  /**
    * 拍照
    */
   takePhotoAction: function () {
     var that = this
+    wx.navigateTo({
+      url: '../../pages/scan/scanResult/scanResult',
+    })
     const ctx = wx.createCameraContext()
     ctx.takePhoto({
       quality: 'high', //高质量
       success: (res) => {
         // this.loadTempImagePath(res.tempImagePath);
-        console.log(res,'takePhotoAction');
+        console.log(res, 'takePhotoAction');
       },
     })
   },
   // 图库选择
   chooseImg() {
     wx.chooseImage({
-      sourceType: ['album'],
+      count: 1,
+      sourceType: ['album'], //只打开相册
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
-        console.log(res,'chooseImage');
+        console.log(res, 'chooseImage');
+        let imgInfo = {
+          tempFilePaths: res.tempFilePaths
+        }
+        // wx.navigateTo({
+        //   url: '/pages/scan/scanResult/scanResult',
+        // })
+        wx.navigateTo({
+          url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
+        })
         // wx.uploadFile({
         //   url: 'http://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
         //   filePath: tempFilePaths[0],
@@ -205,4 +218,11 @@ Page({
       }
     })
   },
+  // 查看教程
+  seeTutorial(){
+    wx.navigateTo({
+      url: './videoView/videoView',
+    })
+    console.log('教程');
+  }
 })

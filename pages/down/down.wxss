@@ -1,0 +1,253 @@
+/* pages/down/down.wxss */
+/* Frame 427320480 */
+
+/* Auto layout */
+.layout{display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 26px 32px;
+gap: 12px;
+
+width: 414px;
+height: 208px;
+
+}
+/* Inside auto layout */
+.inlayout{
+  flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+/* Frame 427320482 */
+
+/* Auto layout */
+.frame_layout{
+  display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 12px;
+
+width: 131px;
+height: 156px;
+}
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 0;
+flex-grow: 0; */
+
+
+/* Frame 427320476 */
+
+/* Auto layout */
+.s{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 131px;
+height: 72px;
+}
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 0;
+flex-grow: 0; */
+
+
+/* 近6000万 */
+
+.liu{
+  width: 131px;
+height: 44px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+display: flex;
+align-items: center;
+}
+
+/* color-white */
+/* color: #FFFFFF; */
+
+/* APP用户 */
+
+.app{width: 62px;
+height: 24px;
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+}
+
+/* color-white */
+/* color: #FFFFFF;
+
+opacity: 0.7; */
+
+/* Frame 427320477 */
+
+/* Auto layout */
+.as{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 96px;
+height: 72px;
+}
+
+
+/* 18亿次 */
+
+.shiba{width: 96px;
+height: 44px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+/* identical to box height, or 147% */
+display: flex;
+align-items: center;
+}
+
+
+/* 外瓶扫描 */
+
+.w{
+  width: 64px;
+height: 24px;
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+align-items: center;
+}
+
+/* Auto layout */
+.c{
+  display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 12px;
+
+width: 149px;
+height: 156px;
+}
+
+
+/* Frame 427320476 */
+
+/* Auto layout */
+.v{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 149px;
+height: 72px;
+}
+
+/* 2亿3200万 */
+
+.ly{
+  width: 149px;
+height: 44px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+/* identical to box height, or 147% */
+display: flex;
+align-items: center;
+
+}
+
+
+/* 葡萄酒评分 */
+.ra{
+  width: 80px;
+  height: 24px;
+  
+  /* 16pt Regular@用户主页个人名称、消息中心标题等 */
+  font-family: 'Source Han Sans CN';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Frame 427320477 */
+
+/* Auto layout */
+/* display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 4px;
+
+width: 131px;
+height: 72px; */
+
+
+/* 1470万瓶 */
+/* 
+width: 131px;
+height: 44px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 44px;
+display: flex;
+align-items: center; */
+
+
+/* 葡萄酒上线平台 */
+
+/* width: 112px;
+height: 24px;
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+align-items: center; */
+

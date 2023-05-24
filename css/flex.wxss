@@ -31,14 +31,17 @@
 .clr-pri {
   color: #B81728;
 }
+
 /* 评分颜色 */
 .clr-rate {
   color: #FCB709;
 }
+
 /* 按钮背景色 */
-.clr-btn-bg{
+.clr-btn-bg {
   color: #F6F6F6;
 }
+
 .clr-666 {
   color: #666;
 }
@@ -148,19 +151,24 @@
 .ft-se-30 {
   font-size: 60rpx;
 }
+
 .ft-se-34 {
   font-size: 68rpx;
 }
+
 .ft-se-36 {
   font-size: 72rpx;
 }
+
 /* 字体加粗 */
 .ft-bd {
   font-weight: bold;
 }
+
 .ft-bd-600 {
   font-weight: 600;
 }
+
 .ft-bd-700 {
   font-weight: 700;
 }
@@ -384,6 +392,7 @@
 .mg-tp-4 {
   margin-top: 8rpx;
 }
+
 .mg-tp-5 {
   margin-top: 10rpx;
 }
@@ -402,6 +411,14 @@
 
 .mg-tp-30 {
   margin-top: 60rpx;
+}
+
+.mg-tp-35 {
+  margin-top: 70rpx;
+}
+
+.mg-tp-40 {
+  margin-top: 80rpx;
 }
 
 .mg-lt-5 {
@@ -488,7 +505,6 @@
   margin-left: 60rpx;
   margin-right: 60rpx;
 }
-
 .mg-tb-5 {
   margin-top: 10rpx;
   margin-bottom: 10rpx;
@@ -513,10 +529,12 @@
   margin-top: 60rpx;
   margin-bottom: 60rpx;
 }
+
 /* 首行缩进2字符 */
-.tx-ind{
-  text-indent:2em
+.tx-ind {
+  text-indent: 2em
 }
+
 .tx-ct {
   text-align: center;
 }
@@ -662,7 +680,8 @@ flex-row .flex-center {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.flex-row-center{
+
+.flex-row-center {
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -683,6 +702,7 @@ flex-row .flex-center {
   align-items: center;
   align-content: center;
 }
+
 /* 行式弹性盒子两端对齐 */
 .flex-space {
   display: -webkit-box;

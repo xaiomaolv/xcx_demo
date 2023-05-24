@@ -17,7 +17,7 @@
       <view>
         <scroll-view scroll-x class="scrolls">
           <view class="scroll-box" style="width:25%;margin:50rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" catchtap="tap" data-index="{{index}}">
-            <view class="flex-row-center ft-bd-600">
+            <view class="ft-bd-600">
               <view wx:if="{{item.rate > 0}}" class="center_btn tx-ct">
                 <text>{{item.rate}}</text>
               </view>

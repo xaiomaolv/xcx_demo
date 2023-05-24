@@ -33,11 +33,6 @@ button::after {
   border: none;
   display: none;
 }
-.nationFlags{
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 50%;
-}
 .mg-15-25 {
   margin: 30rpx 50rpx;
 }
@@ -102,15 +97,15 @@ button::after {
 
 .topCard {
   background-color: white;
-  border-bottom-left-radius: 40rpx;
-  border-bottom-right-radius: 40rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
 .rateCard {
   background-color: white;
-  border-bottom-left-radius: 40rpx;
-  border-bottom-right-radius: 40rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
@@ -183,14 +178,14 @@ button::after {
 /* 编者注 */
 .editCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
 /* 简介 */
 .blurbCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
@@ -235,7 +230,7 @@ button::after {
 /* 口味特征 */
 .flavourCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
  /* padding: 0 20rpx 20rpx 20rpx; */
 }
@@ -278,7 +273,7 @@ button::after {
 /* 我的日志 */
 .logCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
    padding-bottom: 20rpx;
   /* padding: 0 20rpx 20rpx 20rpx; */
 }
@@ -304,40 +299,39 @@ button::after {
 /* 评价 */
 .evaluateCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
 /* 赏酒攻略 */
 .tasteCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
 /* 酿酒师笔记 */
 .brewerCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 
 /* 酒庄 */
 .wineryCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
-.winery_btn{
-  /* padding: 0 20rpx !important; */
-  /* background-color: var(--btn-bg); */
-  /* border-radius: 30rpx; */
+.flag_btn{
+  margin-top: 20rpx;
+  padding: 0 60rpx;
 }
 
 /* 你可能喜欢 */
 .likeCard {
   background-color: white;
-  border-radius: 40rpx;
+  border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
 .gridLike {

@@ -29,6 +29,7 @@ App({
     })
   },
   globalData: {
-    capsule: ''
+    capsule: '',
+    isLogin:false, // 是否授权登录
   }
 })

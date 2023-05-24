@@ -1,0 +1,4 @@
+<!--pages/scan/videoView/videoView.wxml-->
+<!--视频播放器-->
+<video style="width: 100%; height: 100vh;" id='myVideo' controls src='{{srcVideo}}' autoplay="true" 	enable-play-gesture="true"></video>
+

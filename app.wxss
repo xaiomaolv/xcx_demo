@@ -12,10 +12,16 @@
   box-sizing: border-box;
 }
 
-/* 国旗大小 */
+/* 国旗小 */
 .nationFlag {
   width: 30rpx;
   height: 30rpx;
+  border-radius: 50%;
+}
+/* 国旗大 */
+.nationFlags {
+  width: 40rpx;
+  height: 40rpx;
   border-radius: 50%;
 }
 

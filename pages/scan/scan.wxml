@@ -4,10 +4,12 @@
     <view class="head-back flex-row" catchtap="handleBackClick">
     </view>
   </view>
-
+<view class="" style="position: absolute; right: 30rpx;margin: 10rpx;" bindtap="seeTutorial">
+  <van-icon name="/img/scan/tips.png" size="20"/>
+</view>
   <!-- 拍照 -->
-  <view id="takephoto" style="margin-top: {{navTop -10}}px;">
-    <cover-image class='bgImage' src="{{isFirst ? '/img/scan/bkf.png':'/img/scan/bk.png'}}" style="width:90%;margin:auto;height: 46vh;">
+  <view id="takephoto" style="margin-top: {{navTop}}px;">
+    <cover-image class='bgImage' src="{{isFirst ? '/img/scan/bkf.png':'/img/scan/bk.png'}}" style="width:90%;margin:auto;height: 45vh;">
     </cover-image>
   </view>
 

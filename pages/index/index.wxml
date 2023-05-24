@@ -279,17 +279,12 @@
         </view>
         <view class="clr-999 ft-se-14 flex-col-8 tx-lt">36款酒</view>
       </view>
-      <button class="log_btn" round size="mini">
-        <view class="flex-row-center">
-          <image class="nationFlags" src="/img/mate/7.png" mode="aspectFit" />
+      <view class="row">
+        <view class="btn_mini flag_btn row">
+          <image class="nationFlag" src="/img/mate/7.png" mode="aspectFit" />
           <view class="ft-se-14 mg-lt-5">法国马兹</view>
         </view>
-
-      </button>
-      <!-- <view class=" flex-row-center winery_bd">
-    <image class="nationFlags" src="/img/mate/7.png" mode="aspectFit" />
-    <view class="">法国马兹</view>
-  </view> -->
+      </view>
       <!-- 最佳酒款 -->
       <view></view>
     </view>
@@ -302,8 +297,8 @@
         <image src="{{item.w_img}}" mode="aspectFit" style="height: 460rpx; width: 360rpx;" />
         <view class="clr-999 mg-10-15">{{item.num}}</view>
         <view class="line_ellipsis mg-0-15 li-hg-24">{{item.w_name}}</view>
-        <view class="flex-row">
-          <view class="ft-se-18 flex-row-center">{{item.rate}}</view>
+        <view class="row tx-ct">
+          <view class="ft-se-18">{{item.rate}}</view>
           <view class="flex-col">
             <van-rate readonly color="#B81728" value="3" size="8" />
             <view class="ft-se-12 clr-999">{{item.num}}<text class="mg-lt-5">条评价</text></view>

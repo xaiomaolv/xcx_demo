@@ -1,10 +1,14 @@
 {
   "pages": [
+    "pages/scan/scan",
     "pages/home/home",
     "pages/index/index",
     "pages/index/tab/tab",
     "pages/index/scroll_x_wine/scroll_x_wine",
-    "pages/detail/compare/compare"
+    "pages/detail/compare/compare",
+    "pages/scan/scanResult/scanResult",
+    "pages/down/down",
+    "pages/scan/videoView/videoView"
   ],
   "window": {
     "backgroundTextStyle": "light",
