@@ -1,15 +1,17 @@
 {
   "pages": [
-    "pages/down/down",
+    "pages/home/home",
+    "pages/downApp/downApp",
+    
+    "pages/detail/detail",
+    
     "pages/index/index",
     "pages/scan/scan",
-    "pages/home/home",
+   
     "pages/index/tab/tab",
     "pages/index/scroll_x_wine/scroll_x_wine",
     "pages/scan/scanResult/scanResult",
-    "pages/scan/videoView/videoView",
-    "pages/detail/detail",
-    "components/downApp/downApp"
+    "pages/scan/videoView/videoView"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -3,7 +3,6 @@ page {
   width: 100%;
   min-height: 100vh;
   overflow-y: hidden;
-  background-color: var(--primary-color);
 }
 .mg-20-30{
   margin:40rpx 60rpx;

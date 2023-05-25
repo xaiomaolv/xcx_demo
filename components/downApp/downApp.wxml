@@ -1,24 +1,26 @@
 <!--components/downApp/downApp.wxml-->
-<view class="mg-20-30 clr-FFF">
-  <view class="tx-ct clr-FFF">一个拥有全球酒友真实评分的识酒APP</view>
-  <view class="mg-tp-20 flex-space">
-    <view class="ft-se-28"> 近6000万 </view>
-    <view class="ft-se-28"> 2亿3200万 </view>
+<view wx:if="{{showDownApp}}" style="background-color: var(--primary-color);">
+  <view class="mg-20-30 clr-FFF">
+    <view class="tx-ct clr-FFF">一个拥有全球酒友真实评分的识酒APP</view>
+    <view class="mg-tp-20 flex-space">
+      <view class="ft-se-28"> 近6000万 </view>
+      <view class="ft-se-28"> 2亿3200万 </view>
+    </view>
+    <view class="mg-tp-10 flex-space op7">
+      <view class=""> app用户 </view>
+      <view class=""> 葡萄酒评分 </view>
+    </view>
+    <view class="mg-tp-20 flex-space">
+      <view class="ft-se-30"> 18亿次 </view>
+      <view class="ft-se-30"> 1470万瓶 </view>
+    </view>
+    <view class="mg-tp-10 flex-space op7">
+      <view class=""> 外瓶扫描 </view>
+      <view class=""> 葡萄酒上线平台 </view>
+    </view>
   </view>
-  <view class="mg-tp-10 flex-space op7">
-    <view class=""> app用户 </view>
-    <view class=""> 葡萄酒评分 </view>
+  <view class="tx-ct">
+    <image src="/img/home/down.png" style="height:40vh" mode="aspectFit" />
+    <view class="btn_mini btn_w" bindtap="toScan">点击下载Vivino唯唯诺APP</view>
   </view>
-  <view class="mg-tp-20 flex-space">
-    <view class="ft-se-30"> 18亿次 </view>
-    <view class="ft-se-30"> 1470万瓶 </view>
-  </view>
-  <view class="mg-tp-10 flex-space op7">
-    <view class=""> 外瓶扫描 </view>
-    <view class=""> 葡萄酒上线平台 </view>
-  </view>
-</view>
-<view class="tx-ct">
-  <image src="/img/home/down.png" style="height:40vh" mode="aspectFit" />
-  <view class="btn_mini btn_w" bindtap="toScan">点击下载Vivino唯唯诺APP</view>
 </view>

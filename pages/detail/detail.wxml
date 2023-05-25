@@ -43,8 +43,8 @@
       <view class="flex-row flex-col-24">
         <van-button class="flex-col-12" size="" round custom-class="van_btn" icon="/img/mate/star.png">添加你的评分</van-button>
         <image class="circle" src="/img/mate/1.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit"></image>
-        <image class="circle" src="/img/mate/2.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit"></image>
-        <image class="circle" src="/img/mate/3.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit"></image>
+        <image class="circle" src="/img/mate/2.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit" bindtap="toScan"></image>
+        <image class="circle" src="/img/mate/3.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit" bindtap="toPost"></image>
       </view>
       <!-- 酒名 -->
       <view class="mg-10-15">
@@ -329,3 +329,6 @@
     </view>
   </view>
 </scroll-view>
+
+<!-- 下载app -->
+<downApp class="downApp"></downApp>

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "navTabs":"/components/navTabs/navTabs",
-    "topNav":"/components/topNav/topNav"
+    "topNav":"/components/topNav/topNav",
+    "downApp":"/components/downApp/downApp"
   },
   "navigationStyle": "custom"
 }

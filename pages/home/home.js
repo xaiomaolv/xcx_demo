@@ -30,7 +30,8 @@ Page({
       //   img:'http://zuohaotu.com/Download/052510084945_4bg5.png?_gl=1*586e7z*_ga*ODY2MTY4MTcxLjE2ODQ5ODA0NTc.*_ga_ZN9652QSEY*MTY4NDk4MDQ1Ny4xLjEuMTY4NDk4MDUyOS4wLjAuMA..'
       // },
     ],
-    randomImage: '' // 随机图片
+    randomImage: '',// 随机图片
+    showAgree: false,
   },
 
   /**
@@ -61,7 +62,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    let that = this
+    that.agreement = that.selectComponent(".agreement");
   },
 
   /**
@@ -103,5 +105,25 @@ Page({
     wx.navigateTo({
       url: '../scan/scan',
     })
-  }
+  },
+  // 协议查看
+  seeAgreement(e) {
+    let that = this
+    that.agreement.showlog()
+    this.setData({
+      showAgree: true
+    })
+  },
+  // 确认阅读
+  handConfirm() {
+    this.setData({
+      showAgree: false
+    })
+  },
+  // 关闭
+  handCancel() {
+    this.setData({
+      showAgree: false
+    })
+  },
 })

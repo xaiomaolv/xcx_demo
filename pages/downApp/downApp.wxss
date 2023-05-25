@@ -1,4 +1,4 @@
-/* pages/down/down.wxss */
+/* pages/downApp/downApp.wxss */
 page {
   width: 100%;
   min-height: 100vh;
@@ -13,8 +13,8 @@ page {
   background-color: black;
   color: white;
   border-radius: 40rpx;
-  margin-top: 30rpx;
-  padding: 10rpx 100rpx;
+  margin: 30rpx 30rpx;
+  /* padding: 10rpx 100rpx; */
 }
 
 .op7 {

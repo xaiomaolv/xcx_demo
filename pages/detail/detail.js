@@ -255,9 +255,10 @@ Page({
     console.log(this.data.navHeight, 'navHeight');
     let that = this
     that.navTabs = that.selectComponent(".navtabs");
+    that.showDownApp = that.selectComponent(".downApp");
     that.slideAnchor();
     that.rateCardHeight()
-    that.init()
+    // that.init()
   },
 
   /**
@@ -303,7 +304,7 @@ Page({
       })
     } else {
       wx.switchTab({
-        url: '../scan/scan',
+        url: '/pages/scan/scan',
       })
     }
   },
@@ -481,5 +482,17 @@ Page({
       })
       this.inited = true
     }).exec()
+  },
+  // 扫码
+  toScan(){
+    wx.redirectTo({
+      url: '/pages/scan/scan',
+    })
+  },
+  // 发布动态
+  toPost(){
+    wx.navigateTo({
+      url: '/pages/downApp/downApp',
+    })
   },
 })

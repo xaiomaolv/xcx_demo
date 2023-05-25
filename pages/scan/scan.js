@@ -272,5 +272,11 @@ Page({
     wx.navigateTo({
       url: '../detail/detail',
     })
-  }
+  },
+    // 返回
+    handleBackClick(){
+      wx.reLaunch({
+        url: '../home/home',
+      })
+    }
 })

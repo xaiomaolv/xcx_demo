@@ -30,6 +30,7 @@ Page({
       "风格",
       "婚宴佳品"
     ],
+    identifying: 0, //识别，0正在识别，1 识别成功 2 识别失败
   },
 
   /**
@@ -40,6 +41,18 @@ Page({
     this.setData({
       imgInfo: JSON.parse(options.imgInfo)
     })
+    setTimeout(() => {
+      this.setData({
+        identifying: 1
+      })
+
+      setTimeout(() => {
+        this.setData({
+          identifying: 2
+        })
+      }, 1000)
+    }, 3000)
+
   },
 
   /**
@@ -115,7 +128,7 @@ Page({
       return
     }
     wx.createSelectorQuery().selectAll('#lottie_demo').node(res => {
-      console.log(res,'ressss');
+      console.log(res, 'ressss');
       const canvas = res[0].node
       const context = canvas.getContext('2d')
       canvas.width = 160
@@ -133,7 +146,7 @@ Page({
     }).exec()
     // this.ani.pause()  //结束动画
   },
-  
+
   // quan(t) {
   //   var o = t || {},
   //     e = function () {
