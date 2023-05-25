@@ -6,11 +6,10 @@
     "pages/home/home",
     "pages/index/tab/tab",
     "pages/index/scroll_x_wine/scroll_x_wine",
-    "pages/detail/compare/compare",
     "pages/scan/scanResult/scanResult",
-    
     "pages/scan/videoView/videoView",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "components/downApp/downApp"
   ],
   "window": {
     "backgroundTextStyle": "light",

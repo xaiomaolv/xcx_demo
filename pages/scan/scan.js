@@ -37,14 +37,14 @@ Page({
         img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
       },
       {
-        rate:4.1,
-        price:1000,
-        img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
+        rate: 4.1,
+        price: 1000,
+        img: 'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
       },
       {
-        rate:'',
-        price:1000,
-        img:'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
+        rate: '',
+        price: 1000,
+        img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
       },
       // {
       //   rate:'',
@@ -100,6 +100,8 @@ Page({
    */
   onShow() {
     this.queryPhoto()
+    // 相机授权
+    this.authTakePhoto()
   },
 
   /**
@@ -121,6 +123,64 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  // 相机授权
+  authTakePhoto() {
+    var that = this
+    wx.authorize({
+      scope: 'scope.camera',
+      success: function (res) {
+        that.setData({
+          isShowCamera: true,
+        })
+      },
+      fail: function (res) {
+        console.log("" + res);
+        wx.showModal({
+          title: '请求授权您的摄像头',
+          content: '如需正常使用此小程序功能，请您按确定并在设置页面授权用户信息',
+          confirmText: '确定',
+          success: res => {
+            if (res.confirm) {
+              wx.openSetting({
+                success: function (res) {
+                  console.log('成功');
+                  console.log(res);
+                  if (res.authSetting['scope.camera']) { //设置允许获取摄像头
+                    console.log('设置允许获取摄像头')
+                    wx.showToast({
+                      title: '授权成功',
+                      icon: 'success',
+                      duration: 1000
+                    })
+                    that.setData({
+                      isShowCamera: true,
+                    })
+
+                  } else { //不允许
+                    wx.showToast({
+                      title: '授权失败',
+                      icon: 'none',
+                      duration: 1000
+                    })
+                    wx.redirectTo({
+                      url: 'addCarInfo/addCarInfo',
+                    })
+                  }
+                }
+              })
+            } else { //取消
+              wx.showToast({
+                title: '授权失败',
+                icon: 'none',
+                duration: 1000
+              })
+            }
+          }
+        })
+
+      }
+    })
   },
   //获取节点信息
   queryPhoto(e) {
@@ -152,6 +212,8 @@ Page({
    */
   takePhotoAction: function () {
     var that = this
+    // 相机授权
+    that.authTakePhoto()
     wx.navigateTo({
       url: '../../pages/scan/scanResult/scanResult',
     })
@@ -197,16 +259,16 @@ Page({
     })
   },
   // 查看教程
-  seeTutorial(){
+  seeTutorial() {
     wx.navigateTo({
       url: './videoView/videoView',
     })
     console.log('教程');
   },
   // 跳转详情
-  toDetail(e){
+  toDetail(e) {
     let item = e.currentTarget.dataset.item
-    console.log(item,'item');
+    console.log(item, 'item');
     wx.navigateTo({
       url: '../detail/detail',
     })

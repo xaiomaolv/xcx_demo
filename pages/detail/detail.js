@@ -1,5 +1,5 @@
 // pages/detail/detail.js
-// index.js
+import lottie from 'lottie-miniprogram'
 const app = getApp();
 Page({
   data: {
@@ -143,7 +143,7 @@ Page({
         year: 2020,
         desc: '非常不错，非常不错，非常不错，非常不错，非常不错，非常不错，',
         head: '/img/mate/12.png'
-      },{
+      }, {
         name: '武大',
         date: '2012-09-12',
         rate: '4.0',
@@ -214,23 +214,22 @@ Page({
         rate: '4.0',
         num: 300,
       },
-      
+
     ],
     // 评价
     evaluateCurrent: '0',
     rateCardHeight: 0,
-    videoList:[
-      {
-        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
-        num:800
+    videoList: [{
+        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num: 800
       },
       {
-        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
-        num:400
+        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num: 400
       },
       {
-        srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
-        num:300
+        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        num: 300
       },
     ]
   },
@@ -258,6 +257,7 @@ Page({
     that.navTabs = that.selectComponent(".navtabs");
     that.slideAnchor();
     that.rateCardHeight()
+    that.init()
   },
 
   /**
@@ -307,7 +307,7 @@ Page({
       })
     }
   },
-  
+
   // 简介按钮高亮切换
   handleClick(e) {
     this.setData({
@@ -344,7 +344,7 @@ Page({
       let heightArray = [],
         topArray = [];
       res.forEach(rect => {
-        console.log(rect,'rrrrr');
+        console.log(rect, 'rrrrr');
         heightArray.push(Math.floor(rect.top));
         topArray.push(rect.height)
       });
@@ -370,7 +370,7 @@ Page({
   },
   //点击锚点跳转
   jumpTo: function (e) {
-    console.log(e,'eeeeeeeee');
+    console.log(e, 'eeeeeeeee');
     let that = this
     let target = e.detail.item.opt;
     let activeIndex = e.detail.item.type;
@@ -392,7 +392,7 @@ Page({
       isHidden,
       scrollLock: numHeight >= scrollHeight ? true : false //如果界面出现锚点位置过低的情况防止tab的active回弹
     })
-    console.log(this.data.toView,'bbbbbbb');
+    console.log(this.data.toView, 'bbbbbbb');
   },
 
   //scroll-view滚动监听事件
@@ -406,7 +406,7 @@ Page({
     } = that.data;
     let scrollTop = e.detail.scrollTop;
     console.log(scrollTop, 'scrollTop');
-    console.log(heightArray,'heightArray');
+    console.log(heightArray, 'heightArray');
     let isHidden = scrollTop >= heightArray[0] ? true : false; //控制tab显示与隐藏
     let isShowNav = scrollTop >= rateCardHeight ? true : false; //控制topnav显示与隐藏
     if (that.data.isShowNav != isShowNav) {
@@ -445,20 +445,41 @@ Page({
       })
     }
   },
-  startScroll(e){
-    console.log(e,'startScroll');
+  startScroll(e) {
+    console.log(e, 'startScroll');
   },
   //停止滚动，防止锚点位置过低，界面滚动时无效的情况
-  endScroll:function (e) {
-    console.log(e,'eeeeee');
+  endScroll: function (e) {
+    console.log(e, 'eeeeee');
     this.setData({
       scrollLock: true
     });
   },
-    // 返回
-    handleBackClick(){
-      wx.redirectTo({
-        url: '../scan/scan',
-      })
+  // 返回
+  handleBackClick() {
+    wx.redirectTo({
+      url: '../scan/scan',
+    })
+  },
+  init() {
+    if (this.inited) {
+      return
     }
+    wx.createSelectorQuery().selectAll('#lottie_demo').node(res => {
+      const canvas = res[0].node
+      const context = canvas.getContext('2d')
+      canvas.width = 200
+      canvas.height = 300
+      lottie.setup(canvas)
+      this.ani = lottie.loadAnimation({
+        loop: true,
+        autoplay: true,
+        animationData: require('../../json/data'),
+        rendererSettings: {
+          context,
+        },
+      })
+      this.inited = true
+    }).exec()
+  },
 })

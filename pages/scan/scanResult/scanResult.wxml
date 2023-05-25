@@ -1,10 +1,14 @@
 <!--pages/scan/scanResult/scanResult.wxml-->
 <van-popup show="{{ showResult }}" closeable round close-icon="close" position="bottom" custom-style="" bind:close="onClose">
   <!-- 正在识别 -->
-  <!-- <view class="tx-ct mg-tp-40">
-    <image style="height:30vh ;width:20vh;border-radius: 10rpx;" src="https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg" mode="" />
-    <view class="mg-tp-10 mg-bt-20">正在识别酒款...</view>
-  </view> -->
+  <view style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
+  <canvas style="height:680rpx ;width:520rpx;display: flex;flex-direction: row;justify-content: center;align-items: center;" id="lottie_demo" type="2d">
+    <view class="tx-ct mg-tp-40">
+      <cover-image style="height:480rpx ;width:320rpx;border-radius: 10rpx;margin: auto;" src="https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg" mode="" />
+      <view class="mg-tp-10 mg-bt-20">正在识别酒款...</view>
+    </view>
+  </canvas>
+</view>
   <!-- 识别失败 -->
   <!-- <view class="tx-ct mg-tp-50">
     <view class="flex-row-center">
@@ -24,39 +28,5 @@
       再试一次
     </view>
   </view> -->
-  <!-- 识别成功 -->
-  <view class="flex-row tx-ct" style="padding-bottom: 20rpx;">
-    <view class="flex-col-12">
-      <image class="wine_img" src="{{imgInfo.tempFilePaths ? imgInfo.tempFilePaths : wineInfo.w_img}}" mode="" />
-    </view>
-    <view class="flex-col-12">
-      <!-- 评分 -->
-      <view class="hot-rate" wx:for="{{wineInfo.rate}}" wx:key="index">
-        <view class="ft-se-34">{{item.rate}}</view>
-        <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3.5" size="16" bind:change="onChange" />
-        <view class="ft-se-14 mg-tp-4">{{item.num}}条评价</view>
-        <!-- 参考价格 -->
-        <view class="btn_mini price_btn">
-          <text class="mg-rt-5 ft-se-16">¥</text>******
-        </view>
-        <view class="mg-tp-5 ft-se-12 clr-9797">*价格请点击查看更多</view>
-      </view>
-    </view>
-  </view>
-  <view class="mg-lr-10">
-    <view class="">{{wineInfo.w_name}}</view>
-    <view class="row">
-      <image class="nationFlag" src="/img/mate/7.png" mode="aspectFit" />
-      <view class="ft-se-14 mg-lt-5">来自法国马兹</view>
-    </view>
-    <view class="ft-se-12">avsvsvsvdfv</view>
-    <view class="btn_mini btn_p" wx:for="{{rate}}" wx:key="index">{{item}}</view>
-  </view>
-  <view class="row mg-bt-20">
-    <!-- <view class="btn_mini btn_more" bindtap="seeMore">
-      <text class="clr-FFF">查看更多></text>
-    </view> -->
-    <button size="mini" class="btn_more" round open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">查看更多></button>
-  </view>
-  
+
 </van-popup>

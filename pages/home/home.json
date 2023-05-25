@@ -1,5 +1,6 @@
 {
-  "usingComponents": {
-  },
-  "navigationStyle": "custom"
+  "usingComponents": {},
+  "navigationBarTitleText": "Vivino唯唯诺",
+  "navigationBarBackgroundColor": "#B81728",
+  "navigationBarTextStyle": "white"
 }

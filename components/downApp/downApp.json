@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {},
   "navigationBarTitleText": "Vivino唯唯诺",
   "navigationBarBackgroundColor": "#ffffff",

@@ -1,10 +1,11 @@
 <!--pages/detail/detail.wxml-->
-<!-- navtab吸顶 -->
+<!-- d顶部返回 -->
 <topNav class="nav_wrap" isShowNav="{{isShowNav}}" isShow="{{isShowBtn}}" navTitle="{{navTitle}}" backgroundColor="{{backgroundColor}}" isWhite="{{isWhite}}" titleColor="{{titleColor}}"></topNav>
-<view class="navigateBox" style="margin-top: {{navBarHeight}}px;" wx:if="{{isHidden}}">
+<!-- navtab吸顶 -->
+<view class="navigateBox" style="top:{{navBarHeight}}px;" wx:if="{{isHidden}}">
   <navTabs class="navtabs" list="{{title}}" active="{{activeIndex}}" customStyle="width:560rpx;margin:auto;" bind:change="jumpTo"></navTabs>
 </view>
-<scroll-view style="width:100%;height:100vh" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragstart="startScroll" binddragend="endScroll">
+<scroll-view style="width:100%;height:100vh;margin-top: {{isHidden ? navBarHeight :0}}px;" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" bindscroll="toScroll" binddragstart="startScroll" binddragend="endScroll">
   <view class="header">
     <image src="{{wineInfo.w_bg}}" class="header-bg" />
     <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
@@ -256,7 +257,19 @@
           我要推荐
         </view>
       </view>
-      <view class="flex-row mg-10-15 ft-se-14">
+      <view class="flex-row mg-10-15 ft-se-14 recommend">
+        <!-- <view class="recommend" v-if="detailInfo.wineOccasionList&&detailInfo.wineOccasionList.length>0">
+              <h2 class="title">推荐场合</h2>
+              <view class="content" >
+                <text v-for="item in detailInfo.wineOccasionList" :key="item.uuid">
+                  {{ item.name }}
+                  <strong v-if="item.isSysCommend">
+                    <image src="../../assets/wine/wine-detail/logo.png" />推荐</strong>
+                  </text>
+                <text>户外派对</text>
+                <text>家庭聚会</text>
+              </view>
+            </view> -->
         <view class=" bds tx-ct" wx:for="{{recomeYear}}" wx:key="index">
           <view class="">
             <view class="">{{item.year}}</view>
@@ -298,14 +311,14 @@
     </view>
   </view>
   <!-- 你可能还喜欢 -->
-  <view id="likeCard" class="likeCard">
+  <view id="likeCard" class="likeCard mg-bt-20">
     <view class="ft-bd mg-10-15 pd-tp-10 tx-ct">你可能还喜欢</view>
     <view class="gridLike">
       <view class="itemLike" wx:for="{{wineLists}}" wx:key="index">
         <image src="{{item.w_img}}" mode="aspectFit" style="height: 460rpx; width: 360rpx;" />
         <view class="clr-999 mg-10-15">{{item.num}}</view>
         <view class="line_ellipsis mg-0-15 li-hg-24">{{item.w_name}}</view>
-        <view class="row tx-ct">
+        <view class="tx-ct flex-row-center">
           <view class="ft-se-18">{{item.rate}}</view>
           <view class="flex-col">
             <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3" size="8" />

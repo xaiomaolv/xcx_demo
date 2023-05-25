@@ -1,4 +1,4 @@
-/* pages/down/down.wxss */
+/* components/downApp/downApp.wxss */
 page {
   width: 100%;
   min-height: 100vh;

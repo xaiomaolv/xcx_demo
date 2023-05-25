@@ -1,6 +1,6 @@
 page {
   /* 主色颜色  #FE716F*/
-  --primary-color:#C83C3C; 
+  --primary-color:#B81728; 
   /* 副色颜色（暂未使用） */
   --secondly-color: #000000;
   --white-color: #FFF;

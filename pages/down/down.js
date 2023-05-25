@@ -8,27 +8,27 @@ Page({
     imglist: [{
         rate: 2.1,
         price: 1000,
-        img: 'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
+        img: '/img/home/bg1.png'
       },
-      {
-        rate: '',
-        price: '',
-        img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
-      },
-      {
-        rate: 4.1,
-        price: 1000,
-        img: 'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
-      },
-      {
-        rate: '',
-        price: 1000,
-        img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
-      },
+      // {
+      //   rate: '',
+      //   price: '',
+      //   img: 'http://zuohaotu.com/Download/052510084945_1bg2.png?_gl=1*wzwjvp*_ga*ODY2MTY4MTcxLjE2ODQ5ODA0NTc.*_ga_ZN9652QSEY*MTY4NDk4MDQ1Ny4xLjEuMTY4NDk4MDUyOS4wLjAuMA..'
+      // },
+      // {
+      //   rate: 4.1,
+      //   price: 1000,
+      //   img: 'http://zuohaotu.com/Download/052510084945_2bg3.png?_gl=1*wzwjvp*_ga*ODY2MTY4MTcxLjE2ODQ5ODA0NTc.*_ga_ZN9652QSEY*MTY4NDk4MDQ1Ny4xLjEuMTY4NDk4MDUyOS4wLjAuMA..'
+      // },
+      // {
+      //   rate: '',
+      //   price: 1000,
+      //   img: 'http://zuohaotu.com/Download/052510084945_3bg4.png?_gl=1*wzwjvp*_ga*ODY2MTY4MTcxLjE2ODQ5ODA0NTc.*_ga_ZN9652QSEY*MTY4NDk4MDQ1Ny4xLjEuMTY4NDk4MDUyOS4wLjAuMA..'
+      // },
       // {
       //   rate:'',
       //   price:'',
-      //   img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
+      //   img:'http://zuohaotu.com/Download/052510084945_4bg5.png?_gl=1*586e7z*_ga*ODY2MTY4MTcxLjE2ODQ5ODA0NTc.*_ga_ZN9652QSEY*MTY4NDk4MDQ1Ny4xLjEuMTY4NDk4MDUyOS4wLjAuMA..'
       // },
     ],
     randomImage: '' // 随机图片
@@ -98,5 +98,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  // 跳转识别酒款
+  toScan(){
+    wx.navigateTo({
+      url: '../scan/scan',
+    })
   }
 })
