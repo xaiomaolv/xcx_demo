@@ -170,10 +170,9 @@
   <!-- 评价 -->
   <view id="evaluateCard" class="evaluateCard">
     <view class="ft-bd mg-10-15 pd-tb-10 tx-ct">评价</view>
+    <!-- <guage></guage> -->
     <!-- 评分排名 -->
-    <view class="mg-10-15">
-      <view class="clr-666 ft-se-14">评分排名</view>
-    </view>
+    <rateEchart isStart="{{isStartRate}}" leftText="全球范围" rightText="夏布利范围" leftCount="{{10}}" rightCount="{{20}}" right="true"></rateEchart>
     <!--点评笔记  -->
     <view class="mg-10-15">
       <view class="flex-row">

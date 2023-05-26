@@ -1,0 +1,4 @@
+<!--components/gauage/gauage.wxml-->
+<view class="ec-container">
+  <ec-canvas canvas-id="echarts" id="echarts" canvas-id="echarts" ec="{{ec}}"></ec-canvas>
+</view>

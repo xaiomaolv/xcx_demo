@@ -23,7 +23,7 @@
     </view>
     <view class="mg-tp-10">无法识别酒款</view>
     <view class="ft-se-14 clr-999 mg-lr-50">请检查你拍摄图片的角度，扫酒识别需正对酒标拍照。</view>
-    <view class="mg-tp-10 try_btn btn_mini mg-bt-20">
+    <view class="mg-tp-10 try_btn btn_mini mg-bt-20" bindtap="tryAgain">
       <van-icon name="replay" />
       再试一次
     </view>

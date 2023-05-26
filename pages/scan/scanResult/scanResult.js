@@ -30,7 +30,7 @@ Page({
       "风格",
       "婚宴佳品"
     ],
-    identifying: 0, //识别，0正在识别，1 识别成功 2 识别失败
+    identifying: 2, //识别，0正在识别，1 识别成功 2 识别失败
   },
 
   /**
@@ -42,16 +42,17 @@ Page({
       imgInfo: JSON.parse(options.imgInfo)
     })
     setTimeout(() => {
+      console.log("1");
       this.setData({
         identifying: 1
       })
 
-      setTimeout(() => {
-        this.setData({
-          identifying: 2
-        })
-      }, 1000)
-    }, 3000)
+      // setTimeout(() => {
+      //   this.setData({
+      //     identifying: 2
+      //   })
+      // }, 1000)
+    }, 5000)
 
   },
 
@@ -90,7 +91,7 @@ Page({
 
   },
   //授权获取手机号
-  getPhoneNumber: function (e) { //这个事件同样需要拿到e
+  getPhoneNumber: function (e) {
     console.log(e, 'eeeeee');
     var that = this
     var ency = e.detail.encryptedData;
@@ -193,4 +194,11 @@ Page({
   //         })
   //     }()
   //   }
+  // 再次识别
+  tryAgain() {
+    this.setData({
+      identifying: 0
+    })
+    this.init()
+  }
 })

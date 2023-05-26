@@ -1,0 +1,56 @@
+/* pages/demo/demo.wxss */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.left-box {
+  width: 140rpx;
+  height: 140rpx;
+  position: relative;
+  margin: 20rpx 80rpx;
+}
+
+.count-box {
+  position: absolute;
+  width: 93rpx;
+  height: 84rpx;
+  top: 0rpx;
+  color: #FFFFFF;
+  font-size: 20rpx;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 93rpx 84rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.count-text {
+  width: 100%;
+  font-size: 24rpx;
+}
+
+.scale-img {
+  height: 100rpx;
+  width: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 56rpx;
+}
+
+.all-name {
+  width: 136rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  text-align: center;
+  margin-top: 8rpx;
+}

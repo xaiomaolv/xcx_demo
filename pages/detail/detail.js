@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 import lottie from 'lottie-miniprogram'
+import WxCountUp from '../../plugins/wx-countup/WxCountUp.js'
 const app = getApp();
 Page({
   data: {
@@ -231,13 +232,14 @@ Page({
         srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
         num: 300
       },
-    ]
+    ],
+    isStartRate:false,
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
 
   /**

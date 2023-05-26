@@ -51,7 +51,8 @@ Page({
       //   price:'',
       //   img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
       // },
-    ]
+    ],
+    isShowCamera: false, //相机授权
   },
 
   /**
@@ -76,6 +77,7 @@ Page({
           resolve(res);
         });
       }).then(res => {
+        console.log(res, '234567');
         const windowHeight = wx.getSystemInfoSync().windowHeight;
         let heightArray = [],
           topArray = [];
@@ -163,8 +165,8 @@ Page({
                       icon: 'none',
                       duration: 1000
                     })
-                    wx.redirectTo({
-                      url: 'addCarInfo/addCarInfo',
+                    that.setData({
+                      isShowCamera: false,
                     })
                   }
                 }
@@ -174,6 +176,9 @@ Page({
                 title: '授权失败',
                 icon: 'none',
                 duration: 1000
+              })
+              that.setData({
+                isShowCamera: false,
               })
             }
           }
@@ -214,17 +219,19 @@ Page({
     var that = this
     // 相机授权
     that.authTakePhoto()
-    wx.navigateTo({
-      url: '../../pages/scan/scanResult/scanResult',
-    })
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high', //高质量
-      success: (res) => {
-        // this.loadTempImagePath(res.tempImagePath);
-        console.log(res, 'takePhotoAction');
-      },
-    })
+    if (that.isShowCamera == true) {
+      wx.navigateTo({
+        url: '../../pages/scan/scanResult/scanResult',
+      })
+      const ctx = wx.createCameraContext()
+      ctx.takePhoto({
+        quality: 'high', //高质量
+        success: (res) => {
+          // this.loadTempImagePath(res.tempImagePath);
+          console.log(res, 'takePhotoAction');
+        },
+      })
+    }
   },
   // 图库选择
   chooseImg() {
@@ -273,10 +280,10 @@ Page({
       url: '../detail/detail',
     })
   },
-    // 返回
-    handleBackClick(){
-      wx.reLaunch({
-        url: '../home/home',
-      })
-    }
+  // 返回
+  handleBackClick() {
+    wx.reLaunch({
+      url: '../home/home',
+    })
+  }
 })

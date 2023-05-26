@@ -4,6 +4,13 @@ page {
   height: 100%;
   background-color: rgb(242, 242, 242);
 }
+.num-wrap{
+  padding: 20px;
+  text-align: center;
+  font-size: 60px;
+  color: #4D63BC;
+}
+
 
 .nav_wrap {
   top: 0;
