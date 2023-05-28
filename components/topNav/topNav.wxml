@@ -1,28 +1,30 @@
 <!--components/topNav/topNav.wxml-->
 <!-- <view class="nav-box"> -->
-	<!-- <view wx:if="{{ seat }}" class="seat-box" style="height:{{ 44 + statusBarHeight}}px;"></view> -->
-	<view class='nav_wrap' wx:if="{{isShowNav}}" style="background-color:{{backgroundColor}};">
-		<view style="height:{{statusBarHeight}}px;"></view>
-		<view class='content'>
-			<view class="title" style="line-height:44px;color:{{titleColor}};">{{navTitle}}</view>
-			<view wx:if="{{isShow}}" class="capsule-box {{isWhite? 'isWhite':'isblack'}} {{!isBack?'noBack':''}}"
-				style='height:{{capsule.height}}px;position: absolute; top:{{capsule.top-statusBarHeight}}px; left:{{left}}px;'>
-				<block wx:if="{{isBack}}">
-					<view class="capsult-item">
-						<image class='back' bindtap='back'
-						src="{{isWhite ? '/img/nav/left.png':'/img/nav/left.png'}}"
-						mode="aspectFit" lazy-load="false" data-num="{{pageNum}}" binderror="" bindload="">
-					</image>
-					</view>
-					<view class="{{isWhite? 'lineWhite':'lineblack'}}" hover-class="none" hover-stop-propagation="false"></view>
-		  	</block>
-				<view wx:if="{{isHome}}" class="capsult-item">
-					<image class='home' bindtap="toIndex"
-					src="{{isWhite ? '/img/nav/home.png':'/img/nav/home.png'}}"
-					mode="aspectFit" lazy-load="false" binderror="" bindload="">
-				</image>
-				</view>
-			</view>
-		</view>
-	</view>
+<!-- <view wx:if="{{ seat }}" class="seat-box" style="height:{{ 44 + statusBarHeight}}px;"></view> -->
+<view class='nav_wrap' wx:if="{{isShowNav}}" style="background-color:{{backgroundColor}};">
+  <view style="height:{{statusBarHeight}}px;"></view>
+  <view class='content'>
+    <view class="title" style="line-height:44px;color:{{titleColor}};">{{navTitle}}</view>
+    <!-- <view style="height: {{navObj}}px;padding-top: {{navTop}}px;padding-right:{{navObjWidth}}px;">
+      <view class="head-back flex-row" style='height:{{capsule.height}}px;position: absolute; top:{{capsule.top-statusBarHeight}}px; left:{{left}}px;' bindtap="handleBackClick">
+      </view>
+    </view> -->
+
+    <view wx:if="{{isShow}}" class="capsule-box {{isWhite? 'isWhite':'isblack'}} {{!isBack?'noBack':''}}" style='height:{{capsule.height}}px;position: absolute; top:{{capsule.top-statusBarHeight}}px; left:{{left}}px;'>
+      <block wx:if="{{isWhite}}">
+        <view class="capsult-item">
+          <!-- <image class='back' bindtap='back' src="{{isWhite ? '/img/nav/left.png':'/img/nav/left.png'}}" mode="aspectFit" lazy-load="false" data-num="{{pageNum}}" binderror="" bindload="">
+          </image> -->
+          <view class="head-back" bindtap="handleBackClick">
+      </view>
+        </view>
+        <!-- <view class="{{isWhite? 'lineWhite':'lineblack'}}" hover-class="none" hover-stop-propagation="false"></view> -->
+      </block>
+      <view wx:if="{{isHome}}" class="capsult-item">
+        <image class='home' bindtap="toIndex" src="{{isWhite ? '/img/nav/home.png':'/img/nav/home.png'}}" mode="aspectFit" lazy-load="false" binderror="" bindload="">
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
 <!-- </view> -->

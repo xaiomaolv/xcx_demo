@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "navTabs":"/components/navTabs/navTabs",
+    "topNav":"/components/topNav/topNav",
+    "downApp":"/components/downApp/downApp",
+    "rateEchart":"/components/liquidFill/liquidFill",
+    "scroll_x":"../components/scroll_x_wine/scroll_x_wine",
+    "guage":"/components/gauage/gauage"
+  },
+  "navigationStyle": "custom"
+}

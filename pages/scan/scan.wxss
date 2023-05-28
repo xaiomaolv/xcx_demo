@@ -4,7 +4,13 @@ page {
   min-height: 100%;
   overflow-y: hidden;
 }
-
+#myCanvas {
+  width: 100vw;
+  height: 89vh;
+  position: absolute;
+  z-index: -999;
+  opacity: 0;
+}
 .scrolls {
   white-space: nowrap;
 }

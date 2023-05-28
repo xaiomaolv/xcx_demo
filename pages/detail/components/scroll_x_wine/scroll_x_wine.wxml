@@ -1,5 +1,5 @@
-<!--pages/index/scroll_x_wine/scroll_x_wine.wxml-->
-<view class="hot-card">
+<!--pages/detail/components/scroll_x_wine/scroll_x_wine.wxml-->
+<view>
   <view class="hot-card-bg"></view>
   <view class="flex-row">
     <scroll-view scroll-x class="scroll_w" style="margin-top: -180rpx;">

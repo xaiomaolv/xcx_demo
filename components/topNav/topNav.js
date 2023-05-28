@@ -16,14 +16,14 @@ Component({
       value: true
     },
     // 是否显示左侧返回按钮
-    isBack: {
+    isWhite: {
       type: Boolean,
       value: true
     },
     // 是否显示左侧返回按钮
     isHome: {
       type: Boolean,
-      value: true
+      value: false
     },
     // 返回层级 默认为1
     pageNum: {
@@ -74,8 +74,10 @@ Component({
       wx.switchTab({
         url: '/pages/home/home'
       })
+    },
+    handleBackClick() {
+      this.triggerEvent('handleBackClick')
     }
-
   },
   lifetimes: {
     //判断是否有上一级页面，如果有显示返回按钮（isBack参数）否则不显示

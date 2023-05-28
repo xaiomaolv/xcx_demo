@@ -53,47 +53,28 @@ Page({
       // },
     ],
     isShowCamera: false, //相机授权
+    startY: 0, // 下滑删除开始坐标
+    delIndex: -1, // 当前滑动的元素下标位置
+    index: -1,
+    Ystart: 0,
+    isAnimation: false,
+    aniMation: {},
+    slideTop: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.ctx = wx.createCameraContext();//初始化 创建 camera 上下文 CameraContext 对象。
+    this.ctx_A = wx.createCanvasContext("myCanvas"); //画布
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    let that = this
-    setTimeout(() => {
-      let that = this
-      new Promise(resolve => {
-        let query = wx.createSelectorQuery().in(that);
-        query.select('#cemeraHeight').boundingClientRect();
-        query.select('#takephoto').boundingClientRect();
-        query.exec(function (res) {
-          resolve(res);
-        });
-      }).then(res => {
-        console.log(res, '234567');
-        const windowHeight = wx.getSystemInfoSync().windowHeight;
-        let heightArray = [],
-          topArray = [];
-        res.forEach(rect => {
-          console.log(rect, 'rrrrr');
-          // heightArray.push(Math.floor(rect.top));
-          topArray.push(rect.height)
-        });
-        that.setData({
-          heightArray,
-          topArray,
-          photoHeight: topArray[0] - topArray[1]
-        });
-        console.log(that.data.photoHeight, '99999999');
-      });
-    }, 300)
+
 
   },
 
@@ -102,30 +83,14 @@ Page({
    */
   onShow() {
     this.queryPhoto()
-    // 相机授权
-    this.authTakePhoto()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
 
   },
+  // 
   // 相机授权
   authTakePhoto() {
     var that = this
@@ -190,27 +155,78 @@ Page({
   //获取节点信息
   queryPhoto(e) {
     let that = this
-    new Promise(resolve => {
-      let query = wx.createSelectorQuery().in(that);
-      query.select('#takephoto').boundingClientRect();
-      query.exec(function (res) {
-        resolve(res);
+    setTimeout(() => {
+      let that = this
+      new Promise(resolve => {
+        let query = wx.createSelectorQuery().in(that);
+        query.select('#cemeraHeight').boundingClientRect();
+        query.select('#takephoto').boundingClientRect();
+        query.select('#delBox').boundingClientRect();
+        query.exec(function (res) {
+          resolve(res);
+        });
+      }).then(res => {
+        console.log(res, '234567');
+        const windowHeight = wx.getSystemInfoSync().windowHeight;
+        let heightArray = [],
+          bottomArray = [],
+          topArray = [];
+        res.forEach(rect => {
+          console.log(rect, 'rrrrr');
+          heightArray.push(Math.floor(rect.top));
+          bottomArray.push(Math.floor(rect.bottom));
+          topArray.push(rect.height)
+        });
+        that.setData({
+          heightArray,
+          topArray,
+          photoHeight: topArray[0] - topArray[1],
+          slideTop: bottomArray[2] - heightArray[2]
+        });
+        console.log(that.data.photoHeight, '99999999');
       });
-    }).then(res => {
-      const windowHeight = wx.getSystemInfoSync().windowHeight;
-      let heightArray = [],
-        topArray = [];
-      res.forEach(rect => {
-        console.log(rect, 'rrrrr');
-        // heightArray.push(Math.floor(rect.top));
-        // topArray.push(rect.height)
-      });
-      that.setData({
-        // scrollHeight: windowHeight,
-        // heightArray,
-        // topArray,
-      });
-    });
+    }, 300)
+  },
+  /**
+   * 图片截取
+   * 自定义计算位置  截取自己需要的那一部分图片
+   */
+  generate(imgSrc) {
+    wx.createSelectorQuery()
+      .select("#cover_image")
+      .boundingClientRect((rect) => {
+        this.ctx_A.drawImage(
+          imgSrc,
+          0,
+          0,
+          wx.getSystemInfoSync().windowWidth,
+          wx.getSystemInfoSync().windowHeight * 0.75
+        );
+        this.ctx_A.draw(true, () => {
+          wx.canvasToTempFilePath({
+            //调用方法，开始截取
+            x: rect.left,
+            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066,
+            width: rect.width,
+            height: rect.height,
+            destWidth: rect.width,
+            destHeight: rect.height,
+            canvasId: "myCanvas",
+            quality: 1,
+            success: (res) => {
+              // this.getUrl(res.tempFilePath, 5);
+              let imgInfo = {
+                tempFilePaths: res.tempFilePath
+              }
+              console.log(res,'ressssss');
+              wx.navigateTo({
+                url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
+              })
+            },
+          });
+        });
+      })
+      .exec();
   },
   /**
    * 拍照
@@ -219,16 +235,15 @@ Page({
     var that = this
     // 相机授权
     that.authTakePhoto()
-    if (that.isShowCamera == true) {
-      wx.navigateTo({
-        url: '../../pages/scan/scanResult/scanResult',
-      })
-      const ctx = wx.createCameraContext()
-      ctx.takePhoto({
+    if (that.data.isShowCamera == true) {
+      // wx.navigateTo({
+      //   url: '../../pages/scan/scanResult/scanResult',
+      // })
+      this.ctx.takePhoto({
         quality: 'high', //高质量
         success: (res) => {
-          // this.loadTempImagePath(res.tempImagePath);
-          console.log(res, 'takePhotoAction');
+          this.generate(res.tempImagePath);
+          // console.log(res, 'takePhotoAction');
         },
       })
     }
@@ -277,7 +292,7 @@ Page({
     let item = e.currentTarget.dataset.item
     console.log(item, 'item');
     wx.navigateTo({
-      url: '../detail/detail',
+      url: '../detail/index/index',
     })
   },
   // 返回
@@ -285,5 +300,93 @@ Page({
     wx.reLaunch({
       url: '../home/home',
     })
-  }
+  },
+  // 创建一个上滑的动画 基于px单位
+  createAnimationPY(changeY, index) {
+    let imglist = this.data.imglist;
+    if (imglist.length != 0) {
+      let ani = wx.createAnimation({
+        delay: 0,
+        timingFunction: 'linear',
+        duration: 45
+      }).translateY(changeY).step().export()
+      // imglist[this.data.delIndex].aniMation = ani
+      imglist[index].aniMation = ani
+      this.setData({
+        imglist,
+        isAnimation: true
+      })
+    }
+  },
+  // //获取节点信息
+  // queryDel(e) {
+  //   let that = this
+  //   new Promise(resolve => {
+  //     let query = wx.createSelectorQuery().in(that);
+  //     query.select('#delBox').boundingClientRect();
+  //     query.exec(function (res) {
+  //       resolve(res);
+  //     });
+  //   }).then(res => {
+  //     const windowHeight = wx.getSystemInfoSync().windowHeight;
+  //     let heightArray = [],
+  //       topArray = [];
+  //     res.forEach(rect => {
+  //       console.log(rect, 'delBox');
+
+  //       // heightArray.push(Math.floor(rect.top));
+  //       // topArray.push(rect.height)
+  //     });
+  //     that.setData({
+  //       // scrollHeight: windowHeight,
+  //       // heightArray,
+  //       // topArray,
+  //     });
+  //   });
+  // },
+  //手指触摸动作开始 记录起点y坐标
+  touchstart(e) {
+    // console.log(e,'eeee');
+    let index = e.currentTarget.dataset.index
+    if (this.data.isAnimation) {
+      this.createAnimationPY(0, index)
+    }
+    this.setData({
+      delIndex: e.currentTarget.dataset.index,
+      Ystart: e.changedTouches[0].pageY
+    });
+  },
+  touchmove(e) {
+    let index = e.currentTarget.dataset.index
+    //  从下往上的移动距离 = 触摸初始位置y坐标 - 当前位置的y坐标
+    let move = this.data.Ystart - e.changedTouches[0].pageY;
+    // 当从下往上位移大于move的时候 调用方法创建动画
+    if (move > 0) {
+      this.createAnimationPY(-move, index)
+    } else {
+      // 当从下往上滑动的时候将让卡片复位
+      this.createAnimationPY(0, index)
+    }
+  },
+  touchend(e) {
+    let index = e.currentTarget.dataset.index
+    //  从下往上的移动距离 = 触摸初始位置y坐标 - 当前位置的y坐标
+    let move = this.data.Ystart - e.changedTouches[0].pageY;
+    console.log(move, 'end-move');
+    console.log(this.data.slideTop, 'this.data.slideTop');
+    // 当位移大于图片高度时候删除
+    if (move > this.data.slideTop) {
+      this.createAnimationPY(-move, index)
+      let imglist = this.data.imglist
+      imglist.splice(this.data.delIndex, 1);
+      console.log('删除第：' + this.data.delIndex + 1);
+      this.setData({
+        imglist: imglist
+      })
+      console.log(this.data.imglist, 'imglist');
+    } else {
+      // 复位
+      this.createAnimationPY(0, index)
+    }
+  },
 })

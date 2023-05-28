@@ -15,6 +15,7 @@
     "showShadowRootInWxmlPanel": true,
     "ignoreUploadUnusedFiles": false,
     "ignoreDevUnusedFiles": false,
+    "packNpmManually": false,
     "packNpmRelationList": [
       {
         "packageJsonPath": "./package.json",

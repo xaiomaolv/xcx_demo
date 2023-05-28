@@ -2,19 +2,20 @@
   "pages": [
     "pages/home/home",
     "pages/demo/demo",
-    "pages/detail/detail",
-    
-    "pages/downApp/downApp",
-    
-    
-    
     "pages/index/index",
     "pages/scan/scan",
-   
-    "pages/index/tab/tab",
     "pages/index/scroll_x_wine/scroll_x_wine",
     "pages/scan/scanResult/scanResult",
     "pages/scan/videoView/videoView"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/detail/",
+      "pages": [
+        "index/index",
+        "downApp/downApp"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",

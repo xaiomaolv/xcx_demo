@@ -41,7 +41,7 @@ Page({
     this.setData({
       imgInfo: JSON.parse(options.imgInfo)
     })
-    setTimeout(() => {
+    // setTimeout(() => {
       console.log("1");
       this.setData({
         identifying: 1
@@ -52,7 +52,7 @@ Page({
       //     identifying: 2
       //   })
       // }, 1000)
-    }, 5000)
+    // }, 5000)
 
   },
 
@@ -114,14 +114,14 @@ Page({
   // 关闭弹窗
   onClose() {
     console.log("dddddd");
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../../../pages/scan/scan',
     })
   },
   // 查看更多
   seeMore() {
-    wx.navigateTo({
-      url: '../../../pages/detail/detail',
+    wx.redirectTo({
+      url: '../../../pages/detail/index/index',
     })
   },
   init() {
