@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/demo/demo",
-    "pages/index/index",
+    "pages/home/home",
+    
     "pages/scan/scan",
-    "pages/index/scroll_x_wine/scroll_x_wine",
     "pages/scan/scanResult/scanResult",
     "pages/scan/videoView/videoView"
+    
   ],
   "subPackages": [
     {
@@ -24,13 +24,8 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
-    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
-    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index",
-    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
-    "van-slider": "/miniprogram_npm/@vant/weapp/slider/index",
-    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
-    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
+    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index"
   }
 }

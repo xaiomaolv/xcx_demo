@@ -102,7 +102,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("" + res);
+        // console.log("" + res);
         wx.showModal({
           title: '请求授权您的摄像头',
           content: '如需正常使用此小程序功能，请您按确定并在设置页面授权用户信息',

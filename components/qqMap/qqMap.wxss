@@ -1,0 +1,9 @@
+/* components/qqMap/qqMap.wxss */
+.map {
+  width: 100%;
+  height: 380rpx;
+}
+
+.map:first-child {
+  border-radius: 30rpx;
+}

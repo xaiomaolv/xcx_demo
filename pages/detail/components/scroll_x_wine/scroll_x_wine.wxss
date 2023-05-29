@@ -60,3 +60,6 @@
 .ft-se-14{
   font-size: 28rpx;
 }
+.ft-se-12{
+  font-size: 24rpx;
+}

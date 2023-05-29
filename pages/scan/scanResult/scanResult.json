@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index"
+  },
   "navigationBarTitleText": "拍照识别"
 }

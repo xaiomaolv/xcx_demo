@@ -123,14 +123,23 @@ button::after {
   background: white;
   top: 300rpx;
   position: absolute;
-  right: 100rpx;
+  right: 70rpx;
 }
 
 /* 拍照识别图片 */
-.takePhoto image {
-  margin-top: 120rpx;
-  width: 160rpx;
+.takePhoto{
+  margin-top: 80rpx;
+  width: 190rpx;
   height: 280rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid var(--border-color);
+  padding: 10rpx;
+  margin-left: 80rpx;
+}
+.takePhoto_img{
+  width: 190rpx;
+  height: 280rpx;
+  border-radius: 10rpx;
 }
 
 /* 参考价格 */
@@ -138,8 +147,8 @@ button::after {
   background-color: #F2F2F2;
   border-color: #F2F2F2;
   color: #979797;
-  padding: 20rpx;
-  margin-top: 70rpx;
+  padding: 10rpx;
+  margin-top: 45rpx;
   border-radius: 30rpx;
 }
 
@@ -258,7 +267,18 @@ button::after {
   -webkit-text-fill-color: #000;
   -webkit-opacity: 1;
 }
-
+/* 展开收缩 */
+.hiddenmore .more-item {
+  display: none;
+}
+ .map:first-child {
+    border-radius: 12px;
+}
+.showmore .more-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
 .bd-bt-flavour {
   width: 100%;
   border-bottom: 1rpx solid var(--border-color);
@@ -269,9 +289,9 @@ button::after {
 }
 
 .custom-button {
-  width: 120rpx;
+  width: 70rpx;
   color: #B81728;
-  font-size: 18rpx;
+  font-size: 20rpx;
   line-height: 20rpx;
   text-align: center;
   background-color: #B81728;
@@ -378,7 +398,7 @@ button::after {
   }
 } */
 .recommend-item {
-  height: 150rpx;
+  height: 140rpx;
   margin-right: 25rpx;
   border: 1rpx solid var(--border-color);
   /* 计算每个元素的宽度：20px是前三个元素的间距（margin-right）和，除以4即为每个元素的宽度 */

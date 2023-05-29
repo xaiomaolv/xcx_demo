@@ -125,6 +125,7 @@ Component({
           devicePixelRatio: dpr // new
         });
         // let data = [value, value, value, ];
+        
         let value = this.data.leftCount
         chart.setOption(setOption(value));
         // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问

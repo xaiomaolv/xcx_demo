@@ -26,6 +26,7 @@ Page({
     // customStyle:{
     //   width:560rpx,margin:auto;width:560rpx;margin:auto;
     // },
+    articleEdit: {}, //编者注
     title: [{
       name: "详情",
       opt: 'blurbCard',
@@ -105,7 +106,6 @@ Page({
       }
     ],
     // 口味特征
-
     flavourList: [{
         flavourValue: 70,
         left: '清淡',
@@ -282,32 +282,63 @@ Page({
     isStartRate: false,
     // 食物搭配
     foodList: [{
-      logo: '/img/mate/13.png',
-      name: '牛肉'
-    },
-    {
-      logo: '/img/mate/14.png',
-      name: '羊肉'
-    },
-    {
-      logo: '/img/mate/15.png',
-      name: '家禽'
-    },
-  ],
-  // 推荐场合
-  recommendList: [{
-    isC: '1', // 0不推荐 1推荐
-    name: '婚礼喜宴'
-  },
-  {
-    isC: '1', // 0不推荐 1推荐
-    name: '户外派对'
-  },
-  {
-    isC: '0', // 0不推荐 1推荐
-    name: '家庭聚会'
-  },
-],
+        logo: '/img/mate/13.png',
+        name: '牛肉'
+      },
+      {
+        logo: '/img/mate/14.png',
+        name: '羊肉'
+      },
+      {
+        logo: '/img/mate/15.png',
+        name: '家禽'
+      },
+    ],
+    // 醒酒时间
+    soberList: [{
+        flavourValue: 10,
+        left: '30分钟',
+        right: '500'
+      },
+      {
+        flavourValue: 10,
+        left: '40分钟',
+        right: '2000'
+      },
+      {
+        flavourValue: 10,
+        left: '1小时',
+        right: '50000'
+      },
+      {
+        flavourValue: 10,
+        left: '2小时',
+        right: '3000'
+      },
+    ],
+    // 推荐场合
+    recommendList: [{
+        isC: '1', // 0不推荐 1推荐
+        name: '婚礼喜宴'
+      },
+      {
+        isC: '1', // 0不推荐 1推荐
+        name: '户外派对'
+      },
+      {
+        isC: '0', // 0不推荐 1推荐
+        name: '家庭聚会'
+      },
+      {
+        isC: '0', // 0不推荐 1推荐
+        name: '家庭聚会'
+      },
+    ],
+    isShowBlurb: false, //展开收缩
+    locationMap: {
+      latitude: 44.7,
+      longitude: 8.03
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -333,6 +364,7 @@ Page({
     that.slideAnchor();
     that.rateCardHeight()
     // that.init()
+    that.editCard()
   },
 
   /**
@@ -371,7 +403,7 @@ Page({
   },
   // 返回
   handleBackClick(e) {
-    console.log(e,'返回');
+    console.log(e, '返回');
     wx.navigateTo({
       url: '/pages/scan/scan',
     })
@@ -386,7 +418,26 @@ Page({
     //   })
     // }
   },
-
+  editCard() {
+    app.getText('https://www.vvadd.com/wxml_demo/demo.txt?v=2', res => {
+      let obj = app.towxml(res.data, 'markdown', {
+        theme: 'light', //主题 dark 黑色，light白色，不填默认是light
+        base: "www.xxx.com",
+        events: { //为元素绑定的事件方法
+          tap: e => {
+            console.log('tap', e);
+          },
+          change: e => {
+            console.log('todo', e);
+          }
+        }
+      });
+      //更新解析数据
+      this.setData({
+        articleEdit: obj,
+      });
+    });
+  },
   // 简介按钮高亮切换
   handleClick(e) {
     this.setData({
@@ -565,9 +616,15 @@ Page({
     })
   },
   // 发布动态
-  toPost() {
+  toDownApp() {
     wx.navigateTo({
       url: '/pages/detail/downApp/downApp',
+    })
+  },
+  //展开收缩
+  listToggle: function () {
+    this.setData({
+      isShowBlurb: !this.data.isShowBlurb
     })
   },
 })
