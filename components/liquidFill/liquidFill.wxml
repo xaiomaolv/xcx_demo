@@ -2,30 +2,26 @@
 <view class="flex-row">
   <view class="flex-center">
     <view class="left-box">
-      <ec-canvas class="" id="charts_left" canvas-id="charts_left" ec="{{ ec_left }}" force-use-old-canvas="true"></ec-canvas>
+      <ec-canvas class="" id="charts_left" canvas-id="charts_left" ec="{{ ec_left }}" forceUseOldCanvas="true"></ec-canvas>
       <image src="/img/mate/scale.png" class="scale-img"></image>
-      <view class="count-box flex-center" style="background-image:url('/img/mate/Union.png');position: absolute;top: -20rpx;left: 84rpx;">
+      <view class="count-box flex-center" style="background-image:url({{union}});position: absolute;top: -20rpx;left: 84rpx;">
         <view class="">
           前
           <view class="count-text">
-            <WxCountUp :startVal="100" :endVal="200" :duration="1000" :suffix="'%'" :useEasing="false">{{leftCount}}%</WxCountUp>
+            <WxCountUp class="countUp" :startVal="100" :endVal="200" :duration="1000" :suffix="'%'" :useEasing="false">{{number}}%</WxCountUp>
           </view>
         </view>
       </view>
-      <view style="font-size: 24rpx;margin-top: 10rpx;">{{leftText}}</view>
     </view>
-    <view class="left-box" wx:if="{{right == true}}">
-      <ec-canvas class="" id="charts_right" canvas-id="charts_right" ec="{{ ec_right }}" force-use-old-canvas="true"></ec-canvas>
+    <view class="left-box">
+      <ec-canvas class="" id="charts_right" canvas-id="charts_right" ec="{{ ec_right }}" forceUseOldCanvas="true"></ec-canvas>
       <image src="/img/mate/scale.png" style="height: 100rpx;width: 30rpx;position: absolute; top: 20rpx;left: 56rpx;" class="scale-img"></image>
-      <view class="count-box flex-center" style="background-image:url('/img/mate/Union1.png');position: absolute;top: -20rpx;left: -45rpx;">
-        <view>
-          前
-          <view class="count-text">
-            <WxCountUp :startVal="100" :endVal="200" :duration="1000" :suffix="'%'" :useEasing="false">{{rightCount}}%</WxCountUp>
-          </view>
-        </view>
+      <image src="/img/mate/Union1.png" mode="" class="" style="position: absolute;top: -20rpx;left: -45rpx;width: 93rpx;height: 84rpx;" />
+
+      <view class="count-box1">
+        <view>前</view>
+        <WxCountUp class="countUp" :startVal="100" :endVal="200" :duration="1000" :suffix="'%'" :useEasing="false">{{number}}%</WxCountUp>
       </view>
-      <view style="font-size: 24rpx;margin-top: 10rpx;">{{rightText}}</view>
     </view>
   </view>
 </view>

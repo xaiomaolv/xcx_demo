@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "ec-canvas":"../../components/echarts/ec-canvas"
+    "ec-canvas":"../../components/echarts/ec-canvas",
+    "gav":"/components/gauage/gauage"
   }
 }

@@ -1,4 +1,10 @@
 /* components/liquidFill/liquidFill.wxss */
+#charts_left{
+  z-index: 1
+}
+#charts_right{
+  z-index: 1
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -25,6 +31,23 @@
   width: 93rpx;
   height: 84rpx;
   top: 0rpx;
+  left: 86rpx;
+  color: #FFFFFF;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 93rpx 84rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.count-box1 {
+  line-height: 30rpx;
+  position: absolute;
+  width: 93rpx;
+  height: 84rpx;
+  top: -12rpx;
+  left: -50rpx;
   color: #FFFFFF;
   font-size: 20rpx;
   text-align: center;
@@ -33,7 +56,10 @@
   flex-direction: column;
   justify-content: center;
 }
-
+.countUp{
+  font-size: 32rpx;
+  font-weight: 500;
+}
 .count-text {
   width: 100%;
   font-size: 24rpx;

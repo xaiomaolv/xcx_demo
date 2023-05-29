@@ -46,7 +46,7 @@ Component({
   },
 
   data: {
-    isUseNewCanvas: false
+    isUseNewCanvas: true
   },
 
   ready: function () {
@@ -79,32 +79,33 @@ Component({
   methods: {
     init: function (callback) {
       const version = wx.getSystemInfoSync().SDKVersion
+      console.log(version,'compareVersion');
+      const canUseNewCanvas = compareVersion(version, '2.9') >= 0;
+      console.log(canUseNewCanvas,'canUseNewCanvas');
+      // const forceUseOldCanvas = this.data.forceUseOldCanvas;
+      // const isUseNewCanvas = canUseNewCanvas && !forceUseOldCanvas;
+      // this.setData({ isUseNewCanvas });
 
-      const canUseNewCanvas = compareVersion(version, '2.9.0') >= 0;
-      const forceUseOldCanvas = this.data.forceUseOldCanvas;
-      const isUseNewCanvas = canUseNewCanvas && !forceUseOldCanvas;
-      this.setData({ isUseNewCanvas });
+      // if (forceUseOldCanvas && canUseNewCanvas) {
+      //   console.warn('开发者强制使用旧canvas,建议关闭');
+      // }
 
-      if (forceUseOldCanvas && canUseNewCanvas) {
-        console.warn('开发者强制使用旧canvas,建议关闭');
-      }
-
-      if (isUseNewCanvas) {
+      // if (isUseNewCanvas) {
         // console.log('微信基础库版本大于2.9.0，开始使用<canvas type="2d"/>');
         // 2.9.0 可以使用 <canvas type="2d"></canvas>
         this.initByNewWay(callback);
-      } else {
-        const isValid = compareVersion(version, '1.9.91') >= 0
-        if (!isValid) {
-          console.error('微信基础库版本过低，需大于等于 1.9.91。'
-            + '参见：https://github.com/ecomfe/echarts-for-weixin'
-            + '#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82');
-          return;
-        } else {
-          console.warn('建议将微信基础库调整大于等于2.9.0版本。升级后绘图将有更好性能');
-          this.initByOldWay(callback);
-        }
-      }
+      // } else {
+      //   const isValid = compareVersion(version, '1.9.91') >= 0
+      //   if (!isValid) {
+      //     console.error('微信基础库版本过低，需大于等于 1.9.91。'
+      //       + '参见：https://github.com/ecomfe/echarts-for-weixin'
+      //       + '#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82');
+      //     return;
+      //   } else {
+      //     console.warn('建议将微信基础库调整大于等于2.9.0版本。升级后绘图将有更好性能');
+      //     this.initByOldWay(callback);
+      //   }
+      // }
     },
 
     initByOldWay(callback) {
