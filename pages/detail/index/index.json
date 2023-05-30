@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "towxml":"/towxml/towxml",
-    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "starRate":"/components/starRate/starRate",
     "van-slider": "/miniprogram_npm/@vant/weapp/slider/index",
     "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",

@@ -108,7 +108,7 @@ button::after {
   background-color: white;
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
-  padding-top: 20rpx;
+  padding-top: 10rpx;
   padding-bottom: 20rpx;
 }
 
@@ -119,6 +119,19 @@ button::after {
   top: 100rpx;
   position: absolute;
   left: 80rpx;
+}
+.wine_img_no{
+  width: 360rpx;
+  height: 590rpx;
+  margin:-10rpx 40rpx 0 40rpx;
+  padding: 6rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid var(--border-color);
+}
+.wine_img_no_img{
+  width: 360rpx;
+  height: 590rpx;
+  border-radius: 20rpx;
 }
 
 /* 评分 */
@@ -168,12 +181,31 @@ button::after {
 }
 
 .van_btn {
-  border: 1rpx solid black !important;
-  margin-left: 30rpx;
-  font-weight: bold !important;
-  padding: 0 32rpx !important;
+    border: 1rpx solid black !important;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 40rpx;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    line-height: 2.55555556;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+    overflow: hidden;
+    padding-left: 28rpx;
+    padding-right: 28rpx;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26rpx;
+    line-height: 2.3;
+    font-weight: bold;
+    padding: 8rpx 32rpx;
 }
-
+.van_btn image{
+  width: 38rpx;
+  height: 38rpx;
+}
 .bds {
   border: 1rpx solid var(--border-color);
   margin-right: 25rpx;

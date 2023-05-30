@@ -1,0 +1,37 @@
+/* components/starRate/starRate.wxss */
+/* 评分 */
+.stars {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.star {
+  position: relative;
+  /* width: 30rpx;
+  height: 30rpx; */
+  margin-right: 8rpx;
+}
+/* 红色星星 */
+.star view.icon_red {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  /* height: 30rpx; */
+  overflow: hidden;
+}
+/* 灰色星星背景 */
+.star view.icon_grey {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* width: 30rpx;
+  height: 30rpx; */
+}
+
+.star view image {
+  /* width:30rpx;
+  height: 30rpx; */
+  display: block;
+}

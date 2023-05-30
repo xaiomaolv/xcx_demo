@@ -349,9 +349,9 @@
 }
 
 /**内置元素**/
-image,video {
+/* image,video {
     max-width: 100%;
-}
+} */
 
 
 video {

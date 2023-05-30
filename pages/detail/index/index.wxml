@@ -6,7 +6,7 @@
   <navTabs class="navtabs" list="{{title}}" active="{{activeIndex}}" customStyle="width:560rpx;margin:auto;" bind:change="jumpTo"></navTabs>
 </view>
 <scroll-view style="width:100%;height:100vh;margin-top: {{isHidden ? navBarHeight :0}}px;" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragend="endScroll">
-<!-- <scroll-view style="width:100%;height:100vh;padding-top: {{isHidden ? navBarHeight :0}}px;" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragend="endScroll"> -->
+  <!-- <scroll-view style="width:100%;height:100vh;padding-top: {{isHidden ? navBarHeight :0}}px;" enable-passive show-scrollbar="{{false}}" scroll-into-view="{{toView}}" scroll-y="{{isScroll}}" scroll-with-animation="true" enhanced="true" bindscroll="toScroll" binddragend="endScroll"> -->
   <view style="height: 1100rpx;background-color: #fff;">
     <view class="header">
       <image src="{{wineInfo.w_bg}}" class="header-bg" />
@@ -15,15 +15,19 @@
         </view>
       </view>
     </view>
-    <view class="flex-row" style="background: white;padding-bottom: 20rpx;">
+    <view class="flex-row" style="background: white;">
       <view class="flex-col-12">
-        <image class="wine_img" src="{{wineInfo.w_img}}" mode="" />
+        <!-- <image class="wine_img" src="{{wineInfo.w_img}}" mode="" /> -->
+        <view class="wine_img_no">
+          <image class="wine_img_no_img" src="https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg" mode="" />
+        </view>
       </view>
       <view class="flex-col-12 tx-ct">
         <!-- 评分 -->
         <view class="hot-rate" wx:for="{{wineInfo.rate}}" wx:key="index">
           <view class="ft-se-34">{{item.rate}}</view>
-          <van-rate value="3.5" void-color="#eee" color="#B81728" allow-half bind:change="onChange" size="16" />
+          <!-- <van-rate value="3.9" void-color="#eee" color="#B81728" allow-half bind:change="onChange" size="16" /> -->
+          <starRate remark_num="4.0" iconStyle="width:30rpx;height:30rpx"></starRate>
           <view class="ft-se-14 mg-tp-4">{{item.num}}条评分</view>
         </view>
         <!-- 识别照片 -->
@@ -49,7 +53,10 @@
   <view id="rateCard">
     <view class="rateCard">
       <view class="flex-row flex-col-24">
-        <van-button class="" size="" round custom-class="van_btn" icon="/img/mate/star.png">添加你的评分</van-button>
+        <view class="van_btn row">
+          <image src="/img/mate/star.png" mode="aspectFit" />
+          <view class="ft-se-14 mg-lt-5">添加你的评分</view>
+        </view>
         <image class="circle mg-lt-10" src="/img/mate/1.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit"></image>
         <image class="circle" src="/img/mate/2.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit" bindtap="toScan"></image>
         <image class="circle" src="/img/mate/3.png" style="width: 40rpx;height: 40rpx;" mode="aspectFit" bindtap="toDownApp"></image>
@@ -70,7 +77,7 @@
           <view class="">
             <view class="">{{item.year}}</view>
             <view class="">{{item.name}}</view>
-            <view class="ft-se-12 clr-999">{{item.num}}</view>
+            <view class="ft-se-10 clr-999">{{item.num}}</view>
           </view>
         </view>
         <view class="volume-item tx-ct flex-col" bindtap="toDownApp">

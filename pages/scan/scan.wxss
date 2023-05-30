@@ -33,30 +33,6 @@ page {
   margin-right: 20rpx;
 }
 
-/* 底部 */
-/* .camera_view {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-} */
-.camera_view {
-  /* height: 100%; */
-  /* width: 100%; */
-  /* position:absolute; */
-  /* position: relative; */
-  /* margin: 0 auto; */
-}
-
-.camera_bottom {
-  height: calc(100vh - 89vh);
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background-color: #B81728;
-  border: 1rpx solid #B81728;
-}
-
 .photolist {
   width: 30%;
   background: rgb(141, 138, 138);
@@ -83,24 +59,6 @@ page {
   display: flex;
   justify-content: row;
   align-items: center;
-}
-
-.takephoto {
-  width: 200rpx;
-  height: 200rpx;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 30rpx;
-}
-
-.takephoto1 {
-  display: inline;
-  float: right;
-  padding-top: 50rpx;
-  padding-right: 50rpx;
-  width: 92rpx;
-  height: 92rpx;
 }
 
 .center_btn {
@@ -166,98 +124,32 @@ page {
   left: 50rpx;
 }
 
-/* 识酒卡片 */
-
-/* Auto layout */
-/* display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-
-width: 87px;
-height: 160px; */
-
-/* 用户评分 */
-
-/* Auto layout */
-/* display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-isolation: isolate;
-
-width: 48px;
-height: 30px; */
-
-
-
-/* 评分 */
-
-/* Auto layout */
-/* display: flex;
-flex-direction: column;
-justify-content: flex-end;
-align-items: center;
-padding: 0px;
-
-width: 48px;
-height: 30px; */
-
-
-
-/* 4.5 */
-
-/* width: 24px;
-height: 24px;
-
-font-family: 'Source Han Sans CN';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center; */
-
-/* 评分和价格 */
-
-/* Auto layout */
-/* display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-
-display: none;
-width: 83px;
-height: 18px; */
-
-
-/* Inside auto layout */
-/* flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-z-index: 1; */
-
-
-/* 酒瓶 */
-
-/* width: 83px;
-height: 106px;
-
-background: url(截屏2022-08-30 11.31.10.png);
-border-radius: 8px; */
-
-/* ¥45852 */
-
-/* width: 42px;
-height: 18px;
-
-font-family: 'Source Han Sans CN';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 18px;
-text-align: center; */
+/* 底部 */
+.camera_bottom{
+  height: calc(100vh - 89vh);
+  width: 100%;
+  bottom: 0;
+  background-color: #B81728;
+  border: 1rpx solid #B81728;
+  width: 100%;
+  position:absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ .cancelphoto{
+  width: 90rpx;
+  height: 90rpx;
+ }
+ .takephoto{
+  width: 200rpx;
+  height: 200rpx;
+ }
+ .skipphoto{
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  width: 90rpx;
+  height: 90rpx;
+ }

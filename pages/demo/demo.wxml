@@ -25,3 +25,25 @@
   </view>
 </view>
 <!-- <gav></gav> -->
+<view class="stars">
+  <view class="star" wx:for="{{5}}" wx:key="index">
+    <!-- 整颗星星显示个数 -->
+    <view class="icon_red" wx:if="{{index < int}}" style="width: 100%;">
+      <image src="/img/home/star.png">
+      </image>
+    </view>
+    <!-- 非整颗星星显示个数 -->
+    <view class="icon_red" wx:if="{{index == int}}" style="width: {{percent}};">
+      <image src="/img/home/star.png">
+      </image>
+    </view>
+    <!-- 灰色星星背景 -->
+    <view class="icon_grey">
+      <image src="/img/home/star_no.png"></image>
+    </view>
+  </view>
+  <!-- 评分 -->
+  <view>{{remark_num}}</view>
+</view>
+<starRate remark_num="3.8"></starRate>
+

@@ -1,0 +1,21 @@
+<!--components/starRate/starRate.wxml-->
+<view class="stars">
+  <view class="star" wx:for="{{5}}" wx:key="index" style="{{iconStyle}}">
+    <!-- 整颗星星显示个数 -->
+    <view class="icon_red" wx:if="{{index < int}}" style="width: 100%;{{redStyle}}">
+      <image src="/img/home/star.png" style="{{iconStyle}}">
+      </image>
+    </view>
+    <!-- 非整颗星星显示个数 -->
+    <view class="icon_red" wx:if="{{index == int}}" style="width: {{percent}};{{redStyle}}">
+      <image src="/img/home/star.png" style="{{iconStyle}}">
+      </image>
+    </view>
+    <!-- 灰色星星背景 -->
+    <view class="icon_grey" style="{{iconStyle}}">
+      <image src="/img/home/star_no.png" style="{{iconStyle}}"></image>
+    </view>
+  </view>
+  <!-- 评分 -->
+  <!-- <view>{{remark_num}}</view> -->
+</view>

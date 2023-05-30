@@ -80,3 +80,38 @@
   text-align: center;
   margin-top: 8rpx;
 }
+
+/* 评分 */
+.stars {
+  display: flex;
+  margin: 200rpx 0;
+}
+.star {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+/* 红色星星 */
+.star view.icon_red {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 50rpx;
+  overflow: hidden;
+}
+/* 灰色星星背景 */
+.star view.icon_grey {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.star view image {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
