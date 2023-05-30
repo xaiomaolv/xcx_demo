@@ -44,6 +44,12 @@ button::after {
   border: none;
   display: none;
 }
+/*文本两端对齐*/
+.tx-jt {
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
+}
 .mg-5{
   margin: 10rpx;
 }

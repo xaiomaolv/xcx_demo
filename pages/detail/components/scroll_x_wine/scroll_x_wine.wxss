@@ -1,6 +1,6 @@
 /* pages/detail/components/scroll_x_wine/scroll_x_wine.wxss */
 .hot-card-bg {
-  background: wheat;
+  background: #9C720E;
   width: 100%;
   height: 300rpx;
   clip-path: ellipse(90% 60% at 35% 35%);

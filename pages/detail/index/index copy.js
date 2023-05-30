@@ -279,7 +279,6 @@ Page({
         num: 300
       },
     ],
-    // 评分组件开始
     isStartRate: false,
     // 食物搭配
     foodList: [{
@@ -345,11 +344,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let that = this
-    //获取锚点的节点信息
-    that.slideAnchor();
-    that.rateCardHeight()
-    this.judgeWater()
+
   },
 
   /**
@@ -366,8 +361,9 @@ Page({
     let that = this
     that.navTabs = that.selectComponent(".navtabs");
     that.showDownApp = that.selectComponent(".downApp");
+    that.slideAnchor();
+    that.rateCardHeight()
     // that.init()
-    // markdown
     that.editCard()
   },
 
@@ -407,6 +403,7 @@ Page({
   },
   // 返回
   handleBackClick(e) {
+    console.log(e, '返回');
     wx.navigateTo({
       url: '/pages/scan/scan',
     })
@@ -476,18 +473,15 @@ Page({
     }).then(res => {
       const windowHeight = wx.getSystemInfoSync().windowHeight;
       let heightArray = [],
-        bottomArray = [],
         topArray = [];
       res.forEach(rect => {
-        console.log(rect, 'rrrrr');
+        // console.log(rect, 'rrrrr');
         heightArray.push(Math.floor(rect.top));
-        bottomArray.push(Math.floor(rect.bottom));
         topArray.push(rect.height)
       });
       that.setData({
         scrollHeight: windowHeight,
         heightArray,
-        bottomArray,
         topArray,
         scrollLock: true,
         isScroll: true,
@@ -505,24 +499,6 @@ Page({
       })
     })
   },
-
-  // 判断评价水球开始滚动
-  judgeWater() {
-    // 监听页面是否滚动到myElement标签
-    let isStartRate
-    let observer = wx.createIntersectionObserver(this)
-    observer.relativeToViewport().observe('#evaluateCard', (res) => {
-      if (res.intersectionRatio > 0) {
-        isStartRate = true; //控制水球动画
-      } else {
-        isStartRate = false
-      }
-      this.setData({
-        isStartRate: isStartRate
-      })
-    })
-
-  },
   //点击锚点跳转
   jumpTo: function (e) {
     console.log(e, 'eeeeeeeee');
@@ -536,19 +512,22 @@ Page({
     } = that.data;
     let numHeight = 0;
     //计算当前锚点是否能根据tab的点击至顶部
-    console.log(topArray, 'topArray');
+    // console.log(topArray, 'topArray');
     for (var i = activeIndex; i < topArray.length; i++) {
       numHeight += topArray[i]
     }
-    // console.log(target,'target');
-    // console.log(isHidden,'isHidden');
+    console.log(target,'target');
+    console.log(isHidden,'isHidden');
     isHidden = target === 'blurbCard' ? false : isHidden;
+    console.log(isHidden,'11111');
     that.setData({
       toView: target,
       activeIndex,
       isHidden,
       scrollLock: numHeight >= scrollHeight ? true : false //如果界面出现锚点位置过低的情况防止tab的active回弹
     })
+    console.log(this.data.activeIndex,'activeIndex');
+    console.log(this.data.isHidden, 'isHiddenisHiddenisHiddenisHidden');
   },
 
   //scroll-view滚动监听事件
@@ -565,7 +544,6 @@ Page({
     // console.log(heightArray, 'heightArray');
     let isHidden = scrollTop >= heightArray[0] ? true : false; //控制tab显示与隐藏
     let isShowNav = scrollTop >= rateCardHeight ? true : false; //控制topnav显示与隐藏
-
     if (that.data.isShowNav != isShowNav) {
       that.setData({
         isShowNav
@@ -578,8 +556,9 @@ Page({
         activeIndex: 0,
       })
     }
+    console.log(that.data.activeIndex,'22222');
     //锚点高度足够时，滑动到相应的位置，tab的active发生相应的改变
-    // console.log(scrollLock,'scrollLock');
+    console.log(scrollLock,'scrollLock');
     if (scrollLock) {
       let len = heightArray.length;
       let lastIndex = len - 1;
@@ -591,7 +570,7 @@ Page({
           // console.log(i,1111);
           activeIndex = 0;
         } else if (scrollTop >= heightArray[i] && scrollTop < heightArray[i + 1]) {
-          // console.log(i,'iiiiii');
+          console.log(i,'iiiiii');
           activeIndex = i;
         } else if (scrollTop >= heightArray[lastIndex]) {
           activeIndex = lastIndex;
@@ -600,11 +579,12 @@ Page({
       that.setData({
         activeIndex
       })
+      console.log(that.data.activeIndex,'ccc');
     }
   },
   //停止滚动，防止锚点位置过低，界面滚动时无效的情况
   endScroll: function (e) {
-    console.log(e, 'end');
+    // console.log(e, 'eeeeee');
     this.setData({
       scrollLock: true
     });

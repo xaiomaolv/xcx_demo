@@ -2,7 +2,7 @@
 @import "/css/flex.wxss";
 @import "css/main.wxss";
 
-.container {
+/* .container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-}
+} */
 /* 顶部返回 */
 .head-back {
   padding: 0 20rpx;

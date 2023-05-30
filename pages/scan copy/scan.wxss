@@ -1,0 +1,263 @@
+/* pages/scan/scan.wxss */
+page {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: hidden;
+}
+#myCanvas {
+  width: 100vw;
+  height: 89vh;
+  position: absolute;
+  z-index: -999;
+  opacity: 0;
+}
+.scrolls {
+  white-space: nowrap;
+}
+
+.scrolls .scroll-box {
+  display: inline-block;
+}
+
+.card_item {
+  display: inline-block;
+  /* width: 162rpx; */
+  height: 10vh;
+  border-radius: 15rpx;
+  margin-right: 12rpx;
+  /* opacity: .5; */
+  position: relative;
+}
+
+.card_item:last-child {
+  margin-right: 20rpx;
+}
+
+/* 底部 */
+/* .camera_view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+} */
+.camera_view {
+  /* height: 100%; */
+  /* width: 100%; */
+  /* position:absolute; */
+  /* position: relative; */
+  /* margin: 0 auto; */
+}
+
+.camera_bottom {
+  height: calc(100vh - 89vh);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #B81728;
+  border: 1rpx solid #B81728;
+}
+
+.photolist {
+  width: 30%;
+  background: rgb(141, 138, 138);
+  margin: 80rpx 40rpx 40rpx 40rpx;
+  padding: 10rpx 10rpx 40rpx 10rpx;
+  border-radius: 15rpx;
+}
+
+.card_item {
+  display: inline-block;
+  /* width: 162rpx; */
+  /* height: 10vh; */
+  border-radius: 15rpx;
+  margin-right: 12rpx;
+  /* opacity: .5; */
+  position: relative;
+}
+
+.card_item:last-child {
+  margin-right: 20rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+
+.takephoto {
+  width: 200rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+
+.takephoto1 {
+  display: inline;
+  float: right;
+  padding-top: 50rpx;
+  padding-right: 50rpx;
+  width: 92rpx;
+  height: 92rpx;
+}
+
+.center_btn {
+  margin-bottom: 16rpx;
+  background: #B81728;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.center_btn::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 14rpx solid transparent;
+  border-right: 14rpx solid transparent;
+  border-top: 14rpx solid #B81728;
+  bottom: -10rpx;
+  left: 24rpx;
+}
+
+.center_rates {
+  margin-bottom: 16rpx;
+  background: #B81728;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  position: relative;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.center_rates::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 14rpx solid transparent;
+  border-right: 14rpx solid transparent;
+  border-top: 14rpx solid #B81728;
+  bottom: -10rpx;
+  left: 50rpx;
+}
+
+/* 识酒卡片 */
+
+/* Auto layout */
+/* display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 87px;
+height: 160px; */
+
+/* 用户评分 */
+
+/* Auto layout */
+/* display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+isolation: isolate;
+
+width: 48px;
+height: 30px; */
+
+
+
+/* 评分 */
+
+/* Auto layout */
+/* display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+padding: 0px;
+
+width: 48px;
+height: 30px; */
+
+
+
+/* 4.5 */
+
+/* width: 24px;
+height: 24px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center; */
+
+/* 评分和价格 */
+
+/* Auto layout */
+/* display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+display: none;
+width: 83px;
+height: 18px; */
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+z-index: 1; */
+
+
+/* 酒瓶 */
+
+/* width: 83px;
+height: 106px;
+
+background: url(截屏2022-08-30 11.31.10.png);
+border-radius: 8px; */
+
+/* ¥45852 */
+
+/* width: 42px;
+height: 18px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+text-align: center; */

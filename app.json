@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/demo/demo",
     "pages/home/home",
+    "pages/demo/demo",
+    
     
     "pages/scan/scan",
     "pages/scan/scanResult/scanResult",
