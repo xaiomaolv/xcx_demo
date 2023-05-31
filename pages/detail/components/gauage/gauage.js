@@ -1,5 +1,5 @@
 // components/gauage/gauage.js
-import * as echarts from "../echarts/echarts"
+import * as echarts from "../../../../components/echarts/echarts"
 function initChart(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,
@@ -31,6 +31,7 @@ function initChart(canvas, width, height, dpr) {
       },
       // 指针
       pointer: {
+        show:true,
         icon: 'image://data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAABaCAYAAAC1xQZWAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPbSURBVHgBrZi/TxRBFMff2+MQSIBVopCIYa8w4RITzgJjSEy0sLAwERsafxbY+xfIv2CLDWJlAyRIbIxio0YbC02uuzNqQgNBjBL02OHN3s0yOzuzsz/4NrezN/PZNzPvvm/2ACxarrnusue6tn6OrUP3n7LX3Vf2CoP8Usn1WZdn69dl64DIagDM1s0OIoQHKWSdGhLIYTho62eNiDTIHDZm62SNCGiNkEHx7QeGLl8nWy4lgtbOnqyJ656envwgnkPiuoVYyw2St54xlj8ilEBoyafUIOo4lhtEWx8OZsi83KAjm1pksfOCXo6PeGnuWUEtTQS+s+9mBgH6sUH7fqmWHcSc2CAHWZ6I4oOSFtwIou2e0NzzMoPo+a6GPpYdhJqns4wR8aLIDU3zlbFYakG8KIJBJoPTgmRDU2UyOC2oXRT1Mhmco++MxohMD8kckalYmrbfWFmpWGaIKCGDTcVSv0YJINN3MVCSeSX1iYFaKY4xOoOLT01jaKp0BhcHaQwtNkjjVZqImDUiZDhhBekMTRUVy+NWkNbQUjxMMzX7rlEuJa9RgqGpihlcBJRkaKpUg4uAkgxNlWpwEVCSfahSDc6JfompI1IdIndE6glO3X7rq4KQeoKLRpTyBUbXN7pGGUDMBEpjaKrkMSGolSEaIdngDqeWwtBUyQYXghDQg4ySDS4EsRxTY9E3AxFRdpBcdeXtT52MYURS1S0UkVx1j3aN8iSjkBgbgPIko5BIyvbUciSjkEjKNihFdTVJJGUnIpY7IrHgAQgLrJFISrH9mZMxjKiTlIUjEkkZgFgBkBiLPKH2kTWggEoMK06RZBTiSekUScYQRH/mOXmcURUv306WMm1S8D8cHsEa8fLdJf+RIlTuHwDvzgMYmpyCoQtTwb2d+hdoLD6BHyvPYyB+psQX1eE3dH1Z3Ow7fQYuLixBL33qtPvzO3y4dxP+0mcohM+xqSVBuHo7D+JRhxzKbkfO6tEbM4kQGVahqYdTozNl5BBRuT0LaXVickpu8oRk26I1UD0HaSU2QcihuJpQVHyxGeBb0d78+C712J3618MGg28UEa6I9tan9KDGs/nw2icG8ou16nCD7165fxAuLb2y7hzPpddXJ8N2YCMBEdhD/vn/9y94T8m2KyebBsL7HM4KHl+rbzRR3FitnlogJ7gr2qPTM1C5NRvu5Bat3yZNvbE4Tw/cCe7R4Oa/3b3z083t7RDEX2jKe8eWQfq5JIlDqIJc4dF02lGtjo/M0cH9kYWzTutyX0C0IC7u4y2EOQSfXvDaLy88Akredd93nl6vb6yrYw4AQSAq23e0av4AAAAASUVORK5CYII=',
         length: 40,
         width: 10,

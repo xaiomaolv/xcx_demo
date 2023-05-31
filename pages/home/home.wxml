@@ -5,12 +5,14 @@
     <view class="clr-FFF op7 mg-tp-10">—Vivino唯唯诺—</view>
     <view class="row mg-tp-20">
       <view class="btn_mini btn_w row" bindtap="toScan">
-        <van-icon name="/img/home/camera.png" size="16" />
+        <!-- <van-icon name="/img/home/camera.png" size="16" /> -->
+        <image src="/img/home/camera.png" mode="" class="camera_icon"/>
         <view class="ft-se-16 mg-lt-5">识别酒款</view>
       </view>
     </view>
     <view class="ft-se-12 op7 clr-FFF mg-tb-20" bindtap="seeAgreement">隐私政策</view>
   </view>
 </view>
+
 <!-- 隐私政策 -->
 <agreement class="agreement" bind:cancel='handCancel' bind:confirm="handConfirm"></agreement>

@@ -17,10 +17,10 @@
     </view>
     <view class="flex-row" style="background: white;">
       <view class="flex-col-12">
-        <!-- <image class="wine_img" src="{{wineInfo.w_img}}" mode="" /> -->
-        <view class="wine_img_no">
+        <image class="wine_img" src="{{wineInfo.w_img}}" mode="" />
+        <!-- <view class="wine_img_no">
           <image class="wine_img_no_img" src="https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg" mode="" />
-        </view>
+        </view> -->
       </view>
       <view class="flex-col-12 tx-ct">
         <!-- 评分 -->
@@ -87,17 +87,20 @@
       </view>
     </view>
     <!-- 编者注 -->
-    <view class="mg-tp-15 editCard">
+    <view class="mg-tp-15 editCard" wx:for="{{wineEditorNotes}}" wx:key="index">
       <view class="pd-tb-10 tx-ct">编者注</view>
       <view class="mg-10-15 tx-jt">
-        编者注编者注编者注编者注编者注编者注编者注编者注编者注
-        编者注编者注编者注编者注编者注编者注编者注编者注编者注
-        <!-- <towxml nodes="{{articleEdit}}"/> -->
+        <!-- 编者注编者注编者注编者注编者注编者注编者注编者注编者注
+        编者注编者注编者注编者注编者注编者注编者注编者注编者注 -->
+        <towxml class="" nodes="{{articleEdit}}"/>
+        <!-- <block wx:if="{{item.editorNoteText}}">
+          <rich-text nodes="{{item.editorNoteText}}"></rich-text>
+        </block> -->
       </view>
       <view class="tx-ct">
-        <image src="/img/mate/4.png" mode="aspectFit" style="height: 100rpx;width: 100rpx;border-radius: 50%;" />
-        <view class="ft-se-14"> vivino </view>
-        <view class="ft-se-14 clr-999"> 葡萄酒编辑 </view>
+        <image src="{{item.editorAvatar}}" mode="aspectFit" style="height: 100rpx;width: 100rpx;border-radius: 50%;" />
+        <view class="ft-se-14"> {{item.editorName}} </view>
+        <view class="ft-se-14 clr-999"> {{item.editorTitle}} </view>
       </view>
     </view>
   </view>
@@ -225,7 +228,6 @@
         <view class="ft-se-14">{{item.desc}}</view>
       </view>
     </view>
-
     <view class="tx-ct clr-pri mg-tp-20 pd-tp-10 bd-tp" bindtap="toDownApp">查看全部</view>
     <!-- 评酒视频 -->
     <view class="mg-10-15 pd-tp-10">
@@ -241,10 +243,15 @@
       <!--视频播放器-->
       <view class="mg-tp-10 evlVideo">
         <video class="evlVideo_s" id='myVideo' wx:for="{{videoList}}" wx:key="index" src='{{item.srcVideo}}'>
+          <view class="row evlVideo_text">
+            <image src="/img/mate/videoNum.png" class="nationFlag " mode="" />
+            <view class="mg-lt-5">856</view>
+          </view>
         </video>
       </view>
     </view>
   </view>
+
   <!-- 赏酒攻略 -->
   <view id="tasteCard">
     <view class="tasteCard">
@@ -262,8 +269,9 @@
       <view class="flex-row mg-20-15 ft-se-12">
         <view class="recommend-item tx-ct" wx:for="{{foodList}}" wx:key="index" wx:if="{{index <= 2}}">
           <view class="">
-            <view class="recommendLogo">
-              <image src="/img/mate/logo.png" style="width: 14rpx;height: 18rpx;margin-top: -3rpx;" />推荐
+            <view class="foodLogo">
+              <image src="/img/mate/logo.png" style="width: 10rpx;height: 18rpx;margin-top: -3rpx;" />
+              <text style="margin-left: 4rpx;">推荐</text>
             </view>
             <image src="{{item.logo}}" mode="" style="width: 50rpx;height: 50rpx;" />
             <view class="">{{item.name}}</view>
@@ -308,10 +316,11 @@
         <view class="recommend-item tx-ct" wx:for="{{recommendList}}" wx:key="index" wx:if="{{index <= 2}}">
           <view class="">
             <view class="recommendLogo" wx:if="{{item.isC === '1'}}">
-              <image src="/img/mate/logo.png" style="width: 12rpx;height: 20rpx;margin-top: -4rpx;" />推荐
+              <image src="/img/mate/logo.png" style="width: 10rpx;height: 18rpx;margin-top: -4rpx;" />
+              <text style="margin-left: 4rpx;">推荐</text>
             </view>
             <view class="mg-5">{{item.name}}</view>
-            <view class="mg-5 ft-se-10 clr-999">1288人喜欢</view>
+            <view class="mg-5 ft-se-10 clr-999">1288人推荐</view>
           </view>
         </view>
         <view class="recommend-item tx-ct flex-col" wx:if="{{recommendList.length>3}}">
@@ -329,14 +338,15 @@
     <view class="wineryCard mg-bt-20">
       <view class="ft-bd mg-10-15 pd-tb-10 tx-ct">酒庄</view>
       <view bindtap="toDownApp">
-        <view class="ft-bd tx-ct">la wine</view>
-        <view class="flex-row ">
-          <view class="flex-col-8 tx-rt ft-se-18">4.5</view>
-          <view class="flex-col-6 mg-lt-10 ft-se-12">
-            <van-rate readonly allow-half void-color="#eee" color="#B81728" value="3" size="7" bind:change="onChange" />
-            <view class="ft-se-12 clr-999">21211条评论</view>
+        <view class="ft-bd tx-ct">la wine ror</view>
+        <view class="flex-row-center">
+          <view class="ft-se-18 ft-bd mg-rt-5">4.5</view>
+          <view class="ft-se-12">
+            <!-- <van-rate readonly allow-half void-color="#eee" color="#B81728" value="3" size="7" bind:change="onChange" /> -->
+            <starRate remark_num="4.6" iconStyle="width:20rpx;height:20rpx"></starRate>
+            <view class="ft-se-12 clr-999 flex-row-center">21211条评论</view>
           </view>
-          <view class="clr-999 ft-se-14 flex-col-8 tx-lt">36款酒</view>
+          <view class="clr-999 ft-se-14 mg-lt-10">36款酒</view>
         </view>
         <view class="row mg-bt-20">
           <view class="btn_mini flag_btn row">
@@ -358,17 +368,17 @@
     </view>
   </view>
   <!-- 你可能还喜欢 -->
-  <view id="likeCard" class="likeCard mg-bt-20">
-    <view class="ft-bd mg-10-15 pd-tp-20 tx-ct">你可能还喜欢</view>
+  <view id="likeCard" class="likeCard">
+    <view class="ft-bd mg-10-15 pd-tb-20 tx-ct">你可能还喜欢</view>
     <view class="gridLike">
       <view class="itemLike" wx:for="{{wineLists}}" wx:key="index">
         <image src="{{item.w_img}}" mode="" style="height: 460rpx; width: 140rpx;" />
         <view class="clr-999 mg-10-15">{{item.num}}</view>
         <view class="two_ellipsis mg-0-15 li-hg-24">{{item.w_name}}</view>
-        <view class="tx-ct flex-row-center">
-          <view class="ft-se-18">{{item.rate}}</view>
+        <view class="tx-ct flex-row-center mg-tp-5">
+          <view class="ft-se-18 mg-rt-5">{{item.rate}}</view>
           <view class="flex-col">
-            <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3" size="8" />
+            <starRate remark_num="{{item.rate}}" iconStyle="width:20rpx;height:20rpx"></starRate>
             <view class="ft-se-12 clr-999">{{item.num}}<text class="mg-lt-5">条评价</text></view>
           </view>
         </view>

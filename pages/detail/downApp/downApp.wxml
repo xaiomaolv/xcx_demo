@@ -1,6 +1,6 @@
 <!--pages/downApp/downApp.wxml-->
 <view class="mg-20-30 clr-FFF">
-  <view class="tx-ct clr-FFF">一个拥有全球酒友真实评分的识酒APP</view>
+  <view class="tx-ct clr-FFF ft-se-16">一个拥有全球酒友真实评分的识酒APP</view>
   <view class="mg-tp-20 flex-space">
     <view class="ft-se-28"> 近6000万 </view>
     <view class="ft-se-28"> 2亿3200万 </view>

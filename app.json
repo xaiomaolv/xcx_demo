@@ -27,6 +27,5 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "van-rate": "/miniprogram_npm/@vant/weapp/rate/index"
   }
 }

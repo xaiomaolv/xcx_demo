@@ -5,9 +5,13 @@
     <scroll-view scroll-x class="scroll_w" style="margin-top: -180rpx;">
       <view wx:for="{{wineLists}}" wx:key="index" class="scroll-box">
         <view class="hot-rate tx-ct">
-          <view class="ft-se-20">{{item.rate}}</view>
-          <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3" size="12" bind:change="onChange" />
+        <view class="retatop">
+          <view class="ft-se-20 ft-bd">{{item.rate}}</view>
+          <!-- <van-rate allow-half readonly void-color="#eee" color="#B81728" value="3" size="12" bind:change="onChange" /> -->
+          <starRate remark_num="4.6" iconStyle="width:25rpx;height:25rpx"></starRate>
           <view class="ft-se-12">{{item.num}}条评分</view>
+        </view>
+          
         </view>
         <image class="" src="{{item.w_img}}" mode="aspectFit" />
         <view class="tx-ct mg-tp-10">

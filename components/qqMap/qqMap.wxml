@@ -1,5 +1,5 @@
 <!--components/qqMap/qqMap.wxml-->
 <!--地图容器-->
 <!--longitude及latitude为设置为调转到指定坐标位置，默认不显示-->
-<map id="myMap" markers="{{markers}}" longitude="{{poi.longitude}}" latitude="{{poi.latitude}}" scale='10' show-location enable-zoom="false" enable-scroll="false" class="map">
+<map id="myMap" markers="{{markers}}" longitude="{{poi.longitude}}" latitude="{{poi.latitude}}" scale='10' show-location enable-zoom="{{false}}" enable-scroll="{{false}}" class="map">
 </map>

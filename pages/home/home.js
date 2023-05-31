@@ -1,3 +1,4 @@
+const lottie = require('../../utils/lottie');
 Page({
 
   /**
@@ -48,7 +49,8 @@ Page({
     this.setData({
       randomImage: this.data.imglist[randomIndex]
     });
-    console.log(this.data.randomImage,'randomIndex');
+    // console.log(this.data.randomImage,'randomIndex');
+    // lottie.jsonAnimation('#lottie_demo',)
   },
 
   /**

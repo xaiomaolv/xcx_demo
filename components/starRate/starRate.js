@@ -38,8 +38,6 @@ Component({
       var int = Math.floor(_this.data.remark_num); // 向下取整-得到整颗星的个数
       var percents = (_this.data.remark_num - int) * 100; // 非整颗星的百分比
       let percent = percents + '%'
-      console.log(int, 'int');
-      console.log(percent + '%', 'percent');
       _this.setData({
         int: int,
         percent: percent,

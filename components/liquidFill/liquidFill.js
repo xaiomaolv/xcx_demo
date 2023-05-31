@@ -115,7 +115,7 @@ Component({
   methods: {
     initCharts: function (num) {
       this.ecComponent.init((canvas, width, height, dpr) => {
-        console.log(canvas, width, height);
+        // console.log(canvas, width, height);
         // 获取组件的 canvas、width、height 后的回调函数
         // 在这里初始化图表
         const chart = echarts.init(canvas, null, {
@@ -136,7 +136,7 @@ Component({
     },
     initChartRight: function (num) {
       this.ecComponents.init((canvas, width, height, dpr) => {
-        console.log(canvas, width, height);
+        // console.log(canvas, width, height);
         // 获取组件的 canvas、width、height 后的回调函数
         // 在这里初始化图表
         const chart = echarts.init(canvas, null, {

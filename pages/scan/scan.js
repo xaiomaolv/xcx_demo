@@ -196,10 +196,7 @@ Page({
     wx.createSelectorQuery()
       .select("#cover_image")
       .boundingClientRect((rect) => {
-        this.ctx_A.drawImage(
-          imgSrc,
-          0,
-          0,
+        this.ctx_A.drawImage( imgSrc, 0, 0,
           wx.getSystemInfoSync().windowWidth,
           wx.getSystemInfoSync().windowHeight * 0.75
         );
@@ -221,7 +218,7 @@ Page({
               }
               // console.log(res,'ressssss');
               wx.navigateTo({
-                url: '../../pages/scan/scanResult/scanResult'
+                url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
               })
             },
           });

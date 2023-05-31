@@ -93,7 +93,7 @@ Component({
       statusBarHeight,
       navBarHeight
     } = app.globalData
-    console.log(app.globalData)
+    // console.log(app.globalData)
     this.setData({
       statusBarHeight,
       navBarHeight,

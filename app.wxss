@@ -58,3 +58,28 @@
   width: 100rpx;
   border-radius: 50%;
 }
+
+/* 右边三角形 */
+.triangle-right{
+	width: 0;
+	height: 0;
+	border-top: 80px solid #A8C992;
+	border-left: 80px solid transparent;
+	border-bottom:80px solid transparent;
+	/* margin-right: 20px;
+	margin-bottom: 10px; */
+	position: relative;
+}
+	
+.triangle-right::after{
+	content: "";
+	position:absolute;
+	top: -79px;
+	left: -78px;
+	width: 0;
+	height: 0;
+	border-top: 78px solid #fff;
+	border-left: 78px solid transparent;
+	border-bottom:78px solid transparent;
+}
+

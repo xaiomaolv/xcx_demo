@@ -1,7 +1,6 @@
 {
   "usingComponents": {
-    "agreement":"/components/agreement/agreement",
-    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index"
+    "agreement":"/components/agreement/agreement"
   },
   "navigationBarTitleText": "Vivino唯唯诺",
   "navigationBarBackgroundColor": "#B81728",

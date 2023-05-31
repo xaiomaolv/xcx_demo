@@ -79,9 +79,9 @@ Component({
   methods: {
     init: function (callback) {
       const version = wx.getSystemInfoSync().SDKVersion
-      console.log(version,'compareVersion');
+      // console.log(version,'compareVersion');
       const canUseNewCanvas = compareVersion(version, '2.9') >= 0;
-      console.log(canUseNewCanvas,'canUseNewCanvas');
+      // console.log(canUseNewCanvas,'canUseNewCanvas');
       // const forceUseOldCanvas = this.data.forceUseOldCanvas;
       // const isUseNewCanvas = canUseNewCanvas && !forceUseOldCanvas;
       // this.setData({ isUseNewCanvas });

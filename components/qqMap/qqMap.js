@@ -28,9 +28,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    dd(){
-      console.log(this.data.location,'location');
-    }
 
   },
   lifetimes: {
@@ -40,11 +37,11 @@ Component({
     //在组件在视图层布局完成后执行
     ready: function () {
       var _this = this;
-      console.log(_this.data.location,'_this.data.location');
       qqmapsdk.reverseGeocoder({
         location: _this.data.location, //获取表单传入的位置坐标,不填默认当前位置,示例为string格式
+        //get_poi: 1, //是否返回周边POI列表：1.返回；0不返回(默认),非必须参数
         success: function (res) { //成功后的回调
-          console.log(res);
+          // console.log(res);
           var res = res.result;
           var mks = [];
           mks.push({ // 获取返回结果，放到mks数组中
@@ -73,7 +70,7 @@ Component({
           console.error(error);
         },
         complete: function (res) {
-          console.log(res);
+          // console.log(res);
         }
       })
     }
