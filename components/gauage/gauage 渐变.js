@@ -1,5 +1,5 @@
 // components/gauage/gauage.js
-import * as echarts from "../../../../components/echarts/echarts"
+// import * as echarts from "../../../../components/echarts/echarts"
 /** echarts渐变色 */
 const color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
     offset: 0,

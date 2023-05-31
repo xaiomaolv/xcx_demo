@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "ec-canvas":"../../components/echarts/ec-canvas",
-    "starRate":"/components/starRate/starRate"
+    "starRate":"/components/starRate/starRate",
+    "gav":"/components/gauage/gauage"
   }
 }
