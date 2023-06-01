@@ -1,7 +1,7 @@
 // components/liquidFill/liquidFill.js
 import * as echarts from "../echarts/echarts"
 import * as liquidFill from '../echarts/echarts-liquidfill.min';
-import WxCountUp from '../../plugins/wx-countup/WxCountUp.js'
+import WxCountUp from '../../../../plugins/wx-countup/WxCountUp'
 
 function setOption(num) {
   const color = '#B81728'
@@ -176,7 +176,7 @@ Component({
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行
-      this.chart.clear(); //清空ECharts
+      // this.chart.clear(); //清空ECharts
     },
   }
 })

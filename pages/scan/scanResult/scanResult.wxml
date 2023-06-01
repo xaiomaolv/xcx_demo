@@ -1,5 +1,5 @@
 <!--pages/scan/scanResult/scanResult.wxml-->
-<van-popup show="{{ showResult }}" closeable round close-icon="close" position="bottom" overlay-style="background-image:url('{{wineInfo.w_img}}') ;background-repeat: no-repeat;height: 100%;width: 100%;background-position: center;background-position: center;filter: blur(8px);" bind:close="onClose">
+<van-popup show="{{ showResult }}" closeable round close-icon="close" position="bottom" overlay-style="background-image:url('{{imgInfo.tempFilePaths ? imgInfo.tempFilePaths : wineInfo.w_img}}') ;background-repeat: no-repeat;height: 100%;width: 100%;background-position: center;background-position: center;filter: blur(8px);" bind:close="onClose">
   <!-- 正在识别 -->
   <view wx:if="{{identifying == 0}}" style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
     <canvas style="height:680rpx ;width:520rpx;display: flex;flex-direction: row;justify-content: center;align-items: center;" id="lottie_demo" type="2d">

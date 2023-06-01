@@ -89,18 +89,19 @@
     <!-- 编者注 -->
     <view class="mg-tp-15 editCard" wx:for="{{wineEditorNotes}}" wx:key="index">
       <view class="pd-tb-10 tx-ct">编者注</view>
-      <view class="mg-10-15 tx-jt">
-        <!-- 编者注编者注编者注编者注编者注编者注编者注编者注编者注
-        编者注编者注编者注编者注编者注编者注编者注编者注编者注 -->
-        <towxml class="" nodes="{{articleEdit}}"/>
-        <!-- <block wx:if="{{item.editorNoteText}}">
-          <rich-text nodes="{{item.editorNoteText}}"></rich-text>
-        </block> -->
+      <view class="mg-10-15">
+        <view class="content-wrap">
+          <view class="content {{ isFold ? isOpen ? '' : 'fold' : ''}}">
+            <towxml class="" nodes="{{articleEdit}}" />
+          </view>
+          <view wx:if="{{isFold}}" class="more" bindtap="open">{{ isOpen ? '收起' : '展开阅读'}}</view>
+        </view>
+
       </view>
       <view class="tx-ct">
         <image src="{{item.editorAvatar}}" mode="aspectFit" style="height: 100rpx;width: 100rpx;border-radius: 50%;" />
-        <view class="ft-se-14"> {{item.editorName}} </view>
-        <view class="ft-se-14 clr-999"> {{item.editorTitle}} </view>
+        <view class="ft-se-12 mg-tp-5"> {{item.editorName}} </view>
+        <view class="ft-se-12 clr-999"> {{item.editorTitle}} </view>
       </view>
     </view>
   </view>
@@ -372,7 +373,9 @@
     <view class="ft-bd mg-10-15 pd-tb-20 tx-ct">你可能还喜欢</view>
     <view class="gridLike">
       <view class="itemLike" wx:for="{{wineLists}}" wx:key="index">
-        <image src="{{item.w_img}}" mode="" style="height: 460rpx; width: 140rpx;" />
+      <view style="height: 460rpx; width: 350rpx;">
+        <image src="{{item.w_img}}" mode="aspectFit" style="width: 100%;height: 100%;"/>
+      </view>
         <view class="clr-999 mg-10-15">{{item.num}}</view>
         <view class="two_ellipsis mg-0-15 li-hg-24">{{item.w_name}}</view>
         <view class="tx-ct flex-row-center mg-tp-5">

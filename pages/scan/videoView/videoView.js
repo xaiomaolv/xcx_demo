@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    srcVideo:'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+    srcVideo:'https://api.vivino.cc/app-api/appapi/general/api/getScanStudyVideo',
     // 导航栏高度
     navHeight: app.globalData.navHeight,
     // 导航栏距离顶部距离

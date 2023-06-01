@@ -1,5 +1,5 @@
 // components/gauage/gauage.js
-import * as echarts from "../../../../components/echarts/echarts"
+import * as echarts from "../echarts/echarts"
 function initChart(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,

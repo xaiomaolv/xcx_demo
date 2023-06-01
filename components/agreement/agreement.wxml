@@ -5,7 +5,518 @@
     <scroll-view scroll-y class='main-content'>
       <view class="pd-15">
         <text class="centent tx-jt">
-          隐私政策
+          <text style="font-size: 32px;font-weight: 400;line-height: 50px">引言\n</text>
+          <text>更新时间：2023年05月08日</text>
+          <text style="text-indent: 2em">
+            欢迎您使用我们的产品和服务！我们深知个人信息对您的重要性，您的信赖对我们非常重要，我们将严格遵守法律法规要求采取相应的安全保护措施，致力于保护您的个人信息安全可控。基于此，唯唯诺文化发展（深圳）有限公司（或简称“我们”）制定本《唯唯诺隐私政策》（下称“本政策”/“本隐私政策”），帮助您充分了解在您使用我们产品和服务的过程中，我们会如何收集、使用、共享、存储和保护您的个人信息以及您可以如何管理您的个人信息，以便您更好地作出适当的选择。
+            在您开始使用我们的产品和服务前，请您务必先仔细阅读和理解本政策，特别应重点阅读我们以粗体/粗体下划线标识的条款，确保您充分理解和同意之后再开始使用。本政策中涉及的专业词汇，我们尽量以简明通俗的表述向您解释，以便于您理解。如对本政策内容有任何疑问、意见或建议，您可通过本政策文末的联系方式与我们联系。
+          </text>
+          <text style="text-indent: 2em">
+            您同意隐私政策表示您已了解应用提供的功能，以及功能运行所需的必要个人信息，并给予相应的收集使用授权，但并不代表您已单独同意开启附加功能、处理非必要个人信息，相关附加功能的开启、处理非必要个人信息以及处理敏感个人信息，我们会根据您的实际使用情况单独征求您的同意。
+            唯唯诺严格遵守法律法规，遵循以下隐私保护原则，为您提供更加安全、可靠的服务：
+          </text>
+          <text style="text-indent: 2em">1、安全可靠：</text>
+          <text style="text-indent: 2em">
+            我们竭尽全力通过合理有效的信息安全技术及管理流程，防止您的信息泄露、损毁、丢失。
+          </text>
+          <text style="text-indent: 2em">2、自主选择：</text>
+          <text style="text-indent: 2em">
+            我们为您提供便利的信息管理选项，以便您做出合适的选择，管理您的个人信息。
+          </text>
+          <text style="text-indent: 2em">3、保护通信秘密：</text>
+          <text style="text-indent: 2em">
+            我们严格遵照法律法规，保护您的通信秘密，为您提供安全的通信服务。
+          </text>
+          <text style="text-indent: 2em">4、合理必要：</text>
+          <text style="text-indent: 2em">
+            为了向您和其他用户提供更好的服务，我们仅收集必要的信息。
+          </text>
+          <text style="text-indent: 2em">5、清晰透明：</text>
+          <text style="text-indent: 2em">
+            我们努力使用简明易懂的表述，向您介绍隐私政策，以便您清晰地了解我们的信息处理方式。
+          </text>
+          <text style="text-indent: 2em">6、将隐私保护融入产品设计：</text>
+          <text style="text-indent: 2em">
+            我们在产品或服务开发的各个环节，综合法律、产品、设计等多方因素，融入隐私保护的理念。
+          </text>
+          <text style="text-indent: 2em;">本《隐私政策》主要向您说明：</text>
+          <text style="text-indent: 2em">1、我们收集哪些信息</text>
+          <text style="text-indent: 2em">2、我们收集信息的用途</text>
+          <text style="text-indent: 2em">3、您所享有的权利</text>
+          <text style="text-indent: 2em">4、我们分享的信息</text>
+          <text style="text-indent: 2em">5、我们可能向您发送的信息</text>
+          <text style="text-indent: 2em">6、存储信息的地点和期限</text>
+          <text style="text-indent: 2em">7、信息安全</text>
+          <text style="text-indent: 2em">8、未成年人保护</text>
+          <text style="text-indent: 2em">9、自启动和关联启动说明</text>
+          <text style="text-indent: 2em">10、我们如何更新隐私政策</text>
+          <text style="text-indent: 2em">11、适用范围</text>
+          <text style="text-indent: 2em">12、联系方式</text>
+          <text style="text-indent: 2em">附录</text>
+          <text style="text-indent: 2em">
+            希望您仔细阅读本政策，详细了解我们对信息的收集、使用方式，以便您更好地了解我们的服务并作出适当的选择。
+          </text>
+          <text style="text-indent: 2em">
+            若您使用唯唯诺服务，即表示您认同我们在本政策中所述内容。如您有问题，请联系我们。
+          </text>
+          <text class="title-text">我们收集的信息</text>
+          <text style="text-indent: 2em">
+            我们根据合法、正当、必要的原则，仅收集实现产品功能所必要的信息，包括：
+          </text>
+          <text style="text-indent: 2em">
+            •账号信息：您的ID和相关账号详细信息，包括注册唯唯诺账户时所填写的昵称、上传的头像、手机号码、电子邮件地址、注册的设备、账号状态和已使用时间。
+          </text>
+          <text style="text-indent: 2em">
+            •设备信息：您的设备及软件相关信息，例如您的设备品牌及型号、设备软件版本信息、设备识别码（IMEI/MAC地址/Android
+            ID）。
+          </text>
+          <text style="text-indent: 2em">
+            •联系信息：姓名、电子邮件地址、实际地址、电话号码、我的二维码或其他联系信息等数据。
+          </text>
+          <text style="text-indent: 2em">
+            •防欺诈信息：用于帮助识别和防止欺诈的数据。
+          </text>
+          <text style="text-indent: 2em">
+            •使用数据：有关你在产品上的活动和产品使用的数据，例如服务内的 app
+            启动数据，包括浏览历史记录、搜索历史记录、产品交互、崩溃数据、性能和其他诊断数据以及其他使用数据。
+          </text>
+          <text style="text-indent: 2em">
+            •位置信息：关于您在app中IP属地的信息。
+          </text>
+          <text style="text-indent: 2em">
+            •您提供给我们的其他信息：例如您对唯唯诺的提供的意见反馈相关内容。
+          </text>
+          <text class="title-text">我们在您使用服务时获取的信息</text>
+          <text style="text-indent: 2em">
+            日志信息。当您使用我们的服务时，我们可能会自动收集相关信息并存储为服务日志信息。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">1)、相机权限</text>
+          <text style="text-indent: 2em">
+            使用目的：经您单独同意本授权，我们会收集您的相机信息，以便为您提供扫码、动态发布、上传稿件、拍摄视频、等功能。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们仅在您使用对应功能时收集相应信息，不同的系统显示的名称可能有所差异，如相机、摄像头等。
+          </text>
+          <text style="text-indent: 2em">
+            如您关闭相机授权，您将可能无法使用对应功能，但不会影响您使用基本服务。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">2)、相册权限</text>
+          <text style="text-indent: 2em">
+            使用目的：经您单独同意本授权，我们会收集您的相册信息，以便为您提供动态发布、上传稿件、拍摄视频、音视频缓存和截图、视频等功能。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们仅在您使用对应功能时收集相应信息，不同的系统显示的名称可能有所差异，如相册、存储权限等。
+          </text>
+          <text style="text-indent: 2em">
+            如您关闭相册授权，您将可能无法使用对应功能，但不会影响您使用基本服务。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">3)、麦克风权限</text>
+          <text style="text-indent: 2em">
+            使用目的：经您单独同意本授权，我们会收集您的录音信息，以便为您提供拍摄视频以及捷径等语音交互功能。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们仅在您使用对应功能时收集相应信息，不同的系统显示的名称可能有所差异，如麦克风、录音权限等。
+          </text>
+          <text style="text-indent: 2em">
+            如您关闭麦克风授权，您将可能无法使用对应功能，但不会影响您使用基本服务。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">4)、设备信息</text>
+          <text style="text-indent: 2em">
+            使用目的：在您访问或使用我们服务（包括基本服务）的过程中，我们会收集您的设备信息，以便为您提供视频展示和播放（基本服务）、搜索（基本服务）、定向推荐、投屏以及保障您的账号安全、交易安全和系统运行安全（基本服务）等服务。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们收集的设备状态包括您的设备型号、设备名称、唯一设备识别码（IMEI/IDFA/IMSI）、设备MAC地址、设备IP地址、软件列表、操作系统等。未经您的授权，我们不会提前获取以上信息。目前多数手机终端厂商支持对设备识别码的更改，以保障您对个人信息的自主控制，具体撤回或更改的方式可参见您所使用的终端设备说明。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">5)、位置权限</text>
+          <text style="text-indent: 2em">
+            使用目的：经您单独同意本授权，我们会访问您的位置信息，以便为您展示所处位置的相关功能。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们仅在您使用对应功能时收集相应信息，不同的系统显示的名称可能有所差异，如定位、地理位置等。
+          </text>
+          <text style="text-indent: 2em">
+            如您关闭位置授权，您将可能无法使用对应功能，但不会影响您使用基本服务。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">6)、基于读取/写入外置存储器的扩展功能</text>
+          <text style="text-indent: 2em">
+            使用目的：在您开启我可读取/写入您的设备存储的权限后，我们使用的百度SDK将在网络异常时向拓展卡写入和读取定位数据，向您提供离线定位功能。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">7)、陀螺仪、陀螺传感器</text>
+          <text style="text-indent: 2em">
+            使用目的：我们会根据您的操作使用陀螺仪传感器确定设备水平/竖直持握状态，使用不同布局展示相关内容提升用户体验。
+          </text>
+          <text style="text-indent: 2em">
+            信息说明：我们仅在可横屏播放视频页面获取陀螺传感器数据。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">8)、方向传感器</text>
+          <text style="text-indent: 2em">
+            使用目的：在您使用App时，会获取方向传感器、陀螺仪设备传感器信息，用于鉴别您是否为真实用户。在您使用录像照相相关功能时，会获取加速度设备传感器信息，用于获取拍摄手机角度。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">9)、光线传感器</text>
+          <text style="text-indent: 2em">
+            使用目的：在您使用摄像头进行识酒操作时，会使用光线传感器获取当前光线强度，用于控制闪光灯按钮的显示。
+          </text>
+          <text class="title-text">从第三方合作伙伴获取的信息</text>
+          <text style="text-indent: 2em">
+            我们可能会获得您在使用第三方合作伙伴服务时所产生或分享的信息。例如，您使用微信分享第三方合作伙伴服务时，我们会获得您登录第三方合作伙伴服务的名称、登录时间，方便您进行授权管理。请您仔细阅读第三方合作伙伴服务的用户协议或隐私政策。
+          </text>
+          <text class="title-text">我们如何使用收集的信息</text>
+          <text style="text-indent: 2em">
+            我们严格遵守法律法规的规定及与用户的约定，将收集的信息用于以下用途。若我们超出以下用途使用您的信息，我们将再次向您进行说明，并征得您的同意，向您提供服务，满足您的个性化需求。
+          </text>
+          <text style="text-indent: 2em">
+            例如，语言设定、位置设定、个性化的帮助服务。
+          </text>
+          <text style="text-indent: 2em">产品开发和服务优化</text>
+          <text style="text-indent: 2em">
+            例如，当我们的系统发生故障时，我们会记录和分析系统故障时产生的信息，优化我们的服务。
+          </text>
+          <text style="text-indent: 2em">安全保障</text>
+          <text style="text-indent: 2em">
+            例如，我们会将您的信息用于身份验证、安全防范、反诈骗监测、存档备份、客户的安全服务等用途。例如，您下载或安装的安全软件会对恶意程序或病毒进行检测，或为您识别诈骗信息。
+          </text>
+          <text style="text-indent: 2em">管理软件</text>
+          <text style="text-indent: 2em">例如，进行软件认证、软件升级等。</text>
+          <text style="text-indent: 2em">邀请您参与有关我们服务的调查。</text>
+          <text style="text-indent: 2em">
+            为了让您有更好的体验、改善我们的服务或经您同意的其他用途，在符合相关法律法规的前提下，我们可能将通过某些服务所收集的信息用于我们的其他服务。例如，将您在使用我们某项服务时的信息，用于另一项服务中向您展示个性化的内容或广告、用于用户研究分析与统计等服务。
+          </text>
+          <text style="text-indent: 2em">
+            为了确保服务的安全，帮助我们更好地了解我们应用程序的运行情况，我们可能记录相关信息，例如，您使用应用程序的频率、故障信息、总体使用情况、性能数据以及应用程序的来源。我们不会将我们存储在分析软件中的信息与您在应用程序中提供的个人身份信息相结合。
+          </text>
+          <text class="title-text">我们如何使用cookie及相关技术</text>
+          <text style="text-indent: 2em">
+            （一）、我们或我们的第三方合作伙伴，可能通过放置安全的Cookie及相关技术收集您的信息，目的是为您提供更个性化的用户体验和服务。我们会严格要求第三方合作伙伴遵守本政策的相关规定。
+            您也可以通过浏览器设置管理Cookie。但请注意，如果停用Cookie，您可能无法享受最佳的服务体验，某些服务也可能无法正常使用。若您希望了解更多Cookie的安全性等信息，可参见《Cookie政策说明》。
+          </text>
+          <text style="text-indent: 2em">
+            （二）、为保障我们客户端的稳定运行、功能实现，使您能够使用和享受更多的服务及功能，我们的应用中会嵌入授权合作伙伴的SDK或其他类似的应用程序，请看末尾附录一《第三方SDK收集使用信息说明》我们接入授权合作伙伴的SDK详情。
+          </text>
+          <text style="text-indent: 2em">
+            我们会对授权合作伙伴获取有关信息的应用程序接口（API）、软件工具开发包（SDK）进行严格的安全检测，并与授权合作伙伴约定严格的数据保护措施，令其按照本政策以及其他任何相关的保密和安全措施来处理个人信息。
+          </text>
+          <text class="title-text">您如何管理自己的信息</text>
+          <text class="second-title-text" style="text-indent: 1.5em">访问或更正您的个人信息</text>
+          <text style="text-indent: 2em">
+            您有权随时登录并访问您的账号，查看您的个人信息。如您发现我们收集、存储、使用、公开的您的个人信息有错误的，或者在法律法规规定的其他情况下，您可以更正您的个人信息。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">删除您的个人信息</text>
+          <text style="text-indent: 2em">
+            我们将按照本政策所述，仅为实现我们产品或服务的功能，收集、使用您的信息。在以下情形中，您可以向我们提出删除您个人信息的请求，但已进行个人信息匿名化处理或法律法规另有规定的除外：
+          </text>
+          <text style="text-indent: 2em">
+            如您发现我们违反法律、行政法规的规定或者双方的约定收集、使用您的个人信息，您可以要求我们删除。
+          </text>
+          <text style="text-indent: 2em">
+            如您发现我们收集、存储的您的个人信息有错误的，您也可以要求我们更正；
+          </text>
+          <text style="text-indent: 2em">
+            如您通过注销等方式终止使用唯唯诺服务的，或保存期限已届满。
+          </text>
+          <text style="text-indent: 2em">
+            如您希望删除您的其他个人信息，或在行使上述权利过程中遇到困难，您可通过本政策第11部分的“联系方式”联系我们，我们将在15个工作日内完成用户身份核查和处理，但法律法规另有规定的或本声明另有约定的除外。
+          </text>
+          <text style="text-indent: 2em">
+            在您访问、修改和删除相关信息时，我们可能会要求您进行身份验证，以保障帐号的安全。
+          </text>
+          <text style="text-indent: 2em">
+            在您使用我们服务的过程中，视为您已在充分知情的前提下自愿、明确地同意我们处理您的个人信息；您有权通过注销账户的方式撤回同意
+            。
+          </text>
+          <text style="text-indent: 2em">
+            （请您理解，由于技术所限、法律或监管要求，我们可能无法满足您的所有要求，我们会在合理的期限内答复您的请求。）
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">更改您授权同意的范围或撤销授权</text>
+          <text style="text-indent: 2em">
+            请您理解，每个业务功能往往需要开启部分权限并收集必要的个人信息才能得以实现，对于您个人信息的收集、使用以及设备权限的管理。您可以在操作系统中关闭设备功能等方式改变同意范围或撤回您的授权。当您执行上述操作后，我们将无法继续为您提供撤回同意或授权所对应的服务，但不会影响此前基于您的授权而开展的个人信息处理。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">注销您的账号</text>
+          <text style="text-indent: 2em">
+            您有权注销您的唯唯诺账号。您可以通过【我-设置-注销账号】在满足账号注销的条件的情况下注销您的账号。
+          </text>
+          <text style="text-indent: 2em">
+            如果您无法通过上述方式访问、更正或删除您的个人信息以及注销账号，或者如果您认为唯唯诺存在违反法律的规定收集、使用您个人信息的情形，您可通过本政策第11部分的“联系方式”联系我们，我们将在15个工作日内完成用户身份核查和处理。
+          </text>
+          <text class="title-text">我们分享的信息</text>
+          <text style="text-indent: 2em">
+            我们遵照法律法规的规定，对信息的分享进行严格的限制，例如：
+          </text>
+          <text style="text-indent: 2em">
+            经您事先同意，我们可能与第三方分享您的个人信息
+          </text>
+          <text style="text-indent: 2em">
+            仅为实现外部处理的目的，我们可能会与第三方合作伙伴（第三方服务供应商、承包商、代理、广告合作伙伴、应用开发者等，例如，代表我们发出电子邮件或推送通知的通讯服务提供商、为我们提供位置服务的地图服务供应商）（他们可能并非位于您所在的法域）分享您的个人信息，让他们按照我们的说明、隐私政策以及其他相关的保密和安全措施来为我们处理上述信息，并用于以下用途：
+          </text>
+          <text style="text-indent: 2em">向您提供我们的服务；</text>
+          <text style="text-indent: 2em">
+            实现“我们如何使用收集的信息”部分所述目的；
+          </text>
+          <text style="text-indent: 2em">
+            履行我们在本政策中的义务和行使我们的权利；
+          </text>
+          <text style="text-indent: 2em">理解、维护和改善我们的服务。</text>
+          <text style="text-indent: 2em">
+            如我们与上述第三方分享您的信息，我们将会采用加密、匿名化处理等手段保障您的信息安全。
+          </text>
+          <text style="text-indent: 2em">
+            随着我们业务的持续发展，当发生合并、收购、资产转让等交易导致向第三方分享您的个人信息时，我们将通过推送通知、公告等形式告知您相关情形，按照法律法规及不低于本政策所要求的标准继续保护或要求新的管理者继续保护您的个人信息。
+          </text>
+          <text style="text-indent: 2em">
+            我们会将所收集到的信息用于大数据分析。
+          </text>
+          <text style="text-indent: 2em">
+            例如，我们将收集到的信息用于分析形成不包含任何个人信息的城市热力图或行业洞察报告。
+          </text>
+          <text style="text-indent: 2em">
+            我们可能对外公开并与我们的合作伙伴分享经统计加工后不含身份识别内容的信息，用于了解用户如何使用我们服务或让公众了解我们服务的总体使用趋势。
+          </text>
+          <text style="text-indent: 2em">我们可能基于以下目的披露您的个人信息</text>
+          <text style="text-indent: 2em">遵守适用的法律法规等有关规定；</text>
+          <text style="text-indent: 2em">
+            遵守法院判决、裁定或其他法律程序的规定；
+          </text>
+          <text style="text-indent: 2em">
+            遵守相关政府机关或其他法定授权组织的要求；
+          </text>
+          <text style="text-indent: 2em">
+            我们有理由确信需要遵守法律法规等有关规定；
+          </text>
+          <text style="text-indent: 2em">
+            为执行相关服务协议或本政策、维护社会公共利益，为保护我们的客户、我们或我们的关联公司、其他用户或雇员的人身财产安全或其他合法权益合理且必要的用途。
+          </text>
+          <text class="title-text">我们可能向您发送的信息</text>
+          <text class="second-title-text" style="text-indent: 1.5em">信息推送</text>
+          <text style="text-indent: 2em">
+            您在使用我们的服务时，我们可能向您发送电子邮件、短信、资讯或推送通知。
+          </text>
+          <text style="text-indent: 2em">
+            您可以按照我们的相关提示，在设备上选择取消订阅。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">与服务有关的公告</text>
+          <text style="text-indent: 2em">
+            我们可能在必要时（例如，因系统维护而暂停某一项服务时）向您发出与服务有关的公告。
+          </text>
+          <text style="text-indent: 2em">
+            您可能无法取消这些与服务有关、性质不属于广告的公告。
+          </text>
+          <text class="title-text">存储信息的地点和期限</text>
+          <text class="second-title-text" style="text-indent: 1.5em">存储信息的地点</text>
+          <text style="text-indent: 2em">
+            我们遵守法律法规的规定，将境内收集的用户个人信息存储于境内。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">存储信息的期限</text>
+          <text style="text-indent: 2em">
+            一般而言，我们仅为实现目的所必需的最短时间保留您的个人信息。但在下列情况下，我们有可能因需符合法律要求，更改个人信息的存储时间：
+          </text>
+          <text style="text-indent: 2em">为遵守适用的法律法规等有关规定；</text>
+          <text style="text-indent: 2em">
+            为遵守法院判决、裁定或其他法律程序的规定；
+          </text>
+          <text style="text-indent: 2em">
+            为遵守相关政府机关或法定授权组织的要求；
+          </text>
+          <text style="text-indent: 2em">
+            我们有理由确信需要遵守法律法规等有关规定；
+          </text>
+          <text style="text-indent: 2em">
+            为执行相关服务协议或本政策、维护社会公共利益，为保护们的客户、我们或我们的关联公司、其他用户或雇员的人身财产安全或其他合法权益所合理必需的用途。
+          </text>
+          <text style="text-indent: 2em">
+            当我们的产品或服务发生停止运营的情形时，我们将采取例如，推送通知、公告等形式通知您，并在合理的期限内删除或匿名化处理您的个人信息。
+          </text>
+          <text class="title-text">信息安全</text>
+          <text style="text-indent: 2em">
+            我们为您的信息提供相应的安全保障，以防止信息的丢失、不当使用、未经授权访问或披露。
+          </text>
+          <text style="text-indent: 2em">
+            我们严格遵守法律法规保护用户的通信秘密。
+          </text>
+          <text style="text-indent: 2em">
+            我们将在合理的安全水平内使用各种安全保护措施以保障信息的安全。
+          </text>
+          <text style="text-indent: 2em">
+            例如，我们使用加密技术（例如，TLS、SSL）、匿名化处理等手段来保护您的个人信息。
+          </text>
+          <text style="text-indent: 2em">
+            我们建立专门的管理制度、流程和组织确保信息安全。
+          </text>
+          <text style="text-indent: 2em">
+            例如，我们严格限制访问信息的人员范围，要求他们遵守保密义务，并进行审查。
+          </text>
+          <text style="text-indent: 2em">
+            若发生个人信息泄露等安全事件，我们会启动应急预案，阻止安全事件扩大，并以推送通知、公告等形式告知您。
+          </text>
+          <text class="title-text">未成年人保护</text>
+          <text style="text-indent: 2em">
+            若用户是未满十八周岁的未成年人，应在监护人监护、指导并获得监护人同意的情况下阅读本政策和使用唯唯诺相关服务。
+          </text>
+          <text style="text-indent: 2em">
+            我们重视对未成年人个人信息的保护，未成年用户在填写个人信息时，请加强个人保护意识并谨慎对待，请在监护人指导时正确使用唯唯诺相关服务。
+          </text>
+          <text style="text-indent: 2em">
+            我们将根据国家相关法律法规及本政策的规定保护未成年人用户信息的保密性及安全性。如果我们发现自己在未事先获得可证实的父母或法定监护人同意的情况下收集了未成年人的个人信息，则会设法尽快删除相关数据
+            。
+          </text>
+          <text class="title-text">自启动和关联启动说明</text>
+          <text style="text-indent: 2em">
+            1、为确保本应用处于关闭或后台运行状态下可正常接收到客户端推送的广播信息，本应用须使用(自启动)能力，将存在一定频率通过系统发送广播唤醒本应用自启动或关联启动行为，是因实现功能及服务所必要的。
+          </text>
+          <text style="text-indent: 2em">
+            2、当您打开唯唯诺
+            app内容类推送消息，在征得您的明确同意后，会跳转唯唯诺
+            app打开相关内容。在未征得您同意的情况下，则不会有关联启动。
+          </text>
+          <text style="text-indent: 2em">
+            3、当您打开唯唯诺 app内部下载的文件后，会关联启动第三方APP。
+          </text>
+          <text class="title-text">我们如何更新隐私政策</text>
+          <text style="text-indent: 2em">
+            为了给您提供更好的服务，我们会根据产品的更新情况及法律法规的相关要求更新本政策的条款，这些更新将构成本政策的一部分。未经您明确同意，我们不会减少您依据当前生效的本政策所应享受的权利。
+          </text>
+          <text style="text-indent: 2em">
+            如遇本政策更新，我们会通过APP客户端推送通知或其他合理方式通知您，以便您能及时了解本政策的最新版本。
+          </text>
+          <text class="title-text">适用范围</text>
+          <text style="text-indent: 2em">我们的所有服务均适用本政策。</text>
+          <text style="text-indent: 2em">
+            某些服务有其特定的隐私指引/声明，该特定隐私指引/声明更具体地说明我们在该服务中如何处理您的信息。
+          </text>
+          <text style="text-indent: 2em">
+            如本政策与特定服务的隐私指引/声明有不一致之处，请以该特定隐私指引声明为准。
+          </text>
+          <text style="text-indent: 2em">
+            请您注意，本政策不适用由其他公司或个人提供的服务。
+          </text>
+          <text style="text-indent: 2em">
+            例如，您通过使用微信帐号登录其他公司或个人提供的服务。
+          </text>
+          <text style="text-indent: 2em">
+            您使用该等第三方服务须受其隐私政策（而非本政策）约束，您需要仔细阅读其政策内容。
+          </text>
+          <text class="title-text">联系方式</text>
+          <text style="text-indent: 2em">
+            您可以通过以下方式联系我们，我们将尽快审核所涉问题，并在验证您的用户身份后的十五个工作日内予以答复：
+          </text>
+          <text style="text-indent: 2em">
+            （1）
+            您可以通过唯唯诺【我-设置-关于唯唯诺】页面中的意见反馈功能联系我们；
+          </text>
+          <text style="text-indent: 2em">
+            （2）
+            您可以向我们开通的support@vivino.cn.com邮箱发送邮件与我们联系。
+          </text>
+          <text class="title-text">附录一《第三方SDK收集使用信息说明》</text>
+          <text class="second-title-text" style="text-indent: 1.5em">阿里云</text>
+          <text style="text-indent: 2em">功能：视频图片上传服务器</text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：网络状态信息、WiFi信息、设置信息
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201902141711_54837.html"
+          >http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201902141711_54837.html</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">百度地图</text>
+          <text style="text-indent: 2em">
+            功能：用于帮助用户设置定位实现内容发布、附近用户内容查看、评论数据排名
+          </text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：设备信息、地理位置信息、存储SD卡写入和读取缓存信息
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://lbsyun.baidu.com/index.php?title=openprivacy"
+          >https://lbsyun.baidu.com/index.php?title=openprivacy</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">腾讯</text>
+          <text style="text-indent: 2em">功能：用于唯唯诺APP分享到微信</text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：WiFi状态、手机状态、网络状态、剪切板信息
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://privacy.qq.com/mb/policy/tencent-privacypolicy"
+          >https://privacy.qq.com/mb/policy/tencent-privacypolicy</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">腾讯bugly</text>
+          <text style="text-indent: 2em">功能：用于唯唯诺APP异常上报</text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：WiFi状态、设备型号、操作系统版本、wifi状态、idfv、cpu属性
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://privacy.qq.com/document/preview/fc748b3d96224fdb825ea79e132c1a56"
+          >https://privacy.qq.com/document/preview/fc748b3d96224fdb825ea79e132c1a56</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">TalkingData</text>
+          <text style="text-indent: 2em">
+            功能：用于唯唯诺APP运营统计及数据分析
+          </text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：设备型号、获取设备序列号、WiFi状态、地理位置信息、MAC地址
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://www.talkingdata.com/privacy.jsp?languagetype=zh_cn"
+          >https://www.talkingdata.com/privacy.jsp?languagetype=zh_cn</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">极光</text>
+          <text style="text-indent: 2em">功能：用于唯唯诺APP的系统通知和推送</text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：设备类型、设备型号、系统版本、设备标识符、网络信息、位置信息、APP应用列表及活跃状态信息
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://www.jiguang.cn/license/privacy"
+          >https://www.jiguang.cn/license/privacy</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">消息推送</text>
+          <text style="text-indent: 2em">
+            我们收集您的设备信息，用于向您推送车辆绑定成功信息、服务期变动信息、警报信息等。通过华为推送(SDK: com.aliyunams:aicloud -android-third-push-huawei:3.3.0；会收集您的手机号，用于通定推送方式），小米推送(SDK: com.aliyun.ams:alicloud-android-third-push-xiaomi:3.3.0；会收集您的手机号，用于确定推送方式）、vivo推送(SDK:com.aliyun.ams:alicloud-android-third-push-vivo:3.3.0；会收集您的手机号，用于确定推送方式）、OPPO推送(SDK: com.aliyun.ams:alicloud-android-third-push-oppo:3.3.0；会收集您的手机号，用于确定推送方式）来给您推送信息，您可以在手机或其他设备的-设置-或在APP等进行免打扰（接收但不提醒）设置。
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">闪验SDK</text>
+          <text style="text-indent: 2em">
+            使用目的：用于用户登录时获取手机号一键登录，简化登录注册流程，改善用户体验
+          </text>
+          <text style="text-indent: 2em">
+            收集个人信息类型：手机号、IP地址、网卡（MAC)地址、国际移动设备识别码（IMEI）、sim卡信息、手机机型、系统信息、网络环境
+          </text>
+          <text style="text-indent: 2em">
+            收集方式：SDK本机采集，不涉及数据共享
+          </text>
+          <text style="text-indent: 2em">
+            第三方公司名称：上海璟梦信息科技有限公司
+          </text>
+          <text style="text-indent: 2em">
+            隐私权政策链接：<a
+            style="line-break: anywhere"
+            href="https://shanyan.253.com/document/details?cid=91&lid=639&pc=28&pn=%25E9%2597%25AA%25E9%25AA%258CSDK"
+          >https://shanyan.253.com/document/details?cid=91&lid=639&pc=28&pn=%25E9%2597%25AA%25E9%25AA%258CSDK</a
+          >
+          </text>
+          <text class="second-title-text" style="text-indent: 1.5em">附录：相关定义</text>
+          <text style="text-indent: 2em">
+            唯唯诺：指唯唯诺文化发展（深圳）有限公司（域名为：<a
+            style="line-break: anywhere"
+            href="https://vivino.cc"
+          >vivino.cc</a
+          >）网站及唯唯诺客户端。
+          </text>
+          <text style="text-indent: 2em">
+            唯唯诺用户：是指任何注册、登录、使用唯唯诺服务或通过唯唯诺搜索等行为的最终用户。
+          </text>
         </text>
       </view>
     </scroll-view>

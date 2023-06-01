@@ -41,7 +41,6 @@ Page({
       imgInfo: JSON.parse(options.imgInfo)
     })
     // setTimeout(() => {
-      console.log("1");
       this.setData({
         identifying: 0
       })
@@ -93,7 +92,7 @@ Page({
   },
   //授权获取手机号
   getPhoneNumber: function (e) {
-    console.log(e, 'eeeeee');
+    // console.log(e, 'eeeeee');
     var that = this
     var ency = e.detail.encryptedData;
     var iv = e.detail.iv;
@@ -104,6 +103,10 @@ Page({
         icon: 'none',
       })
       return false
+    } else {
+      wx.redirectTo({
+        url: '../../../pages/detail/index/index',
+      })
     }
     //把获取手机号需要的参数取到，然后存到头部data里面
     // that.setData({
@@ -114,7 +117,6 @@ Page({
   },
   // 关闭弹窗
   onClose() {
-    console.log("dddddd");
     wx.redirectTo({
       url: '../../../pages/scan/scan',
     })
@@ -130,7 +132,7 @@ Page({
       return
     }
     wx.createSelectorQuery().selectAll('#lottie_demo').node(res => {
-      console.log(res, 'ressss');
+      // console.log(res, 'ressss');
       const canvas = res[0].node
       const context = canvas.getContext('2d')
       canvas.width = 160

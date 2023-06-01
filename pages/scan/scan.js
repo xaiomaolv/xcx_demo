@@ -15,16 +15,6 @@ Page({
     // 胶囊宽度+距右距离
     navObjWid: app.globalData.navObjWid,
     sShowCamera: false,
-    width: 10,
-    height: 10,
-    src: "",
-    image: "",
-    skipphotoStatus: "0", // 1跳过 0没有跳过
-    isShowImage: false,
-    dataArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // mock数据
-    dataLength: null,
-    divsion: 4, // 三条数据一个swiper-item
-    current: "",
     isFirst: true, //是否是第一次进入
     imglist: [{
         rate: 2.1,
@@ -66,8 +56,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.ctx = wx.createCameraContext();//初始化 创建 camera 上下文 CameraContext 对象。
-    this.ctx_A = wx.createCanvasContext("myCanvas"); //画布
+    this.ctx = wx.createCameraContext(); //初始化 创建 camera 上下文 CameraContext 对象。
+    this.ctx_A = wx.createCanvasContext('myCanvas'); //画布
   },
 
   /**
@@ -102,7 +92,7 @@ Page({
               wx.openSetting({
                 success: function (res) {
                   // console.log('成功');
-                  console.log(res);
+                  // console.log(res);
                   if (res.authSetting['scope.camera']) { //设置允许获取摄像头
                     console.log('设置允许获取摄像头')
                     wx.showToast({
@@ -142,17 +132,19 @@ Page({
       }
     })
   },
+    /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+    this.ctx_A.clearRect(0, 0, that.data.canvasWidth, that.data.canvasHight);
+  },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
 
   },
-  // 
-  // 相机授权
-  authTakePhoto() {
-    
-  },
+
   //获取节点信息
   queryPhoto(e) {
     let that = this
@@ -193,31 +185,31 @@ Page({
    * 自定义计算位置  截取自己需要的那一部分图片
    */
   generate(imgSrc) {
+    let that = this
     wx.createSelectorQuery()
       .select("#cover_image")
       .boundingClientRect((rect) => {
-        this.ctx_A.drawImage( imgSrc, 0, 0,
-          wx.getSystemInfoSync().windowWidth,
-          wx.getSystemInfoSync().windowHeight * 0.75
-        );
-        this.ctx_A.draw(true, () => {
+        that.ctx_A.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75 );
+        that.ctx_A.draw(true, () => {
           wx.canvasToTempFilePath({
             //调用方法，开始截取
-            x: rect.left,
-            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066,
-            width: rect.width,
-            height: rect.height,
-            destWidth: rect.width,
-            destHeight: rect.height,
+            x: rect.left,//画布x轴起点
+            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066,//画布y轴起点
+            width: rect.width,//画布宽度
+            height: rect.height,//画布高度
+            destWidth: rect.width,//输出图片宽度
+            destHeight: rect.height,//输出图片高度
             canvasId: "myCanvas",
             quality: 1,
             success: (res) => {
-              // this.getUrl(res.tempFilePath, 5);
               let imgInfo = {
                 tempFilePaths: res.tempFilePath
               }
-              // console.log(res,'ressssss');
-              wx.navigateTo({
+              that.setData({
+                canvasWidth:rect.width,
+                canvasHight:rect.height,
+              })
+              wx.redirectTo({
                 url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
               })
             },
@@ -260,7 +252,7 @@ Page({
         // wx.navigateTo({
         //   url: '/pages/scan/scanResult/scanResult',
         // })
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
         })
         // wx.uploadFile({
@@ -289,7 +281,7 @@ Page({
   toDetail(e) {
     let item = e.currentTarget.dataset.item
     // console.log(item, 'item');
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../detail/index/index',
     })
   },

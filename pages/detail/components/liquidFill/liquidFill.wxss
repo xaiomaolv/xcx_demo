@@ -61,7 +61,7 @@ ec-canvas {
   justify-content: center;
 }
 .countUp{
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 500;
 }
 .count-text {

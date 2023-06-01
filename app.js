@@ -1,6 +1,14 @@
 // app.js
+import {
+  initPage,
+  onPageLoad
+} from './utils/page'
+import request from './utils/request'
+import util from './utils/util'
 App({
   onLaunch() {
+    // 重构Page对象
+    initPage(this)
     // 自定义头部
     let menuButtonObject = wx.getMenuButtonBoundingClientRect();
     wx.getSystemInfo({
@@ -27,6 +35,29 @@ App({
       }
     })
   },
+  //  挂载全局request，使用app.request 替代wx.request
+  ...request,
+  // 挂载全局工具类
+  ...util,
+  // api: [...api],
+  setToken(token) {
+    wx.setStorageSync('token', token)
+  },
+  getToken() {
+    return wx.getStorageSync('token')
+  },
+  setCode(code) {
+    wx.setStorageSync('code', code)
+  },
+  getCode() {
+    return wx.getStorageSync('code')
+  },
+  setUserInfo(userInfo){
+    wx.setStorageSync('userInfo', userInfo)
+  },
+  getUserInfo(){
+    return wx.getStorageSync('userInfo')
+  },
   // 引入`towxml3.0`解析方法
   towxml: require('/towxml/index'),
   //声明一个数据请求方法
@@ -46,5 +77,6 @@ App({
   globalData: {
     capsule: '',
     isLogin: false, // 是否授权登录
+    isFirst: false, // 是否第一次使用
   }
 })

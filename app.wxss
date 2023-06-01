@@ -83,3 +83,20 @@
 	border-bottom:78px solid transparent;
 }
 
+/* markdown解析 */
+view .h2w__main {
+  margin: 0;
+  padding-top: 0;
+}
+
+/* 重置部分框架自带的样式，更加方便在页面里做定制化 */
+/* view .h2w-light {
+  color: unset;
+  background-color: unset;
+}
+view .h2w {
+  font-weight: unset;
+  font-size: unset;
+  line-height: unset;
+} */
+

@@ -1,5 +1,7 @@
 // pages/detail/index/index.js
-// pages/detail/detail.js
+import {
+  detailInfo,
+} from '../../../api/detail'
 import lottie from 'lottie-miniprogram'
 import WxCountUp from '../../../plugins/wx-countup/WxCountUp.js'
 const app = getApp();
@@ -26,7 +28,6 @@ Page({
     // customStyle:{
     //   width:560rpx,margin:auto;width:560rpx;margin:auto;
     // },
-    articleEdit: {}, //编者注
     title: [{
       name: "详情",
       opt: 'blurbCard',
@@ -165,7 +166,7 @@ Page({
     evaluateHight: ['参考酒评', '最新', '朋友'],
     wineLists: [{
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=104e019e-cbbe-4b9b-9ab4-895933ff416f',
+        w_img: '/img/mate/wine1.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -180,7 +181,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=f25a8958-3c37-4719-9071-136f24c7bd7f',
+        w_img: '/img/mate/wine.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -195,7 +196,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=f25a8958-3c37-4719-9071-136f24c7bd7f',
+        w_img: '/img/mate/wine1.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -210,7 +211,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=104e019e-cbbe-4b9b-9ab4-895933ff416f',
+        w_img: '/img/mate/wine.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -225,7 +226,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=f25a8958-3c37-4719-9071-136f24c7bd7f',
+        w_img: '/img/mate/wine1.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -240,7 +241,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=104e019e-cbbe-4b9b-9ab4-895933ff416f',
+        w_img: '/img/mate/wine.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -255,7 +256,7 @@ Page({
       },
       {
         w_bg: 'https://img1.baidu.com/it/u=1098577027,1368137597&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500',
-        w_img: 'http://dev.vivino.cc/api/files/sc/find-by-uuid?uuid=104e019e-cbbe-4b9b-9ab4-895933ff416f',
+        w_img: '/img/mate/wine1.png',
         rate: [{
           origin: '法国',
           desc: '本周最佳评价',
@@ -274,15 +275,15 @@ Page({
     evaluateCurrent: '0',
     rateCardHeight: 0,
     videoList: [{
-        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        srcVideo: 'https://api.vivino.cc/app-api/appapi/general/api/getScanStudyVideo',
         num: 800
       },
       {
-        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        srcVideo: 'https://api.vivino.cc/app-api/appapi/general/api/getScanStudyVideo',
         num: 400
       },
       {
-        srcVideo: 'https://vivino-wines.oss-cn-shanghai.aliyuncs.com/videos/SacnStudyVideo/scan-wine-study-video-20221108.mp4',
+        srcVideo: 'https://api.vivino.cc/app-api/appapi/general/api/getScanStudyVideo',
         num: 300
       },
     ],
@@ -346,7 +347,10 @@ Page({
     locationMap: {
       latitude: 44.7,
       longitude: 8.03
-    }
+    },
+    articleEdit: {}, //编者注
+    isOpen: false,
+    isFold: false, // 是否显示'展开' 默认不显示
   },
   /**
    * 生命周期函数--监听页面加载
@@ -358,6 +362,10 @@ Page({
     that.slideAnchor();
     that.rateCardHeight()
     this.judgeWater()
+    setTimeout(function () {
+      that.editMarkdown()
+    }, 100)
+
   },
 
   /**
@@ -374,8 +382,8 @@ Page({
     let that = this
     that.navTabs = that.selectComponent(".navtabs");
     that.showDownApp = that.selectComponent(".downApp");
+    that.detailInfo()
     // that.init()
-    // markdown
   },
 
   /**
@@ -412,6 +420,35 @@ Page({
   onShareAppMessage() {
 
   },
+  detailInfo(){
+    let params = {
+      wineUUID:'139a3308-4617-11ec-8373-066b4187bf04'
+    }
+    detailInfo(params).then(res=>{
+      console.log(res,'wineUUID=139a3308-4617-11ec-8373-066b4187bf04');
+    })
+  },
+  // 编者注计算markdown高度
+  editMarkdown() {
+    let that = this
+    let query = wx.createSelectorQuery();
+    query.select('.content').boundingClientRect();
+    query.exec(function (rect) {
+      if (rect[0] === null) {
+        return
+      } else if (rect[0].height > 570) { // 自定义一个边界高度
+        that.setData({
+          isFold: true
+        })
+      }
+    })
+  },
+  // 编者注点击展开或收起
+  open() {
+    this.setData({
+      isOpen: this.data.isOpen ? false : true
+    })
+  },
   // 返回
   handleBackClick(e) {
     wx.navigateTo({
@@ -429,32 +466,35 @@ Page({
     // }
   },
   editCard() {
-    let cod = `偶然相遇相貌英俊的青年水手傩（nuó）送，傩送在翠翠的心里留下了深刻的印象。同时，傩送的兄长天保也喜欢上了翠翠，并提前托媒人提了亲。天保告诉傩送一年前他就爱上了翠翠，而傩送告诉天保他两年前就爱上了翠翠，天保听了后也吃了一惊。然而此时，当地的团总以新磨坊为陪嫁，想把女儿许配给傩送。而傩送宁肯继承一条破船也要与翠翠成婚。
+    let cod = `偶然相遇相貌英俊的青年水手傩送，傩送在翠翠的心里留下了深刻的印象。同时，傩送的兄长天保也喜欢上了翠翠，并提前托媒人提了亲。天保告诉傩送一年前他就爱上了翠翠，而傩送告诉天保他两年前就爱上了翠翠，天保听了后也吃了一惊。然而此时，当地的团总以新磨坊为陪嫁，想把女儿许配给傩送。而傩送宁肯继承一条破船也要与翠翠成婚。
     兄弟俩没有按照当地风俗以决斗论胜负，而是采用公平而浪漫的唱山歌的方式表达感情，让翠翠自己从中选择。傩送是唱歌好手，天保自知唱不过弟弟，心灰意冷，断然驾船远行做生意。
     碧溪边只听过一夜傩送的歌声，后来，歌却再没有响起来。老船夫忍不住去问，本以为是老大唱的，却得知：唱歌人是傩送，老大讲出实情后便去做生意。几天后老船夫听说老大坐水船出了事，淹死了……
     码头的船总顺顺因为儿子天保的死对老船夫变得冷淡。船总顺顺不愿意翠翠再做傩送的媳妇。老船夫只好郁闷地回到家，翠翠问他，他也没说起什么。夜里下了大雨，夹杂着吓人的雷声。第二天翠翠起来发现船已被冲走，屋后的白塔也冲塌了，翠翠去找爷爷却发现老人已在雷声将息时死去了…… 老军人杨马兵热心地前来陪伴翠翠，也以渡船为生，等待着傩送的归来。
     `
     // app.getText('https://www.vvadd.com/wxml_demo/demo.txt?v=2', res => {
-      // let obj = app.towxml(this.data.wineEditorNotes[0].editorNote, 'markdown', {
-        let obj = app.towxml(cod, 'markdown', {
-        theme: 'light', //主题 dark 黑色，light白色，不填默认是light
-        base: "www.xxx.com",
-        events: { //为元素绑定的事件方法
-          tap: e => {
-            console.log('tap', e);
-          },
-          change: e => {
-            console.log('todo', e);
+    // let obj = app.towxml(this.data.wineEditorNotes[0].editorNote, 'markdown', {
+    let obj = app.towxml(cod, 'markdown', {
+      theme: 'light', //主题 dark 黑色，light白色，不填默认是light
+      base: "www.xxx.com",
+      events: { //为元素绑定的事件方法
+        tap: e => {
+          if (e.currentTarget.dataset.data && e.currentTarget.dataset.data.attr && (e.currentTarget.dataset.data.attr.class == "h2w__p")) {
+
           }
+          console.log('tap', e);
+        },
+        change: e => {
+          console.log('todo', e);
         }
-      });
-      //更新解析数据
-      console.log(obj,'ddd');
-      this.setData({
-        articleEdit: obj,
-      });
-      // console.log(obj,'obj');
-    // });
+      }
+    });
+    //更新解析数据
+    // console.log(obj, 'ddd');
+    this.setData({
+      articleEdit: obj,
+    });
+    // console.log(obj,'obj');
+    //   });
   },
   // 简介按钮高亮切换
   handleClick(e) {
@@ -493,7 +533,7 @@ Page({
         bottomArray = [],
         topArray = [];
       res.forEach(rect => {
-        console.log(rect, 'rrrrr');
+        // console.log(rect, 'rrrrr');
         heightArray.push(Math.floor(rect.top));
         bottomArray.push(Math.floor(rect.bottom));
         topArray.push(rect.height)
@@ -550,7 +590,6 @@ Page({
     } = that.data;
     let numHeight = 0;
     //计算当前锚点是否能根据tab的点击至顶部
-    console.log(topArray, 'topArray');
     for (var i = activeIndex; i < topArray.length; i++) {
       numHeight += topArray[i]
     }
@@ -577,6 +616,7 @@ Page({
     let scrollTop = e.detail.scrollTop;
     // console.log(scrollTop, 'scrollTop');
     // console.log(heightArray, 'heightArray');
+    // console.log(rateCardHeight, 'rateCardHeight');
     let isHidden = scrollTop >= heightArray[0] ? true : false; //控制tab显示与隐藏
     let isShowNav = scrollTop >= rateCardHeight ? true : false; //控制topnav显示与隐藏
 
@@ -618,17 +658,12 @@ Page({
   },
   //停止滚动，防止锚点位置过低，界面滚动时无效的情况
   endScroll: function (e) {
-    console.log(e, 'end');
+    // console.log(e, 'end');
     this.setData({
       scrollLock: true
     });
   },
-  // 返回
-  // handleBackClick() {
-  //   wx.redirectTo({
-  //     url: '../scan/scan',
-  //   })
-  // },
+
   init() {
     if (this.inited) {
       return

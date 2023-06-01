@@ -7,7 +7,7 @@
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
     "navTabs":"/components/navTabs/navTabs",
     "topNav":"/components/topNav/topNav",
-    "rateEchart":"/components/liquidFill/liquidFill",
+    "rateEchart":"../components/liquidFill/liquidFill",
     "scroll_x":"../components/scroll_x_wine/scroll_x_wine",
     "guage":"../components/gauage/gauage",
     "qqMap":"/components/qqMap/qqMap"

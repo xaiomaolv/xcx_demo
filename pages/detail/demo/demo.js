@@ -1,7 +1,7 @@
 // pages/demo/demo.js
-import * as echarts from "../../components/echarts/echarts"
-import * as liquidFill from '../../components/echarts/echarts-liquidfill.min';
-import WxCountUp from '../../plugins/wx-countup/WxCountUp.js'
+import * as echarts from "../echarts/echarts"
+import * as liquidFill from '../echarts/echarts-liquidfill.min';
+import WxCountUp from '../../../plugins/wx-countup/WxCountUp.js'
 
 function setOption(num) {
   const color = '#B81728'

@@ -4,6 +4,38 @@ page {
   height: 100%;
   background-color: rgb(242, 242, 242);
 }
+
+/* 编者注 */
+.content-wrap {
+  position: relative;
+}
+.content {
+  background: #fff;
+  font-size: 24rpx;
+  /* padding: 10rpx 20rpx; */
+  color: #535353;
+  line-height: 60rpx;
+  /* margin: 30rpx 0 0 0; */
+  text-indent: 60rpx;
+}
+.more {
+  width: 100%;
+  padding-top: 10rpx;
+  color: var(--primary-color);
+  font-size: 28rpx;
+  text-align: center;
+  /* background: linear-gradient(rgba(255, 255, 255, 0) 50%, #fff 70%); */
+}
+
+.fold {
+  height: 570rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
 .num-wrap {
   padding: 20px;
   text-align: center;
@@ -43,15 +75,18 @@ button::after {
   border: none;
   display: none;
 }
+
 /*文本两端对齐*/
 .tx-jt {
   display: inline-block;
   text-align: justify;
   vertical-align: top;
 }
-.mg-5{
+
+.mg-5 {
   margin: 10rpx;
 }
+
 .mg-15-25 {
   margin: 30rpx 50rpx;
 }
@@ -75,7 +110,8 @@ button::after {
 .mg-10-0 {
   margin: 20rpx 0;
 }
-.mg-tp-20{
+
+.mg-tp-20 {
   margin-top: 20rpx;
 }
 
@@ -119,15 +155,17 @@ button::after {
   position: absolute;
   left: 80rpx;
 }
-.wine_img_no{
+
+.wine_img_no {
   width: 360rpx;
   height: 590rpx;
-  margin:-10rpx 40rpx 0 40rpx;
+  margin: -10rpx 40rpx 0 40rpx;
   padding: 6rpx;
   border-radius: 20rpx;
   border: 1rpx solid var(--border-color);
 }
-.wine_img_no_img{
+
+.wine_img_no_img {
   width: 360rpx;
   height: 590rpx;
   border-radius: 20rpx;
@@ -145,7 +183,7 @@ button::after {
 }
 
 /* 拍照识别图片 */
-.takePhoto{
+.takePhoto {
   margin-top: 80rpx;
   width: 190rpx;
   height: 280rpx;
@@ -154,7 +192,8 @@ button::after {
   padding: 10rpx;
   margin-left: 80rpx;
 }
-.takePhoto_img{
+
+.takePhoto_img {
   width: 190rpx;
   height: 280rpx;
   border-radius: 10rpx;
@@ -180,31 +219,33 @@ button::after {
 }
 
 .van_btn {
-    border: 1rpx solid black !important;
-    -webkit-tap-highlight-color: transparent;
-    border-radius: 40rpx;
-    box-sizing: border-box;
-    color: #000;
-    cursor: pointer;
-    line-height: 2.55555556;
-    margin-left: 30rpx;
-    margin-right: 20rpx;
-    overflow: hidden;
-    padding-left: 28rpx;
-    padding-right: 28rpx;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 26rpx;
-    line-height: 2.3;
-    font-weight: bold;
-    padding: 8rpx 32rpx;
+  border: 1rpx solid black !important;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  line-height: 2.55555556;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 2.3;
+  font-weight: bold;
+  padding: 8rpx 32rpx;
 }
-.van_btn image{
+
+.van_btn image {
   width: 38rpx;
   height: 38rpx;
 }
+
 .bds {
   border: 1rpx solid var(--border-color);
   margin-right: 25rpx;
@@ -304,18 +345,22 @@ button::after {
   -webkit-text-fill-color: #000;
   -webkit-opacity: 1;
 }
+
 /* 展开收缩 */
 .hiddenmore .more-item {
   display: none;
 }
- .map:first-child {
-    border-radius: 12px;
+
+.map:first-child {
+  border-radius: 12px;
 }
+
 .showmore .more-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
+
 .bd-bt-flavour {
   width: 100%;
   border-bottom: 1rpx solid var(--border-color);
@@ -387,19 +432,22 @@ button::after {
   margin: 4rpx;
   border-radius: 10rpx;
 }
-.evlVideo_text{
+
+.evlVideo_text {
   font-size: 26rpx;
   color: white;
   position: absolute;
   bottom: 20rpx;
   left: 20rpx;
 }
+
 /* 赏酒攻略 */
 .tasteCard {
   background-color: white;
   border-radius: 20rpx;
   padding-bottom: 20rpx;
 }
+
 /* 食物搭配 */
 .foodLogo {
   font-weight: 400;
@@ -412,6 +460,7 @@ button::after {
   top: -20rpx;
   left: 0;
 }
+
 /* 推荐场合 */
 .recommend-item {
   height: 140rpx;
@@ -425,6 +474,7 @@ button::after {
   width: calc((100% - 25rpx) / 4);
   position: relative;
 }
+
 /* 将下标是4的倍数元素的margin-right设置为0，即将每行最后一个元素的margin-right置0 */
 .recommend-item:nth-of-type(4n+0) {
   margin-right: 0;
