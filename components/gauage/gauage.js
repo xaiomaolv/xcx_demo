@@ -105,7 +105,7 @@ function initChart(canvas, width, height, dpr) {
         color: 'inherit'
       },
       data: [{
-        value: 11,
+        value: 4,
         name: 'A-4'
       }]
     }]
