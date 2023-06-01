@@ -30,16 +30,21 @@ Page({
       "婚宴佳品"
     ],
     identifying: 2, //识别，0正在识别，1 识别成功 2 识别失败
+    imgInfo:{}, //扫描结果
+    baseBg:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options);
+    // console.log(options);
     this.setData({
       imgInfo: JSON.parse(options.imgInfo)
     })
+    console.log(this.data.imgInfo,'this.data.imgInfo');
+    let img = this.data.imgInfo.tempFilePaths
+    this.getBase64(img)
     // setTimeout(() => {
       this.setData({
         identifying: 0
@@ -89,6 +94,20 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  // 图片转base64
+  getBase64(img){
+    console.log(img,'vvvv');
+    wx.getFileSystemManager().readFile({
+      filePath: img, //选择图片返回的相对路径
+      encoding: 'base64', //编码格式
+      success: res => { //成功的回调
+        this.setData({
+          baseBg:res.data
+        })
+        // console.log('data:image/png;base64,' + res.data)
+      }
+    })
   },
   //授权获取手机号
   getPhoneNumber: function (e) {

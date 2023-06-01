@@ -15,6 +15,12 @@
       ]
     }
   ],
+  "preloadRule": {
+    "pages/scan/scan": {
+      "network": "all",
+      "packages": ["pages/detail/"]
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

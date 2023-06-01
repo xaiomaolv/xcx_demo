@@ -17,33 +17,42 @@
   <!-- 识别图片-->
   <view>
     <view class="">
-      <view>
-        <scroll-view scroll-x class="scrolls">
-          <view class="scroll-box" style="width:25%;margin:30rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" data-item="{{item}}">
-            <view data-item="{{item}}" data-index="{{index}}" bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend' animation="{{item.aniMation}}">
-              <view class="flex-row-center ft-bd-600">
-                <view wx:if="{{item.rate > 0}}" class="center_btn tx-ct">
-                  <text>{{item.rate}}</text>
-                </view>
-                <view wx:else class="center_rates tx-ct">
-                  <text>暂无评分</text>
-                </view>
+      <scroll-view scroll-x class="scrolls">
+        <view class="scroll-box" style="width:25%;margin:30rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;" wx:for="{{imglist}}" wx:key="index" data-item="{{item}}">
+          <view data-item="{{item}}" data-index="{{index}}" bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend' animation="{{item.aniMation}}">
+            <view class="flex-row-center ft-bd-600">
+              <view wx:if="{{item.rate > 0}}" class="center_btn tx-ct">
+                <text>{{item.rate}}</text>
               </view>
-              <view id="delBox" style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;background: rgba(0, 0, 0, 0.4);" data-item="{{item}}" bindtap="toDetail">
-                <image src="{{item.img}}" mode="" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
-                <view wx:if="{{item.price}}" class="tx-ct ft-se-12 ft-bd-600 clr-FFF">¥{{item.price}}</view>
-                <view wx:else class="tx-ct ft-se-12 ft-bd-600 clr-FFF">价格未知</view>
+              <view wx:else class="center_rates tx-ct">
+                <text>暂无评分</text>
               </view>
             </view>
+            <view id="delBox" style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;background: rgba(0, 0, 0, 0.4);" data-item="{{item}}" bindtap="toDetail">
+              <image src="{{item.img}}" mode="" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
+              <view wx:if="{{item.price}}" class="tx-ct ft-se-12 ft-bd-600 clr-FFF">¥{{item.price}}</view>
+              <view wx:else class="tx-ct ft-se-12 ft-bd-600 clr-FFF">价格未知</view>
+            </view>
           </view>
-        </scroll-view>
-      </view>
+        </view>
+      </scroll-view>
     </view>
+    <!-- <view wx:else>
+      <view style="width:25%;margin:40rpx 10rpx 40rpx 10rpx;border-radius: 15rpx;padding: 10rpx;position: absolute;bottom: 0rpx;right: 0;">
+        <view>
+          <view style="border-radius: 15rpx;border: 1rpx solid rgb(141, 138, 138);padding: 4rpx;background: rgba(0, 0, 0, 0.4);" bindtap="toDetail">
+            <view class="tx-ct ft-se-12 ft-bd-600 clr-FFF">酒标示例</view>
+            <image src="/img/mate/wine.png" mode="aspectFit" style="width: 100%;border-radius: 15rpx;height: 16vh"></image>
+            <view class="tx-ct ft-se-12 ft-bd-600 clr-FFF">查看攻略</view>
+          </view>
+        </view>
+      </view>
+    </view> -->
   </view>
 </camera>
 <!-- 拍照按钮 -->
 <cover-view class='camera_bottom'>
-<cover-view class="cancelphoto"></cover-view>
+  <cover-view class="cancelphoto"></cover-view>
   <cover-image class='takephoto' src='/img/scan/pz.png' bindtap='takePhotoAction'></cover-image>
   <cover-image class='skipphoto ' src='/img/scan/xc.png' bindtap='chooseImg'></cover-image>
-  </cover-view>
+</cover-view>

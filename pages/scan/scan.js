@@ -36,11 +36,6 @@ Page({
         price: 1000,
         img: 'https://pic.aigexing.net/uploads/8/1253/2536336073/92605875135/41199282.jpg'
       },
-      // {
-      //   rate:'',
-      //   price:'',
-      //   img:'https://pic.aigexing.net/uploads/7/1253/2862058340/93209845123/476260524.jpg'
-      // },
     ],
     isShowCamera: false, //相机授权
     startY: 0, // 下滑删除开始坐标
@@ -73,6 +68,21 @@ Page({
    */
   onShow() {
     this.queryPhoto()
+  },
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  },
+  // 相机授权
+  authCamera() {
     var that = this
     wx.authorize({
       scope: 'scope.camera',
@@ -132,19 +142,6 @@ Page({
       }
     })
   },
-    /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-    this.ctx_A.clearRect(0, 0, that.data.canvasWidth, that.data.canvasHight);
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
   //获取节点信息
   queryPhoto(e) {
     let that = this
@@ -189,16 +186,16 @@ Page({
     wx.createSelectorQuery()
       .select("#cover_image")
       .boundingClientRect((rect) => {
-        that.ctx_A.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75 );
+        that.ctx_A.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75);
         that.ctx_A.draw(true, () => {
           wx.canvasToTempFilePath({
             //调用方法，开始截取
-            x: rect.left,//画布x轴起点
-            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066,//画布y轴起点
-            width: rect.width,//画布宽度
-            height: rect.height,//画布高度
-            destWidth: rect.width,//输出图片宽度
-            destHeight: rect.height,//输出图片高度
+            x: rect.left, //画布x轴起点
+            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066, //画布y轴起点
+            width: rect.width, //画布宽度
+            height: rect.height, //画布高度
+            destWidth: rect.width, //输出图片宽度
+            destHeight: rect.height, //输出图片高度
             canvasId: "myCanvas",
             quality: 1,
             success: (res) => {
@@ -206,8 +203,8 @@ Page({
                 tempFilePaths: res.tempFilePath
               }
               that.setData({
-                canvasWidth:rect.width,
-                canvasHight:rect.height,
+                canvasWidth: rect.width,
+                canvasHight: rect.height,
               })
               wx.redirectTo({
                 url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
@@ -224,15 +221,12 @@ Page({
   takePhotoAction: function () {
     var that = this
     // 相机授权
-    // that.authTakePhoto()
+    that.authCamera()
     if (that.data.isShowCamera == true) {
-      // wx.navigateTo({
-      //   url: '../../pages/scan/scanResult/scanResult',
-      // })
-      this.ctx.takePhoto({
+      that.ctx.takePhoto({
         quality: 'high', //高质量
         success: (res) => {
-          this.generate(res.tempImagePath);
+          that.generate(res.tempImagePath);
           // console.log(res, 'takePhotoAction');
         },
       })
@@ -247,11 +241,8 @@ Page({
         var tempFilePaths = res.tempFilePaths
         // console.log(res, 'chooseImage');
         let imgInfo = {
-          tempFilePaths: res.tempFilePaths
+          tempFilePaths: res.tempFilePaths[0]
         }
-        // wx.navigateTo({
-        //   url: '/pages/scan/scanResult/scanResult',
-        // })
         wx.redirectTo({
           url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
         })

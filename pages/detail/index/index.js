@@ -1,7 +1,7 @@
 // pages/detail/index/index.js
 import {
   detailInfo,
-} from '../../../api/detail'
+} from '../../../api/detail.js'
 import lottie from 'lottie-miniprogram'
 import WxCountUp from '../../../plugins/wx-countup/WxCountUp.js'
 const app = getApp();
@@ -434,11 +434,16 @@ Page({
     let query = wx.createSelectorQuery();
     query.select('.content').boundingClientRect();
     query.exec(function (rect) {
+      console.log(rect,'hhhhhhhhhh');
       if (rect[0] === null) {
-        return
-      } else if (rect[0].height > 570) { // 自定义一个边界高度
         that.setData({
-          isFold: true
+          markdownHeight:0
+        })
+        return
+      } else if (rect[0].height > 320) { // 自定义一个边界高度
+        that.setData({
+          isFold: true,
+          markdownHeight:rect[0].height - 320
         })
       }
     })
@@ -534,10 +539,14 @@ Page({
         topArray = [];
       res.forEach(rect => {
         // console.log(rect, 'rrrrr');
-        heightArray.push(Math.floor(rect.top));
+        // console.log(that.data.markdownHeight);
+        // console.log(rect.top,'rect.top');
+        let top = that.data.markdownHeight > 0 ? Math.floor(rect.top)-that.data.markdownHeight : Math.floor(rect.top)
+        heightArray.push(top);
         bottomArray.push(Math.floor(rect.bottom));
         topArray.push(rect.height)
       });
+      console.log(heightArray,'heightArray');
       that.setData({
         scrollHeight: windowHeight,
         heightArray,
