@@ -1,0 +1,78 @@
+/* pages/scan/components/scanResult.wxss */
+@import "/css/flex.wxss";
+/*  去掉button的默认样式*/
+button {
+  background: transparent;
+  font-weight: normal;
+}
+
+button::after {
+  outline: none;
+  border: none;
+  display: none;
+}
+.try_btn {
+  border-radius: 30rpx;
+  background: black;
+  color: white;
+  padding: 5rpx 56rpx;
+}
+
+.mg-tp-50 {
+  margin-top: 100rpx;
+}
+
+.mg-lr-50 {
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+}
+
+.icon_view {
+  display: inline-block;
+  position: relative;
+}
+
+.show_icon {
+  position: absolute;
+  top: -11rpx;
+  right: 0px;
+  z-index: 1;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* 识别成功 */
+.wine_img {
+  width: 160rpx;
+  height: 600rpx;
+  margin-top: 30rpx;
+  margin-left: 100rpx;
+}
+
+/* 评分 */
+.hot-rate {
+  margin-right: 90rpx;
+  margin-top: 60rpx;
+}
+
+/* 参考价格 */
+.price_btn {
+  border-radius: 40rpx;
+  background: #F2F2F2;
+  color: #979797;
+  padding: 5rpx 30rpx;
+  margin-top: 40rpx;
+}
+
+.btn_p {
+  border-radius: 10rpx;
+  margin: 10rpx 20rpx 10rpx 0;
+}
+
+.btn_more {
+  color: white;
+  background: black;
+  margin-top: 10rpx;
+  padding: 5rpx 60rpx !important;
+  border-radius: 30rpx;
+}

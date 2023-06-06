@@ -44,7 +44,11 @@ Page({
     Ystart: 0,
     isAnimation: false,
     aniMation: {},
-    slideTop: 0
+    slideTop: 0,
+    // 弹窗
+    imgInfo: {},
+    cameraImg: '', //canvas转图片
+    isShowImage: false
   },
 
   /**
@@ -67,6 +71,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    this.scanResult = this.selectComponent(".scanResult");
     this.queryPhoto()
   },
   /**
@@ -183,35 +188,78 @@ Page({
    */
   generate(imgSrc) {
     let that = this
+    // that.ctx_A = wx.createCanvasContext('myCanvas'); //画布
     wx.createSelectorQuery()
       .select("#cover_image")
       .boundingClientRect((rect) => {
-        that.ctx_A.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75);
-        that.ctx_A.draw(true, () => {
-          wx.canvasToTempFilePath({
-            //调用方法，开始截取
-            x: rect.left, //画布x轴起点
-            y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066, //画布y轴起点
-            width: rect.width, //画布宽度
-            height: rect.height, //画布高度
-            destWidth: rect.width, //输出图片宽度
-            destHeight: rect.height, //输出图片高度
-            canvasId: "myCanvas",
-            quality: 1,
-            success: (res) => {
-              let imgInfo = {
-                tempFilePaths: res.tempFilePath
+        wx.getImageInfo({
+          src: imgSrc,
+          success: function (res) {
+            that.canvas = wx.createCanvasContext("myCanvas", that) //画布
+            //过渡页面中，图片的路径坐标和大小
+            that.canvas.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75)
+            // that.canvas.setStrokeStyle('black')
+            // that.canvas.strokeRect(rect.left, rect.top, rect.width, rect.height)
+            that.canvas.draw()
+            // setTimeout(function () {
+            wx.canvasToTempFilePath({ //裁剪对参数
+              canvasId: "myCanvas",
+              x: rect.left, //画布x轴起点
+              y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066, //画布y轴起点
+              width: rect.width, //画布宽度
+              height: rect.height, //画布高度
+              destWidth: rect.width, //输出图片宽度
+              destHeight: rect.height, //输出图片高度
+              success: function (res) {
+                let imgInfo = {
+                  tempFilePaths: res.tempFilePath
+                }
+                //清除画布上在该矩形区域内的内容。
+                // that.canvas.clearRect(0, 0, that.data.width, that.data.height)
+                // that.canvas.drawImage(res.tempFilePath, image_x, image_y, image_width, image_height)
+                that.canvas.draw()
+                console.log(res.tempFilePath);
+                that.setData({
+                  canvasWidth: rect.width,
+                  canvasHight: rect.height,
+                  cameraImg: res.tempFilePath,
+                  imgInfo: imgInfo
+                })
+                that.scanResult.showScanResult()
               }
-              that.setData({
-                canvasWidth: rect.width,
-                canvasHight: rect.height,
-              })
-              wx.redirectTo({
-                url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
-              })
-            },
-          });
-        });
+            })
+            // }, 1000);
+          }
+        })
+        // that.ctx_A.drawImage(imgSrc, 0, 0, wx.getSystemInfoSync().windowWidth, wx.getSystemInfoSync().windowHeight * 0.75);
+        // that.ctx_A.draw(true, () => {
+        //   wx.canvasToTempFilePath({
+        //     //调用方法，开始截取
+        //     x: rect.left, //画布x轴起点
+        //     y: rect.top - wx.getSystemInfoSync().windowHeight * 0.066, //画布y轴起点
+        //     width: rect.width, //画布宽度
+        //     height: rect.height, //画布高度
+        //     destWidth: rect.width, //输出图片宽度
+        //     destHeight: rect.height, //输出图片高度
+        //     canvasId: "myCanvas",
+        //     quality: 1,
+        //     success: (res) => {
+        //       let imgInfo = {
+        //         tempFilePaths: res.tempFilePath
+        //       }
+        //       that.setData({
+        //         canvasWidth: rect.width,
+        //         canvasHight: rect.height,
+        //         cameraImg: res.tempFilePath,
+        //         imgInfo:imgInfo
+        //       })
+        //       that.scanResult.showScanResult()
+        //       // wx.redirectTo({
+        //       //   url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
+        //       // })
+        //     },
+        //   });
+        // });
       })
       .exec();
   },
@@ -222,10 +270,13 @@ Page({
     var that = this
     // 相机授权
     that.authCamera()
+    console.log(that.data.isShowCamera, 'car');
     if (that.data.isShowCamera == true) {
-      that.ctx.takePhoto({
+      let ctx = wx.createCameraContext();
+      ctx.takePhoto({
         quality: 'high', //高质量
         success: (res) => {
+          console.log(res, 'eeee');
           that.generate(res.tempImagePath);
           // console.log(res, 'takePhotoAction');
         },
@@ -234,6 +285,7 @@ Page({
   },
   // 图库选择
   chooseImg() {
+    let that = this
     wx.chooseImage({
       count: 1,
       sourceType: ['album'], //只打开相册
@@ -243,20 +295,13 @@ Page({
         let imgInfo = {
           tempFilePaths: res.tempFilePaths[0]
         }
-        wx.redirectTo({
-          url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
+        that.setData({
+          cameraImg: res.tempFilePaths[0],
+          imgInfo: imgInfo
         })
-        // wx.uploadFile({
-        //   url: 'http://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-        //   filePath: tempFilePaths[0],
-        //   name: 'file',
-        //   formData: {
-        //     'user': 'test'
-        //   },
-        //   success: function (res) {
-        //     var data = res.data
-        //     //do something
-        //   }
+        that.scanResult.showScanResult()
+        // wx.redirectTo({
+        //   url: '../../pages/scan/scanResult/scanResult?imgInfo=' + JSON.stringify(imgInfo)
         // })
       }
     })
@@ -369,5 +414,10 @@ Page({
       // 复位
       this.createAnimationPY(0, index)
     }
+  },
+  handCancel() {
+    this.setData({
+      cameraImg: ''
+    })
   },
 })
